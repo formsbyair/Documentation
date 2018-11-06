@@ -1,0 +1,712 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:fba="https://formsbyair.com/schema/1" xmlns="https://formsbyair.com/schema/9025af03-0786-416f-bfc9-ec4832051269" elementFormDefault="qualified" targetNamespace="https://formsbyair.com/schema/9025af03-0786-416f-bfc9-ec4832051269" version="47" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://formsbyair.com/schema/1/fba.xsd" namespace="https://formsbyair.com/schema/1" />
+  <xs:element name="Form">
+    <xs:annotation>
+      <xs:documentation source="title">Application Form (Sample)</xs:documentation>
+      <xs:documentation source="savecompletedsections">True</xs:documentation>
+      <xs:documentation source="owner">FormsByAir</xs:documentation>
+      <xs:documentation source="ownerId">876bfe05-d117-4927-93ae-20a815981ec8</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="a490c78a7ac9349037cfcc75d12ac79a9" nillable="true">
+          <xs:annotation>
+            <xs:documentation source="title">Applicants</xs:documentation>
+            <xs:documentation source="section">section</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="1" name="a9c95eee694714ef4f8ba27fe42f6293c" nillable="true" type="xs:date">
+                <xs:annotation>
+                  <xs:documentation source="prompt">Date</xs:documentation>
+                  <xs:documentation source="default">=DateTime.Today</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="a4377e299242c485fb2a31343830ec451" nillable="true">
+                <xs:annotation>
+                  <xs:documentation source="title">Applicants</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="unbounded" name="a2ad33fe6c5ea4631bbd0a5679ac46803" nillable="true">
+                      <xs:annotation>
+                        <xs:documentation source="autofillkey">Applicant</xs:documentation>
+                        <xs:documentation source="title">Applicant</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="1" name="a853088908ec340e93e9ab68b664cdd8e" nillable="true">
+                            <xs:annotation>
+                              <xs:documentation source="prompt">Applicant Type</xs:documentation>
+                              <xs:documentation source="autofillkey">ApplicantType</xs:documentation>
+                              <xs:documentation source="listtype">toggle</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="a865348ba517549f47c2c83eb0bba67ea" nillable="true">
+                                  <xs:annotation>
+                                    <xs:documentation source="visibility">Company</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element minOccurs="1" name="aeb8dda4e50054a84a23abe7d86af6f9f" nillable="true" type="fba:typeahead">
+                                        <xs:annotation>
+                                          <xs:documentation source="prompt">Company Name</xs:documentation>
+                                          <xs:documentation source="autofillkey">Company</xs:documentation>
+                                          <xs:documentation source="hint">Start typing a New Zealand company name to lookup</xs:documentation>
+                                          <xs:documentation source="allowmanualentry">False</xs:documentation>
+                                          <xs:documentation source="matchstart">False</xs:documentation>
+                                          <xs:documentation source="getextendeddata">True</xs:documentation>
+                                          <xs:documentation source="subscriptionid">6cf1cf7b-c273-4fcf-a8d2-36f1caa6d37e</xs:documentation>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element name="af3094310f142450d77d685d8f4fe8d42" nillable="true" type="xs:string">
+                                        <xs:annotation>
+                                          <xs:documentation source="prompt">NZBN</xs:documentation>
+                                          <xs:documentation source="default">'&lt;&lt;Company.NZBN&gt;&gt;'</xs:documentation>
+                                          <xs:documentation source="readonly">True</xs:documentation>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element name="a398da1d166944aa36cde0e945a2c5084" nillable="true" type="xs:string">
+                                        <xs:annotation>
+                                          <xs:documentation source="prompt">Status</xs:documentation>
+                                          <xs:documentation source="default">'&lt;&lt;Company.StatusDescription&gt;&gt;'</xs:documentation>
+                                          <xs:documentation source="readonly">True</xs:documentation>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element name="a70f7be2f00704e5b52edcf639792bd74" nillable="true" type="xs:date">
+                                        <xs:annotation>
+                                          <xs:documentation source="prompt">Registration Date</xs:documentation>
+                                          <xs:documentation source="default">'&lt;&lt;Company.RegistrationDate&gt;&gt;'</xs:documentation>
+                                          <xs:documentation source="readonly">True</xs:documentation>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element minOccurs="1" name="a46f7da7def534db05cfad2647e08e1fb" nillable="true" type="fba:email">
+                                        <xs:annotation>
+                                          <xs:documentation source="prompt">Contact Email Address</xs:documentation>
+                                          <xs:documentation source="autofillkey">EmailAddress</xs:documentation>
+                                        </xs:annotation>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="aa20c5123746b4733089d3e7e85a6030f" nillable="true">
+                                  <xs:annotation>
+                                    <xs:documentation source="visibility">Individual</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element minOccurs="1" name="a4e884b06f2fc4bbd99aba6db349203fe" nillable="true" type="xs:string">
+                                        <xs:annotation>
+                                          <xs:documentation source="prompt">First Name</xs:documentation>
+                                          <xs:documentation source="autofillkey">FirstName</xs:documentation>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element minOccurs="1" name="af082b7ff9c194a52b60ff04c52ebf397" nillable="true" type="xs:string">
+                                        <xs:annotation>
+                                          <xs:documentation source="prompt">Last Name</xs:documentation>
+                                          <xs:documentation source="autofillkey">LastName</xs:documentation>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element minOccurs="1" name="aba2315e02d5045d1a64d6f3ded855e77" nillable="true" type="fba:phone">
+                                        <xs:annotation>
+                                          <xs:documentation source="prompt">Phone</xs:documentation>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element minOccurs="1" name="a47005d3da23b4efa9584a727a6657cfc" nillable="true" type="fba:email">
+                                        <xs:annotation>
+                                          <xs:documentation source="prompt">Email Address</xs:documentation>
+                                          <xs:documentation source="autofillkey">EmailAddress</xs:documentation>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element name="a95ca7b12d4444b9d9e5ce5cf2365bbb6" nillable="true">
+                                        <xs:annotation>
+                                          <xs:documentation source="autofillkey">Address</xs:documentation>
+                                          <xs:documentation source="title">Home Address</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="aa3a46f6b6e824114c84e0fdb3fd3462b" nillable="true" type="fba:addressPicker">
+                                              <xs:annotation>
+                                                <xs:documentation source="prompt">Lookup</xs:documentation>
+                                                <xs:documentation source="hint">Start typing an address to lookup, or enter below</xs:documentation>
+                                                <xs:documentation source="allowmanualentry">False</xs:documentation>
+                                              </xs:annotation>
+                                            </xs:element>
+                                            <xs:element minOccurs="1" name="a86cab59bc4104afdf934c02722af6ab0" nillable="true" type="fba:name">
+                                              <xs:annotation>
+                                                <xs:documentation source="prompt">Address 1</xs:documentation>
+                                                <xs:documentation source="autofillkey">Address1</xs:documentation>
+                                              </xs:annotation>
+                                            </xs:element>
+                                            <xs:element name="a0f9cb70a5e1d4992640ec4968498260b" nillable="true" type="fba:name">
+                                              <xs:annotation>
+                                                <xs:documentation source="prompt">Address 2</xs:documentation>
+                                                <xs:documentation source="autofillkey">Address2</xs:documentation>
+                                              </xs:annotation>
+                                            </xs:element>
+                                            <xs:element name="aeac69356790e43e47619b4b0cb079a28" nillable="true" type="fba:name">
+                                              <xs:annotation>
+                                                <xs:documentation source="prompt">City</xs:documentation>
+                                                <xs:documentation source="autofillkey">City</xs:documentation>
+                                              </xs:annotation>
+                                            </xs:element>
+                                            <xs:element name="aca2436dcd8274396d3cd32e172939ca7" nillable="true" type="fba:name">
+                                              <xs:annotation>
+                                                <xs:documentation source="prompt">State</xs:documentation>
+                                                <xs:documentation source="autofillkey">State</xs:documentation>
+                                              </xs:annotation>
+                                            </xs:element>
+                                            <xs:element name="af25d62b3b5014a900fd53cae5e37acc5" nillable="true" type="fba:caps">
+                                              <xs:annotation>
+                                                <xs:documentation source="prompt">Postal Code</xs:documentation>
+                                                <xs:documentation source="autofillkey">PostalCode</xs:documentation>
+                                              </xs:annotation>
+                                            </xs:element>
+                                            <xs:element name="aaf5c166c216d4721cd465ea26f59080c" nillable="true">
+                                              <xs:annotation>
+                                                <xs:documentation source="prompt">Country</xs:documentation>
+                                                <xs:documentation source="autofillkey">Country</xs:documentation>
+                                              </xs:annotation>
+                                              <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:enumeration value="Afghanistan" />
+                                                  <xs:enumeration value="Aland Islands" />
+                                                  <xs:enumeration value="Albania" />
+                                                  <xs:enumeration value="Algeria" />
+                                                  <xs:enumeration value="American Samoa" />
+                                                  <xs:enumeration value="Andorra" />
+                                                  <xs:enumeration value="Angola" />
+                                                  <xs:enumeration value="Anguilla" />
+                                                  <xs:enumeration value="Antarctica" />
+                                                  <xs:enumeration value="Antigua and Barbuda" />
+                                                  <xs:enumeration value="Argentina" />
+                                                  <xs:enumeration value="Armenia" />
+                                                  <xs:enumeration value="Aruba" />
+                                                  <xs:enumeration value="Australia" />
+                                                  <xs:enumeration value="Austria" />
+                                                  <xs:enumeration value="Azerbaijan" />
+                                                  <xs:enumeration value="Bahamas, The" />
+                                                  <xs:enumeration value="Bahrain" />
+                                                  <xs:enumeration value="Bangladesh" />
+                                                  <xs:enumeration value="Barbados" />
+                                                  <xs:enumeration value="Belarus" />
+                                                  <xs:enumeration value="Belgium" />
+                                                  <xs:enumeration value="Belize" />
+                                                  <xs:enumeration value="Benin" />
+                                                  <xs:enumeration value="Bermuda" />
+                                                  <xs:enumeration value="Bhutan" />
+                                                  <xs:enumeration value="Bolivia" />
+                                                  <xs:enumeration value="Bonaire, Saint Eustatius and Saba" />
+                                                  <xs:enumeration value="Bosnia and Herzegovina" />
+                                                  <xs:enumeration value="Botswana" />
+                                                  <xs:enumeration value="Bouvet Island" />
+                                                  <xs:enumeration value="Brazil" />
+                                                  <xs:enumeration value="British Indian Ocean Territory" />
+                                                  <xs:enumeration value="Brunei Darussalam" />
+                                                  <xs:enumeration value="Bulgaria" />
+                                                  <xs:enumeration value="Burkina Faso" />
+                                                  <xs:enumeration value="Burundi" />
+                                                  <xs:enumeration value="Cambodia" />
+                                                  <xs:enumeration value="Cameroon" />
+                                                  <xs:enumeration value="Canada" />
+                                                  <xs:enumeration value="Cape Verde" />
+                                                  <xs:enumeration value="Cayman Islands" />
+                                                  <xs:enumeration value="Central African Republic" />
+                                                  <xs:enumeration value="Chad" />
+                                                  <xs:enumeration value="Chile" />
+                                                  <xs:enumeration value="China" />
+                                                  <xs:enumeration value="Christmas Island" />
+                                                  <xs:enumeration value="Cocos (Keeling) Islands" />
+                                                  <xs:enumeration value="Colombia" />
+                                                  <xs:enumeration value="Comoros" />
+                                                  <xs:enumeration value="Congo" />
+                                                  <xs:enumeration value="Congo, The Democratic Republic of the" />
+                                                  <xs:enumeration value="Cook Islands" />
+                                                  <xs:enumeration value="Costa Rica" />
+                                                  <xs:enumeration value="Cote D'ivoire" />
+                                                  <xs:enumeration value="Croatia" />
+                                                  <xs:enumeration value="Curaçao" />
+                                                  <xs:enumeration value="Cyprus" />
+                                                  <xs:enumeration value="Czech Republic" />
+                                                  <xs:enumeration value="Denmark" />
+                                                  <xs:enumeration value="Djibouti" />
+                                                  <xs:enumeration value="Dominica" />
+                                                  <xs:enumeration value="Dominican Republic" />
+                                                  <xs:enumeration value="Ecuador" />
+                                                  <xs:enumeration value="Egypt" />
+                                                  <xs:enumeration value="El Salvador" />
+                                                  <xs:enumeration value="Equatorial Guinea" />
+                                                  <xs:enumeration value="Eritrea" />
+                                                  <xs:enumeration value="Estonia" />
+                                                  <xs:enumeration value="Ethiopia" />
+                                                  <xs:enumeration value="Falkland Islands (Malvinas)" />
+                                                  <xs:enumeration value="Faroe Islands" />
+                                                  <xs:enumeration value="Fiji" />
+                                                  <xs:enumeration value="Finland" />
+                                                  <xs:enumeration value="France" />
+                                                  <xs:enumeration value="French Guiana" />
+                                                  <xs:enumeration value="French Polynesia" />
+                                                  <xs:enumeration value="French Southern Territories" />
+                                                  <xs:enumeration value="Gabon" />
+                                                  <xs:enumeration value="Gambia, The" />
+                                                  <xs:enumeration value="Georgia" />
+                                                  <xs:enumeration value="Germany" />
+                                                  <xs:enumeration value="Ghana" />
+                                                  <xs:enumeration value="Gibraltar" />
+                                                  <xs:enumeration value="Greece" />
+                                                  <xs:enumeration value="Greenland" />
+                                                  <xs:enumeration value="Grenada" />
+                                                  <xs:enumeration value="Guadeloupe" />
+                                                  <xs:enumeration value="Guam" />
+                                                  <xs:enumeration value="Guatemala" />
+                                                  <xs:enumeration value="Guernsey" />
+                                                  <xs:enumeration value="Guinea" />
+                                                  <xs:enumeration value="Guinea-Bissau" />
+                                                  <xs:enumeration value="Guyana" />
+                                                  <xs:enumeration value="Haiti" />
+                                                  <xs:enumeration value="Heard Island and the McDonald Islands" />
+                                                  <xs:enumeration value="Holy See" />
+                                                  <xs:enumeration value="Honduras" />
+                                                  <xs:enumeration value="Hong Kong" />
+                                                  <xs:enumeration value="Hungary" />
+                                                  <xs:enumeration value="Iceland" />
+                                                  <xs:enumeration value="India" />
+                                                  <xs:enumeration value="Indonesia" />
+                                                  <xs:enumeration value="Iraq" />
+                                                  <xs:enumeration value="Ireland" />
+                                                  <xs:enumeration value="Isle of Man" />
+                                                  <xs:enumeration value="Israel" />
+                                                  <xs:enumeration value="Italy" />
+                                                  <xs:enumeration value="Jamaica" />
+                                                  <xs:enumeration value="Japan" />
+                                                  <xs:enumeration value="Jersey" />
+                                                  <xs:enumeration value="Jordan" />
+                                                  <xs:enumeration value="Kazakhstan" />
+                                                  <xs:enumeration value="Kenya" />
+                                                  <xs:enumeration value="Kiribati" />
+                                                  <xs:enumeration value="Korea, Republic of" />
+                                                  <xs:enumeration value="Kosovo" />
+                                                  <xs:enumeration value="Kuwait" />
+                                                  <xs:enumeration value="Kyrgyzstan" />
+                                                  <xs:enumeration value="Lao People's Democratic Republic" />
+                                                  <xs:enumeration value="Latvia" />
+                                                  <xs:enumeration value="Lebanon" />
+                                                  <xs:enumeration value="Lesotho" />
+                                                  <xs:enumeration value="Liberia" />
+                                                  <xs:enumeration value="Libya" />
+                                                  <xs:enumeration value="Liechtenstein" />
+                                                  <xs:enumeration value="Lithuania" />
+                                                  <xs:enumeration value="Luxembourg" />
+                                                  <xs:enumeration value="Macao" />
+                                                  <xs:enumeration value="Macedonia, The Former Yugoslav Republic of" />
+                                                  <xs:enumeration value="Madagascar" />
+                                                  <xs:enumeration value="Malawi" />
+                                                  <xs:enumeration value="Malaysia" />
+                                                  <xs:enumeration value="Maldives" />
+                                                  <xs:enumeration value="Mali" />
+                                                  <xs:enumeration value="Malta" />
+                                                  <xs:enumeration value="Marshall Islands" />
+                                                  <xs:enumeration value="Martinique" />
+                                                  <xs:enumeration value="Mauritania" />
+                                                  <xs:enumeration value="Mauritius" />
+                                                  <xs:enumeration value="Mayotte" />
+                                                  <xs:enumeration value="Mexico" />
+                                                  <xs:enumeration value="Micronesia, Federated States of" />
+                                                  <xs:enumeration value="Moldova, Republic of" />
+                                                  <xs:enumeration value="Monaco" />
+                                                  <xs:enumeration value="Mongolia" />
+                                                  <xs:enumeration value="Montenegro" />
+                                                  <xs:enumeration value="Montserrat" />
+                                                  <xs:enumeration value="Morocco" />
+                                                  <xs:enumeration value="Mozambique" />
+                                                  <xs:enumeration value="Myanmar" />
+                                                  <xs:enumeration value="Namibia" />
+                                                  <xs:enumeration value="Nauru" />
+                                                  <xs:enumeration value="Nepal" />
+                                                  <xs:enumeration value="Netherlands" />
+                                                  <xs:enumeration value="Netherlands Antilles" />
+                                                  <xs:enumeration value="New Caledonia" />
+                                                  <xs:enumeration value="New Zealand" />
+                                                  <xs:enumeration value="Nicaragua" />
+                                                  <xs:enumeration value="Niger" />
+                                                  <xs:enumeration value="Nigeria" />
+                                                  <xs:enumeration value="Niue" />
+                                                  <xs:enumeration value="Norfolk Island" />
+                                                  <xs:enumeration value="Northern Mariana Islands" />
+                                                  <xs:enumeration value="Norway" />
+                                                  <xs:enumeration value="Oman" />
+                                                  <xs:enumeration value="Pakistan" />
+                                                  <xs:enumeration value="Palau" />
+                                                  <xs:enumeration value="Palestinian Territories" />
+                                                  <xs:enumeration value="Panama" />
+                                                  <xs:enumeration value="Papua New Guinea" />
+                                                  <xs:enumeration value="Paraguay" />
+                                                  <xs:enumeration value="Peru" />
+                                                  <xs:enumeration value="Philippines" />
+                                                  <xs:enumeration value="Pitcairn" />
+                                                  <xs:enumeration value="Poland" />
+                                                  <xs:enumeration value="Portugal" />
+                                                  <xs:enumeration value="Puerto Rico" />
+                                                  <xs:enumeration value="Qatar" />
+                                                  <xs:enumeration value="Reunion" />
+                                                  <xs:enumeration value="Romania" />
+                                                  <xs:enumeration value="Russian Federation" />
+                                                  <xs:enumeration value="Rwanda" />
+                                                  <xs:enumeration value="Saint Barthelemy" />
+                                                  <xs:enumeration value="Saint Helena, Ascension and Tristan da Cunha" />
+                                                  <xs:enumeration value="Saint Kitts and Nevis" />
+                                                  <xs:enumeration value="Saint Lucia" />
+                                                  <xs:enumeration value="Saint Martin" />
+                                                  <xs:enumeration value="Saint Pierre and Miquelon" />
+                                                  <xs:enumeration value="Saint Vincent and the Grenadines" />
+                                                  <xs:enumeration value="Samoa" />
+                                                  <xs:enumeration value="San Marino" />
+                                                  <xs:enumeration value="Sao Tome and Principe" />
+                                                  <xs:enumeration value="Saudi Arabia" />
+                                                  <xs:enumeration value="Senegal" />
+                                                  <xs:enumeration value="Serbia" />
+                                                  <xs:enumeration value="Seychelles" />
+                                                  <xs:enumeration value="Sierra Leone" />
+                                                  <xs:enumeration value="Singapore" />
+                                                  <xs:enumeration value="Sint Maarten" />
+                                                  <xs:enumeration value="Slovakia" />
+                                                  <xs:enumeration value="Slovenia" />
+                                                  <xs:enumeration value="Solomon Islands" />
+                                                  <xs:enumeration value="Somalia" />
+                                                  <xs:enumeration value="South Africa" />
+                                                  <xs:enumeration value="South Georgia and the South Sandwich Islands" />
+                                                  <xs:enumeration value="Spain" />
+                                                  <xs:enumeration value="Sri Lanka" />
+                                                  <xs:enumeration value="Suriname" />
+                                                  <xs:enumeration value="Svalbard and Jan Mayen" />
+                                                  <xs:enumeration value="Swaziland" />
+                                                  <xs:enumeration value="Sweden" />
+                                                  <xs:enumeration value="Switzerland" />
+                                                  <xs:enumeration value="Taiwan" />
+                                                  <xs:enumeration value="Tajikistan" />
+                                                  <xs:enumeration value="Tanzania, United Republic of" />
+                                                  <xs:enumeration value="Thailand" />
+                                                  <xs:enumeration value="Timor-leste" />
+                                                  <xs:enumeration value="Togo" />
+                                                  <xs:enumeration value="Tokelau" />
+                                                  <xs:enumeration value="Tonga" />
+                                                  <xs:enumeration value="Trinidad and Tobago" />
+                                                  <xs:enumeration value="Tunisia" />
+                                                  <xs:enumeration value="Turkey" />
+                                                  <xs:enumeration value="Turkmenistan" />
+                                                  <xs:enumeration value="Turks and Caicos Islands" />
+                                                  <xs:enumeration value="Tuvalu" />
+                                                  <xs:enumeration value="Uganda" />
+                                                  <xs:enumeration value="Ukraine" />
+                                                  <xs:enumeration value="United Arab Emirates" />
+                                                  <xs:enumeration value="United Kingdom" />
+                                                  <xs:enumeration value="United States" />
+                                                  <xs:enumeration value="United States Minor Outlying Islands" />
+                                                  <xs:enumeration value="Uruguay" />
+                                                  <xs:enumeration value="Uzbekistan" />
+                                                  <xs:enumeration value="Vanuatu" />
+                                                  <xs:enumeration value="Venezuela" />
+                                                  <xs:enumeration value="Vietnam" />
+                                                  <xs:enumeration value="Virgin Islands, British" />
+                                                  <xs:enumeration value="Virgin Islands, U.S." />
+                                                  <xs:enumeration value="Wallis and Futuna" />
+                                                  <xs:enumeration value="Western Sahara" />
+                                                  <xs:enumeration value="Yemen" />
+                                                  <xs:enumeration value="Zambia" />
+                                                  <xs:enumeration value="Zimbabwe" />
+                                                </xs:restriction>
+                                              </xs:simpleType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="value">
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Company" />
+                                    <xs:enumeration value="Individual" />
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="value" type="xs:string" />
+            <xs:attribute name="completed" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="a709fe4e39301460854bcd412271dde51" nillable="true">
+          <xs:annotation>
+            <xs:documentation source="title">Product Selection</xs:documentation>
+            <xs:documentation source="section">section</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="a9f82b69d28e24d5cfbc11ee3e9db7e17" nillable="true">
+                <xs:annotation>
+                  <xs:documentation source="title">Products</xs:documentation>
+                  <xs:documentation source="note">Please select the products you would like to apply for</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="unbounded" name="a766a2791c70840d41928be7264a50349" nillable="true">
+                      <xs:annotation>
+                        <xs:documentation source="title">Product</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="1" name="ac4c80186d2ae4fab8691bf9392270fd6" nillable="true" type="fba:lookup">
+                            <xs:annotation>
+                              <xs:documentation source="prompt">Product</xs:documentation>
+                              <xs:documentation source="autofillkey">Product</xs:documentation>
+                              <xs:documentation source="tableid">b5ca3530-3d02-4444-8ed3-d48d9fa57755</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                          <xs:element name="a733dd69966754aa3d5d11d0265b624c3" nillable="true" type="fba:formula">
+                            <xs:annotation>
+                              <xs:documentation source="prompt">Cost</xs:documentation>
+                              <xs:documentation source="autofillkey">Cost</xs:documentation>
+                              <xs:documentation source="hint">&lt;&lt;Product.Cost&gt;&gt;</xs:documentation>
+                              <xs:documentation source="format">currency</xs:documentation>
+                              <xs:documentation source="hidden">False</xs:documentation>
+                            </xs:annotation>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="a87e5e0168d4e4770b7fdf6e895b52d4c" nillable="true">
+                <xs:annotation>
+                  <xs:documentation source="title">Product Summary</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="adafc007f64664e0751f87ecb46e99964" nillable="true" type="fba:formula">
+                      <xs:annotation>
+                        <xs:documentation source="prompt">Total Cost per year</xs:documentation>
+                        <xs:documentation source="hint">sum(&lt;&lt;Cost&gt;&gt;)</xs:documentation>
+                        <xs:documentation source="format">currency</xs:documentation>
+                        <xs:documentation source="hidden">False</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="a4203fcd977e04a9a7341c81ebc6a732c" nillable="true">
+                <xs:annotation>
+                  <xs:documentation source="title">Additional Options</xs:documentation>
+                  <xs:documentation source="note">Please select additional options for your products</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="a9d50c8f34098450c1524842b23422eca" nillable="true" type="fba:option">
+                      <xs:annotation>
+                        <xs:documentation source="prompt">Option 1</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element name="a59a1eaee26544dcdf65db1e2a2d416fe" nillable="true" type="fba:option">
+                      <xs:annotation>
+                        <xs:documentation source="prompt">Option 2</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element name="ad3a13da522234f64a884120b771e3d05" nillable="true" type="fba:option">
+                      <xs:annotation>
+                        <xs:documentation source="prompt">Option 3</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element name="a3108b8656cdb43f2aa6fbeecd1254c65" nillable="true" type="fba:option">
+                      <xs:annotation>
+                        <xs:documentation source="prompt">Option 4</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="value" type="xs:string" />
+            <xs:attribute name="completed" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="a443f14a3ec4f4223c393fcf434ae311a" nillable="true">
+          <xs:annotation>
+            <xs:documentation source="title">Declaration</xs:documentation>
+            <xs:documentation source="section">section</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="a1e9389dbf730463f8d4afd93e269c028" nillable="true">
+                <xs:annotation>
+                  <xs:documentation source="title">Terms &amp; Conditions</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="a713c3e86059044cc2d292c0607040dd0" nillable="true" type="fba:terms">
+                      <xs:annotation>
+                        <xs:documentation source="note">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend ornare massa eu rhoncus. Curabitur varius quis sapien a pretium. Maecenas magna eros, egestas sed velit vel, eleifend dictum sapien. Vestibulum aliquet pulvinar urna, nec tincidunt ex imperdiet eget. Duis sed neque quis ex posuere suscipit vel quis lorem. Nam malesuada orci in lobortis pharetra. Nullam a sapien nec turpis gravida laoreet.
+
+Duis at faucibus diam, sed rhoncus lectus. Morbi venenatis placerat porta. In posuere felis vitae venenatis lacinia. Donec lorem magna, varius quis ultrices quis, ultricies ultrices mauris. Integer aliquam sem vulputate ex blandit, eu ultricies arcu laoreet. Proin ut nisi eros. Duis dapibus sed nunc et tincidunt. Proin est lorem, posuere vulputate lorem ut, pellentesque egestas velit. Duis felis magna, viverra in egestas eget, dapibus eget sapien.
+
+Nunc luctus eros libero, ut venenatis magna ornare nec. Etiam scelerisque dignissim interdum. Vivamus sit amet finibus ipsum. Suspendisse potenti. Praesent mollis pharetra neque, vel iaculis ex accumsan sit amet. Fusce tincidunt dapibus fringilla. Praesent mattis tortor a nulla interdum, sit amet blandit magna ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Nulla facilisi. Integer elementum felis ac nisi egestas imperdiet. Nulla facilisi. Aenean vitae est nulla. Praesent sed libero vitae felis pharetra cursus. Vestibulum fringilla vitae est vel rutrum. Ut arcu metus, suscipit id tellus eu, scelerisque luctus felis. Aliquam erat volutpat. Etiam placerat quam magna, quis lobortis nisi ultrices eu. Nulla eleifend non nunc a mollis. Phasellus vel tellus lectus. Morbi vel felis finibus, suscipit ante eget, ultrices dolor.
+
+Vestibulum fermentum nunc eget diam tincidunt interdum. Nam aliquam lectus in venenatis cursus. Donec imperdiet mi fringilla sagittis blandit. Donec vel ligula id arcu placerat rutrum. Sed placerat aliquam velit porttitor porta. Donec aliquam gravida lorem, et consectetur arcu tristique in. Pellentesque pharetra, lacus viverra semper rhoncus, orci libero fringilla justo, quis efficitur neque turpis eu magna. Integer dignissim aliquet dolor, quis elementum diam vehicula eu.
+
+Phasellus sed sem ut lectus euismod malesuada. Vivamus porta ex mi, non dictum neque ullamcorper sit amet. Phasellus nec quam non erat iaculis pellentesque quis ac augue. Aenean quis nisi a enim vehicula hendrerit in in lectus. Donec ut risus a arcu semper tristique. Praesent commodo eu diam ac venenatis. Donec non lectus ultrices, malesuada est malesuada, porttitor ligula. Nullam eget velit efficitur, interdum dui eget, dignissim magna.
+
+Cras non pharetra enim. Aliquam ut tincidunt mauris. Morbi non mi efficitur, consectetur nulla ut, vulputate elit. Vivamus id nulla turpis. Nunc eget blandit ante. In sit amet finibus libero. Quisque porta congue pharetra. Cras nec enim diam.
+
+Donec quis nunc ante. Sed ultricies enim a tincidunt pharetra. Vivamus ac rutrum ligula. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque interdum erat ac lectus mattis maximus. Integer turpis felis, bibendum ac porta at, interdum et sapien. Aenean sagittis finibus auctor. Phasellus congue mauris non congue tempus. Curabitur pharetra dictum posuere. Sed iaculis turpis vel maximus rutrum.
+
+Donec tincidunt mi diam, eu interdum dui pharetra et. Morbi congue mi tellus, feugiat feugiat augue suscipit eget. Donec scelerisque a risus vel lobortis. Sed id urna non velit mollis placerat non vel orci. Cras ac erat vel leo consequat sodales id sed erat. Curabitur venenatis felis dolor, ut lacinia diam rutrum at. Ut vestibulum metus a tortor fringilla, ut pharetra nisi egestas. Curabitur in elit metus.
+
+Sed gravida vitae enim vel finibus. Curabitur finibus et enim quis gravida. Sed blandit, tellus sit amet maximus vehicula, purus tortor dictum velit, vel vulputate velit quam vitae nisi. Etiam faucibus sed lacus id feugiat. Sed et metus consectetur, pellentesque dolor et, fermentum ex. Nulla in ipsum non mauris congue laoreet quis in ante. Pellentesque fringilla commodo lacus. Fusce lacus lorem, blandit nec interdum eget, congue eget neque.</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                    <xs:element minOccurs="1" name="a10afbe610d614c50dceb57981e698ef0" nillable="true" type="xs:boolean">
+                      <xs:annotation>
+                        <xs:documentation source="prompt">I have read and understand the terms and conditions</xs:documentation>
+                      </xs:annotation>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ae903faa4225742abd35c719d7ec29889" nillable="true">
+                <xs:annotation>
+                  <xs:documentation source="title">Signatures</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="a68b453c0c6ae47162bdf3c5088350e9c" nillable="true">
+                      <xs:annotation>
+                        <xs:documentation source="title">Applicant</xs:documentation>
+                        <xs:documentation source="linkedrepeater">Applicant</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="a56ac7c84670c4f5978e2a05bf546fe8d" nillable="true">
+                            <xs:annotation>
+                              <xs:documentation source="prompt">ApplicantType</xs:documentation>
+                              <xs:documentation source="hint">'&lt;&lt;ApplicantType&gt;&gt;'</xs:documentation>
+                              <xs:documentation source="hidden">True</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ab05a4a9a986f45ad136c45baea9fe65e" nillable="true">
+                                  <xs:annotation>
+                                    <xs:documentation source="visibility">Company</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ac318d3205a80476c193a83b7fd8c5694" nillable="true" type="xs:string">
+                                        <xs:annotation>
+                                          <xs:documentation source="prompt">Company Name</xs:documentation>
+                                          <xs:documentation source="default">'&lt;&lt;Company.Name&gt;&gt;'</xs:documentation>
+                                          <xs:documentation source="readonly">True</xs:documentation>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element name="aaf9b8e2f010b459647cc0df683a95479" nillable="true">
+                                        <xs:annotation>
+                                          <xs:documentation source="title">Directors</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="a42955c86410d4f072b68832a44e7251d" nillable="true">
+                                              <xs:annotation>
+                                                <xs:documentation source="autofillkey">Director</xs:documentation>
+                                                <xs:documentation source="title">Director</xs:documentation>
+                                                <xs:documentation source="default">&lt;&lt;[ForEach:Company.CurrentDirectors]&gt;&gt;</xs:documentation>
+                                                <xs:documentation source="readonly">True</xs:documentation>
+                                              </xs:annotation>
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="aae28ba33dae8439ba4013e58c9685c32" nillable="true" type="xs:string">
+                                                    <xs:annotation>
+                                                      <xs:documentation source="prompt">Name</xs:documentation>
+                                                      <xs:documentation source="default">'&lt;&lt;Director.Name&gt;&gt;'</xs:documentation>
+                                                      <xs:documentation source="readonly">True</xs:documentation>
+                                                    </xs:annotation>
+                                                  </xs:element>
+                                                  <xs:element minOccurs="1" name="a2ddab0e9af4e4f613133e9e5a506fb88" nillable="true" type="fba:signature">
+                                                    <xs:annotation>
+                                                      <xs:documentation source="prompt">Signature</xs:documentation>
+                                                    </xs:annotation>
+                                                  </xs:element>
+                                                  <xs:element minOccurs="1" name="aa21fbc0ad13c44fa0bcd3536760d22ef" nillable="true" type="xs:date">
+                                                    <xs:annotation>
+                                                      <xs:documentation source="prompt">Date</xs:documentation>
+                                                      <xs:documentation source="hint">Not signed yet</xs:documentation>
+                                                      <xs:documentation source="readonly">True</xs:documentation>
+                                                    </xs:annotation>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="aa0012b2d94b147c077fde9d8440c08ae" nillable="true">
+                                  <xs:annotation>
+                                    <xs:documentation source="visibility">Individual</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="acdea37d89613424c6f6ea9bd6a742af4" nillable="true" type="xs:string">
+                                        <xs:annotation>
+                                          <xs:documentation source="prompt">Name</xs:documentation>
+                                          <xs:documentation source="default">'&lt;&lt;FirstName&gt;&gt; &lt;&lt;LastName&gt;&gt;'</xs:documentation>
+                                          <xs:documentation source="readonly">True</xs:documentation>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element minOccurs="1" name="a15b05df1fb5c406cd7671d8fafca63e6" nillable="true" type="fba:signature">
+                                        <xs:annotation>
+                                          <xs:documentation source="prompt">Signature</xs:documentation>
+                                        </xs:annotation>
+                                      </xs:element>
+                                      <xs:element minOccurs="1" name="adf1323368ca0460fecc09160612885f8" nillable="true" type="xs:date">
+                                        <xs:annotation>
+                                          <xs:documentation source="prompt">Date</xs:documentation>
+                                          <xs:documentation source="hint">Not signed yet</xs:documentation>
+                                          <xs:documentation source="readonly">True</xs:documentation>
+                                        </xs:annotation>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="value" type="fba:formula" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="value" type="xs:string" />
+            <xs:attribute name="completed" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="schemaVersion" type="xs:int" use="optional" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

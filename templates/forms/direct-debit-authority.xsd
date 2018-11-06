@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:fba="https://formsbyair.com/schema/1" xmlns="https://formsbyair.com/schema/83d4d841-fea1-4d14-8b23-054436871538" elementFormDefault="qualified" targetNamespace="https://formsbyair.com/schema/83d4d841-fea1-4d14-8b23-054436871538" version="20" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://formsbyair.com/schema/1/fba.xsd" namespace="https://formsbyair.com/schema/1" />
+  <xs:element name="Form">
+    <xs:annotation>
+      <xs:documentation source="title">Direct Debit Authority (Sample)</xs:documentation>
+      <xs:documentation source="savecompletedsections">True</xs:documentation>
+      <xs:documentation source="owner">FormsByAir</xs:documentation>
+      <xs:documentation source="ownerId">876bfe05-d117-4927-93ae-20a815981ec8</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="a16466595b91d4561d699b0113149c251" nillable="true">
+          <xs:annotation>
+            <xs:documentation source="title">Authority to accept Direct Debit</xs:documentation>
+            <xs:documentation source="note">Not to operate as an assignment or agreement.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="a1a0dc3dab6c94718de63b55c9d8e3657" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation source="prompt">Authorisation code</xs:documentation>
+                  <xs:documentation source="default">1234567</xs:documentation>
+                  <xs:documentation source="readonly">True</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="afe653da7d08e452f9c0b9d38c7b96862" nillable="true">
+          <xs:annotation>
+            <xs:documentation source="title">Bank account from which payments are to be made</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="1" name="a5091d591cefd46ee96c430eb9a4f50d4" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation source="prompt">Account name</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="1" name="ad7701b1182e94ba62d8fcd4bca9f5d10" nillable="true" type="fba:nzbank">
+                <xs:annotation>
+                  <xs:documentation source="prompt">Account number</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="a50a9c5a39a5046e2a0598786d38b3fb8" nillable="true">
+          <xs:annotation>
+            <xs:documentation source="title">To the bank manager</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="1" name="ac4ea0767f06644c9fbe1ec22cc9f0e60" nillable="true">
+                <xs:annotation>
+                  <xs:documentation source="prompt">Bank name</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="ANZ" />
+                    <xs:enumeration value="ASB" />
+                    <xs:enumeration value="BNZ" />
+                    <xs:enumeration value="Citibank" />
+                    <xs:enumeration value="KiwiBank" />
+                    <xs:enumeration value="TSB Bank" />
+                    <xs:enumeration value="Westpac" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="afdf8bdf549e44f754a2f99d7c1e5d741" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation source="prompt">Branch name</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="afca8023ef4c9426cac916e62ddda8150" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation source="prompt">Town/City</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="a59d576b007534d3294d9efe296d6f653" nillable="true" type="fba:note">
+                <xs:annotation>
+                  <xs:documentation source="note">I/We authorise you until further notice to debit my/our account with all amounts which Forms By Air Limited, the registered initiator of the above authorisation code, may initiate by direct debit. I/We acknowledge and accept that the Bank accepts this authority only upon the conditions listed below.</xs:documentation>
+                  <xs:documentation source="hidden">False</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="a02bcc5ebffe44b9d40d56d88a81b60c3" nillable="true">
+          <xs:annotation>
+            <xs:documentation source="title">Information to appear on my/our bank statement</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="a495a99ba75814c1334a1cc90ee5cd659" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation source="prompt">Payer particulars</xs:documentation>
+                  <xs:documentation source="default">Subscription</xs:documentation>
+                  <xs:documentation source="readonly">True</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="a603843f3312645e22b30cd57339f53a0" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation source="prompt">Payer code</xs:documentation>
+                  <xs:documentation source="default">FormsByAir</xs:documentation>
+                  <xs:documentation source="readonly">True</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element minOccurs="1" name="a60e5021ebc7549207b7d2e6a319dda55" nillable="true" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation source="prompt">Payer reference</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="a41a0b31391ca4d3940cfea0d3d23e2f4" nillable="true">
+          <xs:annotation>
+            <xs:documentation source="title">Conditions of this Direct Debit Authority</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="a059b66be8c5048bc074a80e033a5c662" nillable="true" type="fba:terms">
+                <xs:annotation>
+                  <xs:documentation source="note">1. The Initiator
+
+a. Undertakes to give Notice to the Acceptor of the commencement date, frequency and amount at least 10 calendar days before the first direct debit is drawn (but not more than 2 calendar months). This notice will be provided either:
+i. in writing; or
+ii. by any other means which provides a verifiable record of the initiated transaction and where the Customer has provided prior written consent to the Initiator.
+b. Where the Direct Debit system is used for the collection of payments which are regular as to frequency but variable as to amounts, the Initiator undertakes to provide the Acceptor with a schedule detailing each payment amount and each payment date. In the event of any subsequent change to the frequency or amount of the direct debits, the Initiator has agreed to give advance notice at least 30 days before the change comes into effect. This notice must be provided either:
+i. In writing; or
+ii. by electronic mail where the Customer has provided prior written consent to the Initiator.
+c. May, upon the relationship which gave rise to this Authority being terminated, give notice to the Bank that no further Direct Debits are to be initiated under the Authority. Upon receipt of such notice the Bank may terminate this Authority as to future payments by notice in writing to me/us.
+d. May, upon receiving an “authority transfer form” (dated after the day of this authority) signed by me/us and addressed to a bank to which I/we have transferred my/our bank account, initiate Direct Debits in reliance of that transfer form and this Authority for the account identified in the authority transfer form.
+
+2. The Customer may:
+
+a. At any time, terminate this Authority as to future payments by giving written notice of termination to the Bank and to the Initiator.
+b. Stop payment of any direct debit to be initiated under this authority by the Initiator by giving written notice to the Bank prior to the direct debit being paid by the Bank.
+c. Where a variation to the amount agreed between the Initiator and the Customer from time to time to be direct debited has been made without notice being given in terms of clause 1(a) above, request the Bank to reverse or alter any such direct debit initiated by the Initiator by debiting the amount of the reversal or alteration of a direct debit back to the Initiator through the Initiator’s Bank, PROVIDED such request is made not more than 120 days from the date when the direct debit was debited to my/our account.
+
+3. The Customer acknowledges that:
+
+a. This authority will remain in full force and effect in respect of all direct debits made from my/our account in good faith notwithstanding my/our death, bankruptcy or other revocation of this authority until actual notice of such event is received by the Bank.
+b. In any event this authority is subject to any arrangement now or hereafter existing between me/us and the Bank in relation to my/our account.
+c. Any dispute as to the correctness or validity of an amount debited to my/our account shall not be the concern of the Bank except in so far as the direct debit has not been paid in accordance with this authority. Any other disputes lie between me/us and the Initiator.
+d. Where the Bank has used reasonable care and skill in acting in accordance with this authority, the Bank accepts no responsibility or liability in respect of: - the accuracy of information about Direct Debits on Bank statements - any variations between notices given by the Initiator and the amounts of Direct Debits.
+e. The Bank is not responsible for, or under any liability in respect of the Initiator’s failure to give written advance notice correctly nor for the nonreceipt or late receipt of notice by me/us for any reason whatsoever. In any such situation the dispute lies between me/us and the Initiator.
+f. Notice given by the Initiator in terms of clause 1(a) to the debtor responsible for the payment shall be effective. Any communication necessary because the debtor responsible for payment is a person other than me/us is a matter between me/us and the debtor concerned.
+
+4. The Bank may:
+
+a. In its absolute discretion conclusively determine the order of priority of payment by it of any monies pursuant to this or any other authority, cheque or draft properly executed by me/us and given to or drawn on the Bank.
+b. At any time terminate this authority as to future payments by notice in writing to me/us.
+c. Charge its current fees for this service in force from time-to-time.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="1" name="a58fe70655c274f7ad17106d5826c92c8" nillable="true" type="fba:signature">
+          <xs:annotation>
+            <xs:documentation source="prompt">Signature</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element minOccurs="1" name="ad74bcd8b30814cf321aa34211dc4b73e" nillable="true" type="xs:date">
+          <xs:annotation>
+            <xs:documentation source="prompt">Date</xs:documentation>
+            <xs:documentation source="hint">Not signed yet</xs:documentation>
+            <xs:documentation source="readonly">True</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="schemaVersion" type="xs:int" use="optional" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,4 +1,4 @@
-# FormsByAir Developer Resources
+# FormsByAir Development Resources
 
 This repository contains useful templates and information for developers building forms with FormsByAir.
 

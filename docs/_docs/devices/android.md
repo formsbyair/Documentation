@@ -6,4 +6,4 @@ order: 2
 
 Creating a new form, step-by-step
 
-{% include flexslider-posts.html %}
+{% include flexslider-build-form.html %}

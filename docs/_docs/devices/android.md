@@ -4,10 +4,6 @@ category: Devices
 order: 2
 ---
 
-Creating a new form, step-by-step with slider
-
-![]({{ site.baseurl }}/images/newform-1.png)
-
-![]({{ site.baseurl }}/images/newform-2.png)
+Creating a new form, step-by-step
 
 {% include flexslider-posts.html %}

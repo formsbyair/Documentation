@@ -1,0 +1,11 @@
+<div class="flexslider">
+	<ul class="slides">	  				
+		{% for image in site.static_files %}	
+			{% if image.path contains 'images/build-form' %}
+			<li>
+				<img src="{{ site.baseurl }}{{ image.path }}" />	
+			</li>
+			{% endif %}
+		{% endfor %}		
+	</ul>
+</div>

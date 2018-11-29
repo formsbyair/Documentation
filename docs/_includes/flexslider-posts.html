@@ -3,16 +3,19 @@
     	<h3>Recent Posts</h3>
   	</div>
 	<div class="flexslider">
-		<ul class="slides">
-	  		{% for page in site.categories.blog %}
-	  		<li>
-	  			<a href="{{ site.url}}{{ page.permalink }}">
-		    		<img src="{{ page.image-slider }}">
-		    		<p class="flex-caption">{{ page.excerpt }}</p>
-		    	</a>
+		<ul class="slides">	  		
+	  		<li>	  			
+		    		<img src="{{ site.baseurl }}/images/newform-1.png">		    		   	
 	 		</li>
-	  		{% endfor %}
+			<li>	  			
+		    		<img src="{{ site.baseurl }}/images/newform-2.png">		    		   	
+	 		</li>	
+			<li>	  			
+		    		<img src="{{ site.baseurl }}/images/newform-3.png">		    		   	
+	 		</li>
+			<li>	  			
+		    		<img src="{{ site.baseurl }}/images/newform-4.png">		    		   	
+	 		</li>			
 		</ul>
-	</div>
-	<p style="text-align: center"><a href="{{ site.url }}/posts-page">See All Posts</a></p>
+	</div>	
 </div>

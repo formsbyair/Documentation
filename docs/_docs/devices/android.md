@@ -4,7 +4,7 @@ category: Devices
 order: 2
 ---
 
-Creating a new form, step-by-step
+Creating a new form, step-by-step with slider
 
 ![]({{ site.baseurl }}/images/newform-1.png)
 

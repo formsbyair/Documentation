@@ -1,17 +1,10 @@
 <div class="flexslider">
-	<ul class="slides">	  		
-		<li>	  			
-			<img src="{{ site.baseurl }}/images/newform-1.png">		    		   	
+	<ul class="slides">	  				
+		{% for image in site.images.build-form %}	
+		<li>
+			<img src="{{ site.baseurl }}{{ image.path }}" />	
 		</li>
-		<li>	  			
-			<img src="{{ site.baseurl }}/images/newform-2.png">		    		   	
-		</li>	
-		<li>	  			
-			<img src="{{ site.baseurl }}/images/newform-3.png">		    		   	
-		</li>
-		<li>	  			
-			<img src="{{ site.baseurl }}/images/newform-4.png">		    		   	
-		</li>			
+		{% endfor %}
 	</ul>
 </div>	
 

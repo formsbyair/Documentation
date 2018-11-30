@@ -4,7 +4,7 @@ category: Tags
 order: 1
 ---
 
-Available to use in integration tasks and templates.
+These special tags reference document or system properties as opposed to form data, and are available to use in integration tasks and templates.
 
 ### Document Tags
 

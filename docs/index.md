@@ -2,7 +2,7 @@
 title: Documentation
 ---
 
-This is the FormsByAir documentation portal containing information for administrators and developers.
+This is the FormsByAir documentation portal containing technical information for administrators and developers.
 
 ### Getting Started
 

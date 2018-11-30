@@ -1,7 +1,7 @@
 ---
 title: Special Tags
-category: Devices
-order: 3
+category: Tags
+order: 1
 ---
 
 Available to use in integration tasks and templates.

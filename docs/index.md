@@ -7,7 +7,7 @@ This is the FormsByAir documentation portal containing information for administr
 ### Getting Started
 
 1. Ensure you have a login for the FormsByAir portal
-2. Log in to your account here https://formsbyair.com/manage
-3. Check out our tutorials, including how to build your first form
+2. Log in to your account here [https://formsbyair.com/manage](https://formsbyair.com/manage)
+3. Check out our tutorials, including [how to build your first form]({{ site.baseurl }}/Documentation/tutorials/build-form)
 
 > Feel free to send us a message at [hello@formsbyair.com](mailto:hello@formsbyair.com) with your feedback.

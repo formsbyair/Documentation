@@ -6,4 +6,14 @@ order: 1
 
 Follow the slideshow below to build a simple form
 
-{% include flexslider-build-form.html %}
+<div class="flexslider">
+	<ul class="slides">	  				
+		{% for image in site.static_files %}	
+			{% if image.path contains 'images/build-form' %}
+			<li>
+				<img src="{{ site.baseurl }}{{ image.path }}" />	
+			</li>
+			{% endif %}
+		{% endfor %}		
+	</ul>
+</div>

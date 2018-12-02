@@ -4,6 +4,7 @@ $(window).load(function() {
     animation: "slide",
     directionNav: true,    
     animationSpeed: 600,
+    animationLoop: false,
     touch: true,
     slideshow: false
     });

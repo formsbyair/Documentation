@@ -4,7 +4,7 @@ category: Tutorials
 order: 1
 ---
 
-Follow the slideshow below to build a simple form
+Follow the steps in the slideshow below to build a simple form
 
 <div class="flexslider">
 	<ul class="slides">	  				
@@ -17,3 +17,5 @@ Follow the slideshow below to build a simple form
 		{% endfor %}		
 	</ul>
 </div>
+
+Next up, [Add a confirmation email]({{ site.baseurl }}/tutorials/confirmation-email)

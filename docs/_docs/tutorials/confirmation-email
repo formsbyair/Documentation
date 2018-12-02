@@ -1,1 +1,21 @@
+---
+title: Send a confirmation email
+category: Tutorials
+order: 2
+---
 
+Follow the steps in the slideshow below to setup a confirmation email
+
+<div class="flexslider">
+	<ul class="slides">	  				
+		{% for image in site.static_files %}	
+			{% if image.path contains 'images/confirmation-email' %}
+			<li>
+				<img src="{{ site.baseurl }}{{ image.path }}" />	
+			</li>
+			{% endif %}
+		{% endfor %}		
+	</ul>
+</div>
+
+Next up, [Setup PDF Delivery]({{ site.baseurl }}/tutorials/pdf-delivery)

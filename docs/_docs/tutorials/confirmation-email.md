@@ -4,6 +4,8 @@ category: Tutorials
 order: 2
 ---
 
+Previous tutorial, [Build a form]({{ site.baseurl }}/tutorials/build-form)
+
 Follow the steps in the slideshow below to setup a confirmation email
 
 <div class="flexslider">

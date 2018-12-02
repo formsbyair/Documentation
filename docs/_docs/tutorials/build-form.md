@@ -18,4 +18,4 @@ Follow the steps in the slideshow below to build a simple form
 	</ul>
 </div>
 
-Next up, [Add a confirmation email]({{ site.baseurl }}/tutorials/confirmation-email)
+Next up, [Setup a confirmation email]({{ site.baseurl }}/tutorials/confirmation-email)

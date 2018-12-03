@@ -18,4 +18,7 @@ Follow the steps in the slideshow below to build a simple form
 	</ul>
 </div>
 
+> Topics - question presets, move questions, delete questions, tags
+
 Next up, [Setup a confirmation email]({{ site.baseurl }}/tutorials/confirmation-email)
+

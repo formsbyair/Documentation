@@ -20,4 +20,8 @@ Follow the steps in the slideshow below to setup a confirmation email
 	</ul>
 </div>
 
+> Topics - email integration, email templates
+
 Next up, [Setup PDF Delivery]({{ site.baseurl }}/tutorials/pdf-delivery)
+
+

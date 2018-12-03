@@ -4,6 +4,8 @@ category: Tutorials
 order: 2
 ---
 
+> Topics - email integration, email template
+
 Previous tutorial, [Build a form]({{ site.baseurl }}/tutorials/build-form)
 
 Follow the steps in the slideshow below to setup a confirmation email
@@ -19,8 +21,6 @@ Follow the steps in the slideshow below to setup a confirmation email
 		{% endfor %}		
 	</ul>
 </div>
-
-> Topics - email integration, email templates
 
 Next up, [Setup PDF Delivery]({{ site.baseurl }}/tutorials/pdf-delivery)
 

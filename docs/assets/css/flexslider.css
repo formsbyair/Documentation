@@ -278,3 +278,7 @@ html[xmlns] .flexslider .slides {
     right: 10px;
   }
 }
+
+.flex-direction-nav a {
+    line-height: 40px;
+}

@@ -15,7 +15,7 @@ Follow the steps in the slideshow below to setup a confirmation email
 		{% for image in site.static_files %}	
 			{% if image.path contains 'images/confirmation-email' %}
 			<li>
-				<img src="{{ site.baseurl }}{{ image.path }}" />	
+				<img src="{{ site.baseurl }}{{ image.path }}?v=2" />	
 			</li>
 			{% endif %}
 		{% endfor %}		

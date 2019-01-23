@@ -14,10 +14,16 @@ These special tags reference document or system properties as opposed to form da
 |<<[DocumentStatus]>>|Current document status|Workflow|
 |<<[DocumentWorkflowStatus]>>|Current document workflow status|Pending|
 |<<[DocumentReceivedDateTime]>>|Local DateTime that document was received|1 Nov 2018 11:00.00|
-|<<[DocumentDeliveryDateTime]>>|Local DateTime that document was received|1 Nov 2018 11:00.00|
-|<<[DocumentRequestedDateTime]>>|Local DateTime that document was received|1 Nov 2018 11:00.00|
-|<<[DocumentExpiryDateTime]>>|Local DateTime that document was received|1 Nov 2018 11:00.00|
+|<<[DocumentRequestedDateTime]>>|Local DateTime that document was requested|1 Nov 2018 11:00.00|
+|<<[DocumentExpiryDateTime]>>|Local DateTime that requested document expired|1 Nov 2018 11:00.00|
 |<<[DocumentOwnerName]>>|Account name|FormsByAir|
+|<<[DocumentUserName]>>|User name|Joe Bloggs|
+
+### Document Delivery Tags
+
+|Tag|Definition|Example|
+|---|---|---|
+|<<[DocumentDeliveryDateTime]>>|Local DateTime that document delivery was queued|1 Nov 2018 11:00.00|
 
 ### Batch Tags
 

@@ -17,7 +17,7 @@ These special tags reference document or system properties as opposed to form da
 |<<[DocumentRequestedDateTime]>>|Local DateTime that document was requested|1 Nov 2018 11:00.00|
 |<<[DocumentExpiryDateTime]>>|Local DateTime that requested document expired|1 Nov 2018 11:00.00|
 |<<[DocumentOwnerName]>>|Account name|FormsByAir|
-|<<[DocumentUserName]>>|User name|Joe Bloggs|
+|<<[DocumentUserName]>>|User that submitted document|Joe Bloggs|
 
 ### Document Delivery Tags
 

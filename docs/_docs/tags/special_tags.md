@@ -18,8 +18,10 @@ These special tags reference document or system properties as opposed to form da
 |<<[DocumentRequestedDateTime]>>|Local DateTime that document was requested|1 Nov 2018 11:00.00|
 |<<[DocumentExpiryDateTime]>>|Local DateTime that requested document will expire|1 Nov 2018 11:00.00|
 |<<[DocumentOwnerName]>>|Account name|FormsByAir|
-|<<[DocumentUserName]>>|User that submitted document|Joe Bloggs|
-
+|<<[DocumentUserName]>>|Name of User that submitted document|Joe Bloggs|
+|<<[DocumentUserEmail]>>|Email address of User that submitted document|joe@bloggs.com|
+|<<[DocumentWorkflowUserName]>>|Name of user that document is currently assigned to|Joe Bloggs|
+|<<[DocumentWorkflowUserEmail]>>|Email address of User that document is currently assigned to|joe@bloggs.com|
 
 ### Document Delivery Tags
 

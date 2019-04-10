@@ -22,6 +22,7 @@ These special tags reference document or system properties as opposed to form da
 |<<[DocumentUserEmail]>>|Email address of User that submitted document|joe@bloggs.com|
 |<<[DocumentWorkflowUserName]>>|Name of user that document is currently assigned to|Joe Bloggs|
 |<<[DocumentWorkflowUserEmail]>>|Email address of User that document is currently assigned to|joe@bloggs.com|
+|<<[DocumentWorkflowAssignmentComment]>>|Comment (if any) associated with assignment of document to current user|Please review|
 
 ### Document Delivery Tags
 

@@ -10,38 +10,38 @@ These special tags reference document or system properties as opposed to form da
 
 |Tag|Definition|Example|
 |---|---|---|
-|<<[DocumentId]>>|Unique Document Id|0745807e-5d2e-4cfb-9f80-85351223bd92|
-|<<[DocumentReference]>>|Document reference|ABC123 Joe Bloggs|
-|<<[DocumentStatus]>>|Current document status|Workflow|
-|<<[DocumentWorkflowStatus]>>|Current document workflow status|Pending|
-|<<[DocumentReceivedDateTime]>>|Local DateTime that document was received|1 Nov 2018 11:00.00|
-|<<[DocumentRequestedDateTime]>>|Local DateTime that document was requested|1 Nov 2018 11:00.00|
-|<<[DocumentExpiryDateTime]>>|Local DateTime that requested document will expire|1 Nov 2018 11:00.00|
-|<<[DocumentOwnerName]>>|Account name|FormsByAir|
-|<<[DocumentUserName]>>|Name of User that submitted document|Joe Bloggs|
-|<<[DocumentUserEmail]>>|Email address of User that submitted document|joe@bloggs.com|
-|<<[DocumentWorkflowUserName]>>|Name of user that document is currently assigned to|Joe Bloggs|
-|<<[DocumentWorkflowUserEmail]>>|Email address of User that document is currently assigned to|joe@bloggs.com|
+|&lt;&lt;[DocumentId]&gt;&gt;|Unique Document Id|0745807e-5d2e-4cfb-9f80-85351223bd92|
+|&lt;&lt;[DocumentReference]&gt;&gt;|Document reference|ABC123 Joe Bloggs|
+|&lt;&lt;[DocumentStatus]&gt;&gt;|Current document status|Workflow|
+|&lt;&lt;[DocumentWorkflowStatus]&gt;&gt;|Current document workflow status|Pending|
+|&lt;&lt;[DocumentReceivedDateTime]&gt;&gt;|Local DateTime that document was received|1 Nov 2018 11:00.00|
+|&lt;&lt;[DocumentRequestedDateTime]&gt;&gt;|Local DateTime that document was requested|1 Nov 2018 11:00.00|
+|&lt;&lt;[DocumentExpiryDateTime]&gt;&gt;|Local DateTime that requested document will expire|1 Nov 2018 11:00.00|
+|&lt;&lt;[DocumentOwnerName]&gt;&gt;|Account name|FormsByAir|
+|&lt;&lt;[DocumentUserName]&gt;&gt;|Name of User that submitted document|Joe Bloggs|
+|&lt;&lt;[DocumentUserEmail]&gt;&gt;|Email address of User that submitted document|joe@bloggs.com|
+|&lt;&lt;[DocumentWorkflowUserName]&gt;&gt;|Name of user that document is currently assigned to|Joe Bloggs|
+|&lt;&lt;[DocumentWorkflowUserEmail]&gt;&gt;|Email address of User that document is currently assigned to|joe@bloggs.com|
 |&lt;&lt;[DocumentWorkflowAssignmentComment]&gt;&gt;|Comment (if any) associated with assignment of document to current user|Please review|
 
 ### Document Delivery Tags
 
 |Tag|Definition|Example|
 |---|---|---|
-|<<[DocumentDeliveryDateTime]>>|Local DateTime that document delivery was queued|1 Nov 2018 11:00.00|
+|&lt;&lt;[DocumentDeliveryDateTime]&gt;&gt;|Local DateTime that document delivery was queued|1 Nov 2018 11:00.00|
 
 ### Batch Tags
 
 |Tag|Definition|Example|
 |---|---|---|
-|<<[BatchId]>>|Unique Batch Id|0745807e-5d2e-4cfb-9f80-85351223bd92|
-|<<[BatchRunDateTime]>>|Local DateTime that batch started running|1 Nov 2018 11:00.00|
-|<<[DetailLineCount]>>|Number of detail lines in batch|10|
-|<<[TotalLineCount]>>|Total number of lines in batch including header, detail and footer|12|
-|<<[Filename]>>|Batch file name|batch.txt|
+|&lt;&lt;[BatchId]&gt;&gt;|Unique Batch Id|0745807e-5d2e-4cfb-9f80-85351223bd92|
+|&lt;&lt;[BatchRunDateTime]&gt;&gt;|Local DateTime that batch started running|1 Nov 2018 11:00.00|
+|&lt;&lt;[DetailLineCount]&gt;&gt;|Number of detail lines in batch|10|
+|&lt;&lt;[TotalLineCount]&gt;&gt;|Total number of lines in batch including header, detail and footer|12|
+|&lt;&lt;[Filename]&gt;&gt;|Batch file name|batch.txt|
 
 ### Miscellaneous Tags
 
 |Tag|Definition|Example|
 |---|---|---|
-|<<[BaseURL]>>|Base URL for account|https://fba.formsbyair.com|
+|&lt;&lt;[BaseURL]&gt;&gt;|Base URL for account|https://fba.formsbyair.com|

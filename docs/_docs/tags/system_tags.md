@@ -1,10 +1,10 @@
 ---
-title: Special Tags
+title: System Tags
 category: Tags
 order: 1
 ---
 
-These special tags reference document or system properties as opposed to form data, and are available to use in integration tasks and templates.
+These tags reference system or document information, and can be used in integration tasks and templates.
 
 ### Document Tags
 
@@ -20,11 +20,11 @@ These special tags reference document or system properties as opposed to form da
 |&lt;&lt;[DocumentOwnerName]&gt;&gt;|Account name|FormsByAir|
 |&lt;&lt;[DocumentUserName]&gt;&gt;|Name of User that submitted document|Joe Bloggs|
 |&lt;&lt;[DocumentUserEmail]&gt;&gt;|Email address of User that submitted document|joe@bloggs.com|
-|&lt;&lt;[DocumentWorkflowUserName]&gt;&gt;|Name of User that document is currently assigned to|Joe Bloggs|
-|&lt;&lt;[DocumentWorkflowUserEmail]&gt;&gt;|Email address of User that document is currently assigned to|joe@bloggs.com|
-|&lt;&lt;[DocumentWorkflowAssignmentUserName]&gt;&gt;|Name of User that assigned document|Please review|
-|&lt;&lt;[DocumentWorkflowAssignmentUserEmail]&gt;&gt;|Email address of User that assigned document|Please review|
-|&lt;&lt;[DocumentWorkflowAssignmentComment]&gt;&gt;|Comment (if any) associated with assignment of document to current user|Please review|
+|&lt;&lt;[DocumentWorkflowUserName]&gt;&gt;|Name of User that document is currently assigned to|Jane Bloggs|
+|&lt;&lt;[DocumentWorkflowUserEmail]&gt;&gt;|Email address of User that document is currently assigned to|jane@bloggs.com|
+|&lt;&lt;[DocumentWorkflowAssignmentUserName]&gt;&gt;|Name of User that assigned document|Mary Bloggs|
+|&lt;&lt;[DocumentWorkflowAssignmentUserEmail]&gt;&gt;|Email address of User that assigned document|mary@bloggs.com|
+|&lt;&lt;[DocumentWorkflowAssignmentComment]&gt;&gt;|Comment associated with assignment of document to current user|Please review|
 
 ### Document Delivery Tags
 

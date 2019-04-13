@@ -1,6 +1,6 @@
 ---
 title: Roles
-category: Workflow
+category: Users
 order: 1
 ---
 

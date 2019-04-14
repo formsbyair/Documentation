@@ -1,6 +1,6 @@
 ---
 title: Assignment emails
-type: minor
+type: feature
 ---
 
 [Send custom emails on workflow assignment]({{ site.baseurl }}/integrations/assignment-emails)

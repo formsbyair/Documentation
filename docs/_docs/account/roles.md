@@ -1,6 +1,6 @@
 ---
 title: Roles
-category: Users
+category: Account
 order: 1
 ---
 

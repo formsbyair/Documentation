@@ -4,17 +4,16 @@ category: Form Actions
 order: 1
 ---
 
-Make a copy of the selected form including the design, settings, header image, style, script and header/footer.
+Make a copy of the selected form including the design, settings, header image, style, script and custom header/footer.
 
-The following form settings are not copied:
+The following form settings are **not** copied:
 
 * Short Name
 * Google Tracking Id
 * Close Date/Time
+* Status (the new form will default to Draft)
 
-The new form will default to **Draft** status.
-
-### Settings
+## Settings
 
 #### New Form Title
 Title for the new form. If the title already exists we'll add a unique number to the end when you click Copy.

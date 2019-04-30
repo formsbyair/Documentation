@@ -1,16 +1,16 @@
 ---
-title: Read-Only Property
+title: Read-Only
 category: Question Properties
 order: 1
 ---
 
-###Property Settings
+### Property Settings
 
-**None**
+#### None
 Question is editable at all times.
 
-**Form**
+#### Form
 Question is editable during prefill, and read-only during form-fill. Use for variable, prefilled information that the form filler can read but not change.
 
-**Prefill**
+#### Prefill
 Question is read-only during prefill, and editable during form-fill. Use for sensitive items such as consents, that must be completed by the form filler.

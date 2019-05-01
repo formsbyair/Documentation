@@ -4,7 +4,7 @@ category: Question Properties
 order: 1
 ---
 
-## Settings
+## Options
 
 #### None
 Question is editable at all times.

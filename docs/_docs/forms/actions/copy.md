@@ -13,7 +13,7 @@ The following form settings are **not** copied:
 * Close Date/Time
 * Status (the new form will default to Draft)
 
-## Settings
+## Options
 
 #### New Form Title
 Title for the new form. If the title already exists we'll add a unique number to the end when you click Copy.

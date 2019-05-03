@@ -18,5 +18,8 @@ The following form settings are **not** copied:
 #### New Form Title
 Title for the new form. If the title already exists we'll add a unique number to the end when you click Copy.
 
+#### Account
+This option will appear if you have access to multiple accounts, allowing you to select which account you want to copy the form to.
+
 #### Copy Form Integrations
 If this option is checked we'll copy all active and disabled form integrations to the new form, and update integration references within the form.

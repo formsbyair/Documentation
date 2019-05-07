@@ -4,7 +4,7 @@ category: Workflow Actions
 order: 1
 ---
 
-**Revalidate** can be used in conjunction with the **Edit** function to re-process validation where a correction has been made in workflow, rather than **Returning** the form to the original form-filler.
+**Revalidate** can be used to reprocess validation of a document where a correction is made in workflow, rather than **Returning** it.
 
 **Revalidate** is available in the Options menu when viewing a document with a workflow status of **EDITED** for Administrators and Supervisors.
 

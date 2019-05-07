@@ -1,5 +1,5 @@
 ---
-title: Revalidate Document
+title: Revalidate document
 type: feature
 ---
 

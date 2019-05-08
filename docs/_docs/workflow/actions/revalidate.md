@@ -4,7 +4,7 @@ category: Workflow Actions
 order: 1
 ---
 
-**Revalidate** can be used to reprocess validation of a document where a correction is made in workflow, rather than **Returning** it.
+**Revalidate** can be used to reprocess external validation e.g. identity verification, where a correction is made to a document in workflow, rather than **Returning** it.
 
 **Revalidate** is available in the Options menu when viewing a document with a workflow status of **EDITED** for Administrators and Supervisors.
 

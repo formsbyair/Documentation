@@ -1,6 +1,6 @@
 ---
-title: Read-Only
-category: Question Properties
+title: Properties > Read-Only
+category: Questions
 order: 1
 ---
 

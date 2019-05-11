@@ -1,6 +1,6 @@
 ---
-title: Revalidate
-category: Workflow Actions
+title: Actions > Revalidate
+category: Workflow
 order: 1
 ---
 

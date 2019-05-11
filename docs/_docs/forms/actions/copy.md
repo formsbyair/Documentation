@@ -1,6 +1,6 @@
 ---
-title: Copy
-category: Forms > Actions
+title: Actions > Copy
+category: Forms
 order: 1
 ---
 

@@ -8,15 +8,15 @@ Query string parameters can be used to pass data to a form, and modify behaviour
 
 ## Form Tag Parameters
 
-Any text-based question with a tag can receive a value including hidden formulas.
+Values can be passed to any text-based question with a tag including hidden formulas using standard query string syntax:
 
-Tag Names are not case sensitive, but must not contain spaces.
+?tag=value&anotherTag=anotherValue
 
-```
-For example:
+There is no limit to the number of values that can be passed. Tag names are not case sensitive, but must not contain spaces. 
 
-https://fba.formsbyair.com/forms/new-patient?FirstName=Joe&LastName=Bloggs
-```
+Questions within a repeater will only be set if the **At Least One** option is enabled, and only for the **first** item in the repeater.
+
+This feature is useful for defaulting values where it's not critical if they're changed, as query string parameters can be easily modified. For more complex prefill options, or where values should not be modifiable, consider prefilling form requests in the portal or via our API.
 
 ## System Parameters
 

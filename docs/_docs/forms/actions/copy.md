@@ -1,7 +1,7 @@
 ---
 title: Actions > Copy
 category: Forms
-order: 1
+order: 2
 ---
 
 Make a copy of the selected form including the design, settings, header image, style, script and custom header/footer.

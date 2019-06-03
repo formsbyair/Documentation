@@ -3,6 +3,6 @@ title: Average function
 type: feature
 ---
 
-Added new *Average* function to calculate the average of a repeated numerical question.
+Added new function to calculate the average of repeated question values with the same tag.
 
 See [Question Aggregate Functions]({{ site.baseurl }}/questions/aggregate-functions)

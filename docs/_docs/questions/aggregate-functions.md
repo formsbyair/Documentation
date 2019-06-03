@@ -14,10 +14,10 @@ The following functions can be used in formula expressions to aggregate data acr
 |sum(&lt;&lt;tag&gt;&gt;)|The numeric sum of question values with *tag*|100|
 |unique(&lt;&lt;tag&gt;&gt;)|Boolean indicating if all question values with *tag* are unique|false|
 
-##Sample Expressions
+## Sample Expressions
 
 sum(&lt;&lt;Amount&gt;&gt;)
 
-'join(&lt;&lt;Option&gt;&gt;)'
+&apos;join(&lt;&lt;Option&gt;&gt;)&apos;
 
-any(&lt;&lt;Warning&gt;&gt;) ? 'You have warnings' : ''
+any(&lt;&lt;Warning&gt;&gt;) ? &apos;You have warnings&apos; : &apos;&apos;

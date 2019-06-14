@@ -6,7 +6,7 @@ order: 2
 
 Send form data to another FormsByAir form using this integration.
 
-### Settings
+## Settings
 
 #### Form Id
 

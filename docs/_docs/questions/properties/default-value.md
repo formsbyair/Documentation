@@ -14,10 +14,10 @@ A list of system defaults is displayed in the form designer when editing a Defau
 
 |Default|Definition|Example|
 |---|---|---|
-|=DateTime.Today|The current date as a JavaScript date object (Date Questions) or ISO string|2019-06-03|
-|=DateTime.Today.AddMonths(months) (Date Question)|The current date plus the specified number of *months* as a JavaScript date object (Date Questions) or ISO string|2019-09-03|
-|=DateTime.Now|The current date and time formatted as an ISO 8601 string|2019-06-03T10:30:00+12:00|
-|=DateTime.Time|The current time formatted as a string|10:30 am|
+|=DateTime.Today|The current date as a JavaScript date object (for Date Questions) or ISO 8601 string|2019-06-03|
+|=DateTime.Today.AddMonths(months)|The current date plus the specified number of *months* as a JavaScript date object (for Date Questions) or ISO 8601 string|2019-09-03|
+|=DateTime.Now|The current date and time as an ISO 8601 string|2019-06-03T10:30:00+12:00|
+|=DateTime.Time|The current time as a string|10:30 am|
 |=GenerateCode(length)|A random alpha-numeric code of *length* characters|3bb188a0|
 |=Manager.Email|The current user's, manager's email address, blank if not logged in or no manager defined|manager@formsbyair.com|
 |=Manager.Name|The current user's, manager's name, blank if not logged in or no manager defined|Joe Bloggs|

@@ -4,7 +4,7 @@ category: Account
 order: 1
 ---
 
-|Role|Build Forms|Use Forms|Use Workflow|Override Assignment|Edit/Revalidate Documents|Manage Account|
+|Role|Build Forms|Use Forms|Use Workflow|Override Assignment|Edit Documents|Manage Account|
 |---|---|
 |Administrator|X|X|X|X|X|X|
 |Supervisor||X|X|X|X||

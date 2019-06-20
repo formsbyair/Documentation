@@ -4,12 +4,17 @@ category: Questions
 order: 1
 ---
 
-Text entry validated against a specific format
+Free text entry validated against a specific pattern, all letters are capitalised by default.
 
-## Options
+## Properties
 
-#### Placeholder
-Optional but we recommend displaying a sample in the required format e.g. AA00
+#### Placeholder Text
+A sample of the required pattern or a &lt;&lt;tag&gt;&gt; referencing a sample patttern e.g. AA00
 
-#### Format
-Literal regex pattern or a <<tag>> referencing a regex pattern. For help with regular expressions see https://regex101.com/
+#### Pattern
+A regex pattern or a &lt;&lt;tag&gt;&gt; referencing a regex pattern. For example...
+
+[0-9][0-9][0-9]
+[a-Z][a-Z][0-9][0-9][0-9][0-9]
+
+For help with regular expressions see https://regex101.com/

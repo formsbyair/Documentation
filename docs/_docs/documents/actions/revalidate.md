@@ -1,6 +1,6 @@
 ---
 title: Actions > Revalidate
-category: Workflow
+category: Documents
 order: 1
 ---
 

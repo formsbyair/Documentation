@@ -10,6 +10,6 @@ If the form requires authorisation, Workflow Status will be set to **Authorised*
 
 If the form does not require authorisation, Workflow Status will be set to **Pending** and assignment will remain with the last assigned user.
 
-**Rework** is available in the Options menu when viewing a document's information for Administrators and Supervisors.
+**Rework** is available in the Options menu when viewing a document's information for Administrators.
 
 The document will be re-delivered on Approval.

@@ -20,7 +20,7 @@ The following errors are displayed when the user attempts to submit or move forw
 The following warnings are displayed as an email address is entered.
 
 * MX record for domain not found
-* Domain matches a common mis-spelling of a major email service provider
+* Domain matches a common misspelling of a major email service provider
 
 |Email Address|Result|Warning Message|
 |---|---|---|

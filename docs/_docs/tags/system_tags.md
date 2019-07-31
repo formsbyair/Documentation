@@ -26,6 +26,8 @@ These tags reference system or document information, and can be used in integrat
 |&lt;&lt;[DocumentWorkflowAssignmentUserName]&gt;&gt;|Name of User that assigned document|Mary Bloggs|
 |&lt;&lt;[DocumentWorkflowAssignmentUserEmail]&gt;&gt;|Email address of User that assigned document|mary@bloggs.com|
 |&lt;&lt;[DocumentWorkflowAssignmentComment]&gt;&gt;|Comment associated with assignment of document to current user|Please review|
+|&lt;&lt;[DocumentWorkflowApprovalUserName]&gt;&gt;|Name of User that approved document|Mary Bloggs|
+|&lt;&lt;[DocumentWorkflowApprovalUserEmail]&gt;&gt;|Email address of User that approved document|mary@bloggs.com|
 
 ### Document Delivery Tags
 

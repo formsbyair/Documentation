@@ -3,4 +3,4 @@ title: Block submit on Enter
 type: feature
 ---
 
-Added new form option to block submission on Enter key press.
+Added new form level option to disable the default behaviour of an Enter key press submitting the form.

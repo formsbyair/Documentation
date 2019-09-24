@@ -15,6 +15,7 @@ A list of system defaults is displayed in the form designer when editing a Defau
 |Default|Definition|Example|
 |---|---|---|
 |=DateTime.Today|The current date as a JavaScript date object (for Date Questions) or ISO 8601 string|2019-06-03|
+|=DateTime.Today.AddDays(days)|The current date plus the specified number of *days* as a JavaScript date object (for Date Questions) or ISO 8601 string|2019-09-03|
 |=DateTime.Today.AddMonths(months)|The current date plus the specified number of *months* as a JavaScript date object (for Date Questions) or ISO 8601 string|2019-09-03|
 |=DateTime.Now|The current date and time as an ISO 8601 string|2019-06-03T10:30:00+12:00|
 |=DateTime.Time|The current time as a string|10:30 am|

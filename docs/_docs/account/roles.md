@@ -13,7 +13,8 @@ order: 1
 |Redeliver Documents|||X|X|X|
 |Override Assignment||||X|X|
 |Edit Documents||||X|X|
-|Delete Documents|||||X|
 |Rework Documents|||||X|
+|Delete Documents|||||X|
+|Restore Documents|||||X|
 |Update Tables|||||X|
 |Manage Account|||||X|

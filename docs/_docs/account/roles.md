@@ -4,10 +4,11 @@ category: Account
 order: 1
 ---
 
-|Role|Build Forms|Use Forms|Use Workflow|Override Assignment|Edit Documents|Manage Account|
+|Feature|User|Workflow|Operations|Supervisor|Administrator|
 |---|---|
-|Administrator|X|X|X|X|X|X|
-|Supervisor||X|X|X|X||
-|Operations||X|X||||
-|Workflow|||X||||
-|User||X|||||
+|Use Forms|X||X|X|X|
+|Use Workflow||X|X|X|X|
+|Override Workflow Assignment||||X|X|
+|Edit Submitted Documents||||X|X|
+|Update Tables|||||X|
+|Manage Account|||||X|

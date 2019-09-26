@@ -4,7 +4,7 @@ category: Account
 order: 1
 ---
 
-|Feature|User|Workflow|Operations|Supervisor|Administrator|
+|Feature\Role|User|Workflow|Operations|Supervisor|Administrator|
 |---|---|
 |Use Forms|X||X|X|X|
 |Use Workflow||X|X|X|X|

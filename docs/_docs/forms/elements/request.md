@@ -14,7 +14,7 @@ Request elements can be added to any part of a form including repeaters and cond
 
 ## Send a message on request generation
 
-FormsByAir generates a unique link for each request, which the main form filler must communicate to the third party themselves by default. FormsByAir can send an automated message by adding a form integration to Send an email **On Third Party Request**
+FormsByAir will generate a unique link for each request, which the main form filler must communicate to the third party themselves by default. FormsByAir can send an automated message by adding a form integration to Send an email **On Third Party Request**
 
 We recommend the following settings:
 

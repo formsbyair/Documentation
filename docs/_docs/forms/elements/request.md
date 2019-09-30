@@ -29,15 +29,15 @@ The email template should include information about the form and a link to open 
 
 &lt;&lt;[BaseUrl]&gt;&gt;/forms/requests/&lt;&lt;[DocumentId]&gt;&gt;
 
-The template can also include a custom message from the form filler, which they enter when they generate the request. 
+The template can also include a custom message from the main form filler, which they enter when they generate a request. 
 
 &lt;&lt;RequestEmailMessage&gt;&gt;
 
-Note - You must include a hidden formula question within the Request element with tag **RequestEmailMessage** to store the message and make it available for the request message.
+You must include a hidden formula question within the Request element with tag **RequestEmailMessage** to store this message.
 
 ## Send a message on request submission
 
-By default, a third party would need to notify the main form filler when they've submitted their request.
+By default, a third party will need to notify the main form filler themselves when they've submitted their request.
 
 FormsByAir can send an automated message by adding a form integration to Send an email **On Third Party Submit**
 
@@ -53,7 +53,7 @@ The email template should include a link to open the main document, the URL for 
 
 &lt;&lt;[BaseUrl]&gt;&gt;/forms/requests/&lt;&lt;[DocumentId]&gt;&gt;
 
-Note - the syntax for this URL is the same as the request email above, however &lt;&lt;[DocumentId]&gt;&gt; will resolve to the main document in this case.
+The syntax for this URL is the same as the request email above, however &lt;&lt;[DocumentId]&gt;&gt; will resolve to the main document in this case.
 
 
 

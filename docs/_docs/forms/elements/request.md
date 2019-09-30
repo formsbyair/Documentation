@@ -10,6 +10,8 @@ A request element can be used to enable a third party to complete *part* of a fo
 
 Request elements can be added to any part of a form including repeaters and conditional paths. Elements *within* the request will be available for completion by the third party.
 
+!({{ site.baseurl }}/images/request.png)
+
 ## Send a message on request generation
 
 FormsByAir generates a unique link for each request, which the main form filler must communicate to the third party themselves by default.

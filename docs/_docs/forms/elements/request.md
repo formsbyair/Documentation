@@ -1,7 +1,7 @@
 ---
 title: Elements > Request
 category: Forms
-order: 3
+order: 2
 ---
 
 A request element can be used to manage the process of a third party completing *part* of a form where the other party is unavailable or in a different location to the main form filler. This is particularly useful for forms with multiple applicants including company directors and trustees where details and identity verification are required for each person.
@@ -10,7 +10,7 @@ A request element can be used to manage the process of a third party completing 
 
 Request elements can be added to any part of a form including repeaters and conditional paths. Elements *within* the request will be available for completion by the third party.
 
-#### Send a message on request generation
+## Send a message on request generation
 
 By default, FormsByAir will generate a unique link for a request, which the main form filler must communicate to the third party themselves.
 
@@ -35,8 +35,7 @@ The template can also include a custom message from the form filler, which they 
 
 Note - You must include a hidden formula question within the Request element with tag **RequestEmailMessage** to store the message, and make it available for the request message.
 
-
-#### Send a message on request submission
+## Send a message on request submission
 
 By default, a third party would need to notify the main form filler when they've submitted their request.
 

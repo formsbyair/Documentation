@@ -13,7 +13,8 @@ order: 1
 |Redeliver Documents|||X|X|X|
 |Override Assignment||||X|X|
 |Edit Documents||||X|X|
-|Rework Documents|||||X|
+|[Revalidate Documents]({{ site.baseurl }}/documents/actions/revalidate)||||X|X|
+|[Rework Documents]({{ site.baseurl }}/documents/actions/rework)|||||X|
 |Delete Documents|||||X|
 |Restore Documents|||||X|
 |Update Tables|||||X|

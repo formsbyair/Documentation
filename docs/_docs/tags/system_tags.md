@@ -51,3 +51,4 @@ These tags reference system or document information, and can be used in integrat
 |Tag|Definition|Example|
 |---|---|---|
 |&lt;&lt;[BaseURL]&gt;&gt;|Base URL for account|https://fba.formsbyair.com|
+|&lt;&lt;RequestEmailMessage&gt;&gt;|Third party request message|Hi Joe, please add your details to this form|

@@ -10,7 +10,7 @@ A request element can be used to enable a third party to complete *part* of a fo
 
 Request elements can be added to any part of a form including repeaters and conditional paths. Elements *within* the request will be available for completion by the third party.
 
-!({{ site.baseurl }}/images/request.png)
+![]({{ site.baseurl }}/images/request.png)
 
 ## Send a message on request generation
 

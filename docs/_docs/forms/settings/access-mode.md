@@ -1,7 +1,7 @@
 ---
 title: Settings > Access Mode
 category: Forms
-order: 8
+order: 4
 ---
 
 Controls how a form can be accessed.
@@ -16,7 +16,7 @@ Only requests or saved documents can be opened, the blank form cannot be opened 
 
 #### Third-Party Prefill
 
-The form will default to **Prefill** mode when opened. This is useful for forms that are managed by third parties on behalf of others. For example, insurance declaration forms prefilled by advisors, and then completed by their clients.
+The form will default to **Prefill** mode when opened. This is useful for forms that are managed by non-authenticated third parties on behalf of others. For example, insurance declaration forms prefilled by advisors, and then completed by their clients.
 
 #### Kiosk
 

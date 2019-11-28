@@ -1,7 +1,7 @@
 ---
 title: Types > Pattern
 category: Questions
-order: 5
+order: 6
 ---
 
 Free text entry validated against a specific pattern, all letters are capitalised by default.

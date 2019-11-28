@@ -1,7 +1,7 @@
 ---
 title: Types > Email Address
 category: Questions
-order: 4
+order: 5
 ---
 
 Free text entry of an email address. 

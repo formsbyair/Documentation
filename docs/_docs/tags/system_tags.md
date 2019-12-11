@@ -38,7 +38,7 @@ These tags reference system or document information, and can be used in integrat
 |---|---|---|
 |&lt;&lt;[DocumentDeliveryId]&gt;&gt;|Unique Document Delivery Id|3a09db8d-4582-45b3-8c67-40b1fdb95298|
 |&lt;&lt;[DocumentDeliveryDateTime]&gt;&gt;|Local DateTime that document delivery was queued|1 Nov 2018 11:00.00|
-|&lt;&lt;[DocumentDeliveryReference:*Subscription Reference*]&gt;&gt;|Last successful delivery reference for a given subscription|132345564|
+|&lt;&lt;[DocumentDeliveryReference:*SubscriptionId*]&gt;&gt;|Last successful delivery reference for a given subscription|132345564|
 
 ### Batch Tags
 

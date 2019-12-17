@@ -13,10 +13,10 @@ Send form data in a file.
 Files will contain either:
 
 * All non-hidden form data apart from Exclusions; or
-* Data referenced by &lt;&lt;tags&gt;&gt; in a Template (in the format of the target file)
+* Data referenced by &lt;&lt;tags&gt;&gt; in a Template (in the format of the target file); or
 * Data referenced by &lt;&lt;tags&gt;&gt; in a FormsByAir JSON Data Map
 
-|Format|Description|Output Sample|Template/Map Sample|
+|Format|Description|Output|Template/Map|
 |---|---|
 |CSV From Template|Comma Separated Values file|||
 |Excel Workbook||||
@@ -38,4 +38,5 @@ Files will contain either:
 
 #### Exclusion List
 
-List of tags to exclude from files that output all form data, for example &lt;&lt;Introduction&gt;&gt;&lt;&lt;RiskRating&gt;&gt;
+List of tags to exclude from files that output all form data, for example:
+&lt;&lt;Introduction&gt;&gt;&lt;&lt;RiskRating&gt;&gt;

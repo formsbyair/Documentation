@@ -16,13 +16,13 @@ Files will contain either:
 * Data referenced by &lt;&lt;tags&gt;&gt; in a Template (in the format of the target file); or
 * Data referenced by &lt;&lt;tags&gt;&gt; in a FormsByAir JSON Data Map
 
-|Format|Description|Output|Template/Map|
+|Format|Description|Template/Map|Output|
 |---|---|
 |CSV From Template|Comma Separated Values file|||
 |Excel Workbook||||
 |Excel Workbook From Template||||
-|JSON||[Sample]({{ site.baseurl }}/samples/json-output.json)||
-|JSON From Map||[Sample]({{ site.baseurl }}/samples/json-map-output.json)|[Sample]({{ site.baseurl }}/samples/json-map.json)|
+|JSON|Uses Question Tags for property names if set, otherwise Question Id||[Sample]({{ site.baseurl }}/samples/json-output.json)|
+|JSON From Map||[Sample]({{ site.baseurl }}/samples/json-map.json)|[Sample]({{ site.baseurl }}/samples/json-map-output.json)|
 |PDF||||
 |PDF From Template||||
 |PDF From Attached Template|Uses template from Attachment within a document|||

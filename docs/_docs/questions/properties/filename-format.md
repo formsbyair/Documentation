@@ -16,4 +16,4 @@ The examples below assume an attachment element has a tag of "Attachment", and a
 |&lt;&lt;Firstname&gt;&gt; Statement|Joe Statement.pdf|
 |Statement - &lt;&lt;Attachment&gt;&gt;|Statement - BankStmtSep2019.pdf|
 |&lt;&lt;Attachment&gt;&gt;|BankStmtSep2019.pdf|
-|BankStmt-&lt;&lt;[FileNumber]&gt;&gt;|BankStmt-1.pdf|
+|Statement-&lt;&lt;[FileNumber]&gt;&gt;|Statement-1.pdf|

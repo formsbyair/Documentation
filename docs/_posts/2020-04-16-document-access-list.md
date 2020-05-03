@@ -1,0 +1,14 @@
+---
+title: Document Access List
+type: feature
+---
+
+Added form-level option to specify a list of FormsByAir users that can access documents (saves/requests/submissions) for the form.
+
+If this is blank (the default), all FormsByAir users in the Workflow role or higher can access documents; otherwise
+
+Documents will be excluded from all views, and access via direct link blocked for all users that are *not* in the Document Access List.
+
+This is useful where you need to limit access and workflow actions for sensitive documents to a subset of your users.
+
+This does *not* apply to Administrators, who can access all documents.

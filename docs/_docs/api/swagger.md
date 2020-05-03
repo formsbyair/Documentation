@@ -1,6 +1,6 @@
 ---
-title: API
-category: Swagger
+title: Swagger
+category: API
 order: 1
 ---
 

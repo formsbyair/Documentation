@@ -7,4 +7,4 @@ Repeaters using the **Auto** format option would previously display values for t
 
 This was useful for previewing and differenting data for multiple, collapsed repeaters, but there was no control over which values should appear.
 
-This "auto preview" feature has been removed. You can now use tags in the Title property of a repeater to refer to child elements (within each repeater) and parent elements.
+This "auto preview" feature has been removed. You can now use tags in the Title property of a repeater to refer to specific child elements (within each repeater) and parent elements.

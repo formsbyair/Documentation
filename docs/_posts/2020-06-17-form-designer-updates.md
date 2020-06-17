@@ -3,7 +3,7 @@ title: Form designer updates
 type: platform
 ---
 
-In order to improve performance and navigation when editing large forms, FormsByAir will now lazy-load section content, and only expand one section at a time by default.
+In order to improve performance and navigation when editing large forms, FormsByAir will now load section content on-demand, and only expand one section at a time by default.
 
 This means that elements within each section will not be loaded until you click on them. You may notice the loading indicator appear while this is happening. Once loaded, sections will remain cached, but only one section will expand and display at a time.
 

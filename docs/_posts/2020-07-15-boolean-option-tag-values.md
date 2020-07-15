@@ -10,9 +10,9 @@ Tags for **True/False** and **Option** type questions are evaluated as follows:
 |&lt;&lt;MyTrueFalseQuestion&gt;&gt;|true or false|Yes or No|
 |&lt;&lt;MyOption&gt;&gt;|true or false|Question Title or &lt;blank&gt;|
 
-The intent is to display a user-friendly value by default, however this can lead to confusion when you want to sue these tags in expressions.
+The intent is to display a user-friendly value by default, however this can lead to confusion when you want to use these tags in expressions.
 
-To make it more explicit, you can now use the **Value** tag property to refer to the underlying value for true/false or option questions.
+To make it more explicit, you can now include the **Value** tag property to refer to the underlying value for true/false or option questions.
 
 |Expression Using Value Property outside of a form|Equivalent To|
 |---|---|

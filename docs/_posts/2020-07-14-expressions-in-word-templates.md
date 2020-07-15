@@ -7,7 +7,7 @@ When typing expressions in to Word templates, single quote marks (') are rendere
 
 &lt;&lt;[Expression:‘Type’ == ‘Custom’ ? ‘Custom text’ : ‘Standard text’]&gt;&gt;
 
-This causes errors with expression evaluation, and the templates had to be updated, usually by copying unformatted text from a text editor like Notepad.
+This causes errors with expression evaluation, and templates had to be updated, usually by copying unformatted text from a text editor like Notepad.
 
 FormsByAir will now automatically convert these formatted quotes to regular quotes, so expressions can be entered directly in Word without issue.
 

@@ -14,7 +14,7 @@ The intent is to display a user-friendly value by default, however this can lead
 
 To make it more explicit, you can now include the **Value** tag property to refer to the underlying value for true/false or option questions.
 
-|Expression Using Value Property outside of a form|Equivalent To|
+|Expression Using Value Property (outside of a form)|Equivalent To|
 |---|---|
 |&apos;&lt;&lt;MyTrueFalseQuestion.Value&gt;&gt;&apos; == &apos;true&apos;|&apos;&lt;&lt;MyTrueFalseQuestion&gt;&gt;&apos; == &apos;Yes&apos;|
 |&apos;&lt;&lt;MyOption.Value&gt;&gt;&apos; == &apos;true&apos;|&apos;&lt;&lt;MyOption&gt;&gt;&apos; != &apos;&apos;|

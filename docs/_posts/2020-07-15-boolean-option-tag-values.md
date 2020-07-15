@@ -16,5 +16,5 @@ To make it more explicit, you can now use the **Value** tag property to refer to
 
 |Expression Using Value Property|Equivalent To|
 |---|---|
-|'&lt;&lt;MyTrueFalseQuestion.Value&gt;&gt;' == 'true'|'&lt;&lt;MyTrueFalseQuestion&gt;&gt;' == 'Yes'|
-|'&lt;&lt;MyOption.Value&gt;&gt;' == 'true'|'&lt;&lt;MyOption&gt;&gt;' != ''|
+|&apos;&lt;&lt;MyTrueFalseQuestion.Value&gt;&gt;&apos; == &apos;true&apos;|&apos;&lt;&lt;MyTrueFalseQuestion&gt;&gt;&apos; == &apos;Yes&apos;|
+|&apos;&lt;&lt;MyOption.Value&gt;&gt;&apos; == &apos;true&apos;|&apos;&lt;&lt;MyOption&gt;&gt;&apos; != &apos;&apos;|

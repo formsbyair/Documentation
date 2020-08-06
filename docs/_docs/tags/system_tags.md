@@ -43,7 +43,7 @@ These tags reference system or document information, and can be used in integrat
 |&lt;&lt;[DocumentDeliveryReference: *DeliveryChannelName* or *SubscriptionId*]&gt;&gt;|Last successful delivery reference for a given delivery channel or subscription|132345564|
 |&lt;&lt;[DocumentDeliveryLink: *DeliveryChannelName* or *SubscriptionId*]&gt;&gt;|Last successful delivery link for a given delivery channel or subscription|https://s.com/r/132345564|
 
-### Batch Tags
+### Aggregate Tags
 
 |Tag|Definition|Example|
 |---|---|---|

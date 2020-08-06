@@ -11,7 +11,7 @@ To enable, log in to the FormsByAir portal, go to Settings &gt; Profile and ente
 
 All login attempts from that point forward will be checked against the whitelist. If a user's IP address doesn't match they won't be able to log in.
 
-This feature can be used in conjunction with **Two Factor Authentication** for strict access control over the form data that we temporarily hold.
+This feature can be used in conjunction with **Two Factor Authentication** for strict access control over form data that we (temporarily) hold.
 
 Login IP Address Whitelisting does not apply to API Key access.
 

@@ -1,6 +1,6 @@
 ---
 title: Repeater Minimum Rows expression
-type: fix
+type: platform
 ---
 
 You can now specify an *expression* for the **Minimum Rows** property of repeaters, previously you could only use a fixed value. **Maximum Rows** has always allowed a fixed value or expression.

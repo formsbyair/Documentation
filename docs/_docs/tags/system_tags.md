@@ -32,6 +32,7 @@ These tags reference system or document information, and can be used in integrat
 |&lt;&lt;[DocumentWorkflowApprovalUserName]&gt;&gt;|Name of User that approved document|Mary Bloggs|
 |&lt;&lt;[DocumentWorkflowApprovalUserEmail]&gt;&gt;|Email address of User that approved document|mary@bloggs.com|
 |&lt;&lt;[DocumentWorkflowApprovalDateTime]&gt;&gt;|Local DateTime that document was approved|1 Nov 2018 11:00.00|
+|&lt;&lt;[DocumentWorkflowDeclineComment]&gt;&gt;|Comment associated with declining a document|Does not meet our criteria|
 |&lt;&lt;[DocumentStage]&gt;&gt;|Last submitted stage where form is configured for staged submission|Enquiry|
 
 ### Document Delivery Tags

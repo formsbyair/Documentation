@@ -8,5 +8,5 @@ Added new Read-Only options for Repeaters that are populated with a Default Valu
 |Setting|Result|
 |---|---|
 |None|Add new rows, remove any row|
-|Default|Add/remove *new* rows only|
-|All|Can't add or remove |
+|Defaults|Add/remove *new* rows only|
+|All|Can't add or remove rows|

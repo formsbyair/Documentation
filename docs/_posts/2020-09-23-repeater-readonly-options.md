@@ -5,8 +5,8 @@ type: platform
 
 Added new Read-Only options for Repeaters that are populated with a Default Value
 
-|Option|Result|
+|Option|Repeater behaviour|
 |---|---|
-|None|Add new rows, remove any row|
-|Defaults|Add/remove *new* rows only|
+|None|Can add new rows, remove any row|
+|Defaults|Can add/remove *new* rows only|
 |All|Can't add or remove rows|

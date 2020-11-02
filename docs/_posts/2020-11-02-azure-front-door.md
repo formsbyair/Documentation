@@ -1,5 +1,5 @@
 ---
-title: Azure Front Door
+title: Azure Front Door Network Upgrade
 type: platform
 ---
 

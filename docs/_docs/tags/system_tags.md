@@ -20,6 +20,7 @@ These tags reference system or document information, and can be used in integrat
 |&lt;&lt;[DocumentStatus]&gt;&gt;|Current document status|Workflow|
 |&lt;&lt;[DocumentWorkflowStatus]&gt;&gt;|Current document workflow status|Pending|
 |&lt;&lt;[DocumentReceivedDateTime]&gt;&gt;|Local DateTime that document was received|1 Nov 2018 11:00.00|
+|&lt;&lt;[DocumentRequestedUserEmail]&gt;&gt;|Email address of User that requested document|joe@bloggs.com|
 |&lt;&lt;[DocumentRequestedDateTime]&gt;&gt;|Local DateTime that document was requested|1 Nov 2018 11:00.00|
 |&lt;&lt;[DocumentExpiryDateTime]&gt;&gt;|Local DateTime that requested document will expire|1 Nov 2018 11:00.00|
 |&lt;&lt;[DocumentOwnerName]&gt;&gt;|Account name|FormsByAir|

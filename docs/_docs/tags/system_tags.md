@@ -17,6 +17,7 @@ These tags reference system or document information, and can be used in integrat
 |&lt;&lt;[DocumentFormVersion]&gt;&gt;|Form version for document|10|
 |&lt;&lt;[ParentDocumentId]&gt;&gt;|Unique Document Id for parent of third party request|281daeee-494c-4ef3-b90b-1a05374d22cb|
 |&lt;&lt;[DocumentReference]&gt;&gt;|Document reference|ABC123 Joe Bloggs|
+|&lt;&lt;[DocumentBatchReference]&gt;&gt;|Batch reference for imported documents|Batch001|
 |&lt;&lt;[DocumentStatus]&gt;&gt;|Current document status|Workflow|
 |&lt;&lt;[DocumentWorkflowStatus]&gt;&gt;|Current document workflow status|Pending|
 |&lt;&lt;[DocumentReceivedDateTime]&gt;&gt;|Local DateTime that document was received|1 Nov 2018 11:00.00|

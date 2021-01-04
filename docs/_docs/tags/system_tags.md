@@ -4,7 +4,9 @@ category: Tags
 order: 1
 ---
 
-These tags reference system or document information, and can be used in integration tasks and templates.
+These tags reference system or document information.
+
+&lt;&lt;[DocumentId]&gt;&gt; can be used everywhere, all other tags can only be used in integration tasks and templates.
 
 ### Document Tags
 

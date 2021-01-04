@@ -16,6 +16,7 @@ FormsByAir allows you to set a specific data type or disable Autocomplete for th
 #### Email
 
 |Autocomplete|Result|
+|---|---|
 |Auto|No autocomplete attribute (default)|
 |None|Disable Autocomplete|
 |Email|Set autocomplete attribute to **email**|
@@ -23,6 +24,7 @@ FormsByAir allows you to set a specific data type or disable Autocomplete for th
 #### Phone
 
 |Autocomplete|Result|
+|---|---|
 |Auto|No autocomplete attribute (default)|
 |None|Disable Autocomplete|
 |Phone|Set autocomplete attribute to **tel**|
@@ -30,6 +32,7 @@ FormsByAir allows you to set a specific data type or disable Autocomplete for th
 #### Text
 
 |Autocomplete|Result|
+|---|---|
 |Auto|No autocomplete attribute (default)|
 |None|Disable Autocomplete|
 |Name|Set autocomplete attribute to **name**|
@@ -39,10 +42,11 @@ FormsByAir allows you to set a specific data type or disable Autocomplete for th
 #### Card
 
 |Format|Result|
-|Name|Set autocomplete attribute to **cc-number**|
+|---|---|
+|Name|Set autocomplete attribute to **cc-name**|
 |Number|Set autocomplete attribute to **cc-number**|
-|Expiry|Set autocomplete attribute to **cc-number**|
-|CVV|Set autocomplete attribute to **cc-number**|
+|Expiry|Set autocomplete attribute to **cc-exp**|
+|CVV|Set autocomplete attribute to **cc-csc**|
 
 Autocomplete is disabled for all of these questions when Kiosk Mode is enabled for a device or form.
 

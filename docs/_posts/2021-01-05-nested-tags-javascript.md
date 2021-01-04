@@ -1,5 +1,5 @@
 ---
-title: Nested tags in javascript
+title: Nested tags in Javascript
 type: platform
 ---
 

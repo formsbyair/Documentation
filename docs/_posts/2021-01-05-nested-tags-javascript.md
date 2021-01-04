@@ -9,4 +9,4 @@ This is particuarly useful for array functions with JSON data from a Data Source
 
 &lt;&lt;&lt;CustomerData.Orders.filter(function(order) { return &apos;&lt;&lt;SelectedProductCode&gt;&gt;&apos;.indexOf(order.ProductCodes) >= 0 })[0].ProductCode&gt;&gt;&gt;
 
-The outer tag for CustomerData has 3 &lt;&lt;&lt;&gt;&gt;&gt;'s whereas the inner tag for SelectedProductCode has 2 &lt;&lt;&gt;&gt's;
+The outer tag for CustomerData has 3 &lt;&lt;&lt;&gt;&gt;&gt;'s whereas the inner tag for SelectedProductCode has 2 &lt;&lt;&gt;&gt;'s;

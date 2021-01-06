@@ -1,7 +1,7 @@
 ---
 title: Settings > Access Mode
 category: Forms
-order: 4
+order: 3
 ---
 
 Controls how a form can be accessed.

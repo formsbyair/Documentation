@@ -4,14 +4,14 @@ category: Questions
 order: 1
 ---
 
-This property can be used to control the "Autocomplete" behaviour of web browsers whereby contact and payment details in a form can be populated automatically.
+Used to control the "Autocomplete" behaviour of web browsers for populating contact and payment details automatically.
 
-Most modern web browsers will try to infer the type of data being requested by parsing the name or associated label for each input. The [HTML autocomplete attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) was introduced to let developers specify a particular data type and in some cases disable Autocomplete, however the implementation across web browsers is inconsistent. FormsByAir supports several common autocomplete data types, and can disable Autocomplete as follows:
+Most modern web browsers will try to infer the type of data being requested in a form by parsing the name or associated label for each input. The [HTML autocomplete attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) was introduced to let developers specify data types and in some cases disable Autocomplete, however the implementation across web browsers is inconsistent. FormsByAir supports the most common autocomplete data types, and can disable Autocomplete as follows:
 
 * Append "search" to the **name** attribute of the input (this is currently the only working solution for Safari)
 * Set the autocomplete attribute for the input to "new-password" for Chrome/Edge and "off" for all others
 
-FormsByAir allows you to set a specific data type or disable Autocomplete for the question types below:
+FormsByAir allows you to specify a data type or disable Autocomplete for the question types below:
 
 #### Email
 

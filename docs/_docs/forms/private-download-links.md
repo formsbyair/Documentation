@@ -6,7 +6,7 @@ order: 5
 
 Private download links can be used to authenticate access to private online resources. We currently support Amazon S3 only but more storage services will be added in future.
 
-The sample URL below points to a PDF in a private Amazon S3 bucket. The file is an annual statement for a particular client that only they should be able to access.
+The sample URL below points to a PDF file in a private Amazon S3 bucket that should only be accessible to a particular user.
 
 Because the bucket is private, the URL on it's own cannot be used to download the file.
 
@@ -20,8 +20,8 @@ This example is a relative link for use within a form, but an absolute link can 
 
 When accessing the link, FormsByAir will check for a valid "Private Form" authentication ticket. If one does not exist the user will be redirected to the login page for the account.
 
-On login, FormsByAir scans the resulting data from the validation request (from a data table or API) for URLs from supported storage services, and stores a hash of each one against the authentication ticket.
+At login, FormsByAir scans the response from the validation request (from a data table or API) for URLs from supported storage services, and stores a hash of each one against the authentication ticket.
 
-This allows us to compare a hash of the URL being requested to hash codes in the ticket. If there's a match, FormsByAir reads the file from the storage service using credentials in the account, and returns it to the user.
+This allows us to compare a hash of the URL being requested to hash codes in the ticket. If there's a match, we read the file from the storage service using credentials in the FormsByAir account, and return it to the user.
 
 "Private Form" authentication cookies are session-based and expire after 2 hours.

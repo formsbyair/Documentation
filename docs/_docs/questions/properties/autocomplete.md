@@ -50,4 +50,6 @@ FormsByAir allows you to set a specific data type or disable Autocomplete for th
 
 Autocomplete is disabled for all of these questions when Kiosk Mode is enabled for a device or form.
 
+Autocomplete is always disabled for Typeahead questions.
+
 All other question types do not implement the autocomplete HTML attribute.

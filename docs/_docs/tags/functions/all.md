@@ -14,7 +14,7 @@ Returns true if all Repeater items match a given Filter, otherwise false
 Tag name of repeater
 
 #### Filter <span class="badge platform">Required</span>
-Boolean expression to filter repeater items e.g. {&apos;&lt;&lt;Type&gt;&gt;&apos; == &apos;Primary&apos;}
+Boolean expression to match repeater items e.g. {&apos;&lt;&lt;Type&gt;&gt;&apos; == &apos;Primary&apos;}
 
 ## Examples
 

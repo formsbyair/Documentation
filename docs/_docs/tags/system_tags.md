@@ -4,9 +4,9 @@ category: Tags
 order: 6
 ---
 
-These tags reference system or document information.
+These tags reference system and document information as opposed to form data.
 
-&lt;&lt;[DocumentId]&gt;&gt; can be used everywhere, all other tags can only be used in integration tasks and templates.
+&lt;&lt;[DocumentId]&gt;&gt; can be used client and server side, all other tags can only be used server side.
 
 ### Document Tags
 

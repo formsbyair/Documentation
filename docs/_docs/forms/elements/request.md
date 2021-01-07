@@ -55,11 +55,11 @@ The syntax for this URL is the same as the request email above, however &lt;&lt;
 
 ## Options
 
-### Hide First
+#### Hide First
 
 When enabled on a Request element within a repeater, FormsByAir will hide the prompt to create a request for the *first* repeater item. This may help to avoid confusion with forms that require completion by multiple people, where the first person is generally the main form filler (so a request is not required for them)
 
-### Required
+#### Required
 
 When enabled, the main form filler **must** generate a request for the content within the request, they cannot complete it themselves.
 

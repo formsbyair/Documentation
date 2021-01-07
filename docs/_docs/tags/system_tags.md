@@ -1,7 +1,7 @@
 ---
 title: System Tags
 category: Tags
-order: 1
+order: 2
 ---
 
 These tags reference system or document information.

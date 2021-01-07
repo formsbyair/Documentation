@@ -3,13 +3,11 @@ title: Functions > ForEach
 category: Tags
 order: 1
 ---
-<span class="badge platform">Client</span>&nbsp;<span class="badge platform">Server</span>
-
 Iterate through a repeater and parse the output for each item
 
 ## Syntax
 
-&lt;&lt;[ForEach:Repeater{Filter}[Separator]:Output]&gt;&gt;
+&lt;&lt;[ForEach:Repeater{Filter}[Separator]:Output]&gt;&gt; <span class="badge platform">Client</span>&nbsp;<span class="badge platform">Server</span>
 
 #### Repeater <span class="badge platform">Required</span>
 Tag name of repeater

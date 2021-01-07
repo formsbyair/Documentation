@@ -7,7 +7,7 @@ order: 1
 Iterate through a repeater and parse the output for each item
 <span class="badge platform">Client</span>&nbsp;<span class="badge platform">Server</span>
 
-### Syntax
+## Syntax
 
 &lt;&lt;[ForEach:Repeater{Filter}[Separator]:Output]&gt;&gt;
 
@@ -23,7 +23,7 @@ Custom separator between the output for each item e.g. [ and ] (defaults to a sp
 #### Output <span class="badge platform">Required</span>
 Text and &lt;&lt;tags&gt;&gt; e.g. &lt;&lt;FirstName&gt;&gt; &lt;&lt;LastName&gt;&gt;
 
-#### Examples
+## Examples
 
 |Function|Result|
 |---|---|

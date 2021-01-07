@@ -1,7 +1,7 @@
 ---
 title: Functions > ForEach
 category: Tags
-order: 3
+order: 4
 ---
 
 Iterate through a repeater and parse the output for each item

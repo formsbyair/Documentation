@@ -4,7 +4,7 @@ category: Tags
 order: 1
 ---
 
-Returns true if all Repeater items are returned for the given Filter, otherwise false
+Returns true if all Repeater items match a given Filter, otherwise false
 
 ## Syntax
 

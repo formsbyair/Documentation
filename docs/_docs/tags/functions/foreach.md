@@ -1,14 +1,14 @@
 ---
 title: Functions > ForEach
 category: Tags
-order: 4
+order: 5
 ---
 
-Iterate through a repeater and parse the output for each item
+Iterates through a repeater and returns the concatenated output for all items
 
 ## Syntax
 
-&lt;&lt;[ForEach:Repeater{Filter}[Separator]:Output]&gt;&gt; <span class="badge platform">Client</span>&nbsp;<span class="badge platform">Server</span>
+&lt;&lt;[**ForEach**:Repeater{Filter}[Separator]:Output]&gt;&gt; <span class="badge platform">Client</span>&nbsp;<span class="badge platform">Server</span>
 
 #### Repeater <span class="badge platform">Required</span>
 Tag name of repeater

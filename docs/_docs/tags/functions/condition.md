@@ -4,11 +4,11 @@ category: Tags
 order: 3
 ---
 
-Evaluates an expression and returns the output if true
+Evaluates a boolean expression and returns the output if true
 
 ## Syntax
 
-&lt;&lt;[Condition:Expression:Output]&gt;&gt; <span class="badge platform">Server</span>
+&lt;&lt;[**Condition**:Expression:Output]&gt;&gt; <span class="badge platform">Server</span>
 
 #### Expression <span class="badge platform">Required</span>
 Boolean expression e.g. &apos;&lt;&lt;Option&gt;&gt;&apos; == &apos;A&apos;

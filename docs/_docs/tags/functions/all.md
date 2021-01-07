@@ -8,7 +8,7 @@ Returns true if all Repeater items match a given Filter, otherwise false
 
 ## Syntax
 
-&lt;&lt;[All:Repeater{Filter}]&gt;&gt; <span class="badge platform">Server</span>
+&lt;&lt;[**All**:Repeater{Filter}]&gt;&gt; <span class="badge platform">Server</span>
 
 #### Repeater <span class="badge platform">Required</span>
 Tag name of repeater

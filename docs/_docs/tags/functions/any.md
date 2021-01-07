@@ -8,7 +8,7 @@ Returns true if there is at least one occurence of a given Repeater item, otherw
 
 ## Syntax
 
-&lt;&lt;[Any:Repeater{Filter}]&gt;&gt; <span class="badge platform">Client</span>&nbsp;<span class="badge platform">Server</span>
+&lt;&lt;[**Any**:Repeater{Filter}]&gt;&gt; <span class="badge platform">Client</span>&nbsp;<span class="badge platform">Server</span>
 
 #### Repeater <span class="badge platform">Required</span>
 Tag name of repeater

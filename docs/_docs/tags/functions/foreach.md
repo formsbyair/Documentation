@@ -3,6 +3,7 @@ title: Functions > ForEach
 category: Tags
 order: 1
 ---
+
 Iterate through a repeater and parse the output for each item
 
 ## Syntax
@@ -19,7 +20,7 @@ Boolean expression to filter each repeater item e.g. {&apos;&lt;&lt;Type&gt;&gt;
 Custom separator between the output for each item e.g. [ and ] (defaults to a space)
 
 #### Output <span class="badge platform">Required</span>
-Text and &lt;&lt;tags&gt;&gt; e.g. &lt;&lt;FirstName&gt;&gt; &lt;&lt;LastName&gt;&gt;
+Text and &lt;&lt;tags&gt;&gt; for each repeater item e.g. &lt;&lt;FirstName&gt;&gt; &lt;&lt;LastName&gt;&gt;
 
 ## Examples
 

@@ -4,41 +4,26 @@ category: Tags
 order: 2
 ---
 
-Availability 
-
-Browser - executed by an open form in a web browser e.g a formula
-Server - executed by FormsByAir servers e.g. template, map, conditional integration
-
 ### &lt;&lt;[ForEach]&gt;&gt;
+<span class="badge platform">Client</span><span class="badge platform">Server</span>
 
-Iterates through a repeater
+Iterate through a repeater and parse the output for each item
 
-Availability: Browser and Server
-Syntax
+#### Syntax
 
-&lt;&lt;[ForEach:Repeater{Filter}[separator]:output]&gt;&gt;
+&lt;&lt;[ForEach:Repeater{Filter}[Separator]:Output]&gt;&gt;
 
-Examples
+##### Repeater (Required)
+Tag name of repeater
 
-### &lt;&lt;[First]&gt;&gt;
+##### Filter (Optional)
+Boolean expression to filter each repeater item e.g. {&lt;&lt;Amount&gt;&gt; > 0}
 
-Iterate
+##### Separator (Optional)
+Custom separator between the output for each item e.g. [ and ] (defaults to a space)
 
-Availability: Server Only
-Syntax
+##### Output (Required)
+Text and &lt;&lt;tags&gt;&gt; e.g. &lt;&lt;FirstName&gt;&gt; &lt;&lt;LastName&gt;&gt;
 
-&lt;&lt;[First:Repeater{Filter}:output]&gt;&gt;
-
-Examples
-
-
-### &lt;&lt;[Any]&gt;&gt;
-
-Iterate
-
-Availability: Browser and Server
-Syntax
-
-&lt;&lt;[Any:Repeater{Filter}]&gt;&gt;
-
-Examples
+Example: &lt;&lt;[ForEach:Client{&lt;&lt;Amount&gt;&gt; &gt; 0}[ and ]:&lt;&lt;FirstName&gt;&gt; &lt;&lt;LastName&gt;&gt;]&gt;&gt;
+Result: Joe Bloggs and Tim Apple

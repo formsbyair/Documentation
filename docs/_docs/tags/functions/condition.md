@@ -21,4 +21,4 @@ Text and &lt;&lt;tags&gt;&gt; e.g. Option A
 |Function|Result|
 |---|---|
 |&lt;&lt;[Condition:&apos;&lt;&lt;Option&gt;&gt;&apos; == &apos;A&apos;:Option A]&gt;&gt;|Option A|
-|&lt;&lt;&lt;[Condition:&lt;&lt;[All:Contact{&apos;&lt;&lt;Type&gt;&gt;&apos; != &apos;Primary&apos;}]&gt;&gt;:All contacts are primary]&gt;&gt;&gt;|All contacts are primary|
+|&lt;&lt;&lt;[Condition:&lt;&lt;[All:Contact{&apos;&lt;&lt;Type&gt;&gt;&apos; == &apos;Primary&apos;}]&gt;&gt;:All contacts are primary]&gt;&gt;&gt;|All contacts are primary|

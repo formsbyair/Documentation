@@ -4,7 +4,7 @@ category: Tags
 order: 1
 ---
 
-Returns true if otherwise false
+Returns true if there is at least one occurence of a given Repeater item, otherwise false
 
 ## Syntax
 

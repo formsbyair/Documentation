@@ -1,7 +1,7 @@
 ---
 title: Functions > Any
 category: Tags
-order: 1
+order: 2
 ---
 
 Returns true if there is at least one occurence of a given Repeater item, otherwise false

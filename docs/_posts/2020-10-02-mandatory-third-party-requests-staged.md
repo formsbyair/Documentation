@@ -9,3 +9,5 @@ We've made the following changes for **Mandatory Third Party Requests** located 
 * Submission of the *last* request will automatically trigger submission of the main form
 
 Combined, these features are useful where a form request for an existing group of people is sent to a primary contact for general completion, but must be viewed/authorised by *all* parties.
+
+See [Requests]({{ site.baseurl }}/forms/elements/requests)

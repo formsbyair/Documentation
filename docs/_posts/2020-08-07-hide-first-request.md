@@ -9,3 +9,4 @@ When enabled on a Request element within a repeater, FormsByAir will hide the pr
 
 This may help to avoid confusion with forms that require completion by multiple people, where the first person is generally the main form filler (so a request is not required for them)
 
+See [Requests]({{ site.baseurl }}/forms/elements/requests)

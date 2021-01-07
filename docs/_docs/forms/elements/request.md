@@ -53,7 +53,20 @@ The email template should include a link to open the main document, the URL for 
 
 The syntax for this URL is the same as the request email above, however &lt;&lt;[DocumentId]&gt;&gt; will resolve to the main document in this case.
 
+## Options
 
+### Hide First
 
+When enabled on a Request element within a repeater, FormsByAir will hide the prompt to create a request for the *first* repeater item. This may help to avoid confusion with forms that require completion by multiple people, where the first person is generally the main form filler (so a request is not required for them)
 
+### Required
 
+When enabled, the main form filler **must** generate a request for the content within the request, they cannot complete it themselves.
+
+In addition, if a Request element is required, third parties are prefilled, and Submission Mode is Staged, then:
+
+* FormsByAir will automatically generate requests on submit of the second-to-last stage. This ensures the requests are sent directly to the third parties. The main form filler has no ability to access or cancel the requests, they can only view the status of them.
+* Submission of the *last* request will automatically trigger submission of the main form
+* Prompts for third parties to review the rest of the form are not shown
+
+Combined, these features are useful where a form request for an existing group of people is sent to a primary contact for general completion, but must be viewed/authorised by *all* parties.

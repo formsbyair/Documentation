@@ -4,28 +4,23 @@ category: Questions
 order: 7
 ---
 
-Free text entry of an phone. 
-
-An "email" keyboard with @ symbol will be displayed on focus where available.
+Under Construction
+Free text entry of a phone number. 
 
 #### Validation Errors
 
-The following error conditions are evaluated when the user attempts to move to the next section, or submit.
+Validation of phone numbers is done for for international and international mobile numbers only and therefore need a valid country code.
 
-* No value provided and question is Required
-* Value doesn't satisfy regex pattern mailbox@domain
+To configure this, go to Advanced Settings and set the format to 'International' or 'International Mobile' and enter a valid Country Code. 
+eg. 'NZ' for New Zealand or 'AU' for Australia
 
-#### Validation Warnings
+If validation fails an error message will appear. eg. for an invalid New Zealand phone number
+:exclamation: Not a valid NZ phone number | Ignore
 
-The following warning conditions are evaluated as an email address is entered.
+or for an invalid internation Austrlain mobile number
+:exclamation: Not a valid AU mobile number | Ignore
 
-* MX record for domain not found
-* Domain matches a common misspelling of a major email service provider
+There is an option to ignore invalid numbers.
 
-|Email Address|Condition|Warning Message|
-|---|---|---|
-|me@extra.co.nz|Domain not found and matches common misspelling|extra.co.nz not found, did you mean xtra.co.nz?|
-|me@gamil.com|Domain found but matches common misspelling|Did you mean gmail.com?|
-|me@formsxyzbyair.com|Domain not found|formsxyzbyair.com not found, please check|
-
-A "tick" icon is displayed in the right margin of an email address that satisfies all validation.
+If the phone number is valid the number will be formatted according to standard internationl rules.
+eg. for international Mobile / Counry Code set to NZ an entry of '0223709899' will be formatted as '+64 22 370 9899'

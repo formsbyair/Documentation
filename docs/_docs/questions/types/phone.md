@@ -1,5 +1,5 @@
 ---
-title: Types > Email Address
+title: Types > Phone
 category: Questions
 order: 7
 ---

@@ -7,15 +7,22 @@ order: 7
 Under Construction  
 Free text entry of a phone number. 
 
+#### Format Options
+
+* Auto
+* International
+* International Mobile
+
 #### Validation Errors
 
 Validation of phone numbers is done for for International and International mobile numbers only and therefore need a valid country code.
 
 To configure this, go to Advanced Settings and set the format to 'International' or 'International Mobile' and enter a valid Country Code. 
-eg. `NZ` for New Zealand or `AU` for Australia  
+eg. `NZ` for New Zealand or **AU** for Australia  
+(see Alpha-2 code in ISO 3166 country codes on https://www.iso.org/iso-3166-country-codes.html)  
 
 If validation fails an error message will appear. eg. for an invalid New Zealand phone number  
-! Not a valid NZ phone number | Ignore
+<span style="color:red"><span class="glyphicon glyphicon-exclamation-sign"></span> Not a valid NZ phone number | Ignore</span>
 
 or for an invalid internation Austrlain mobile number  
 ! Not a valid AU mobile number | Ignore

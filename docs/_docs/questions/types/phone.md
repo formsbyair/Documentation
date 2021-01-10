@@ -29,7 +29,7 @@ Not a valid AU mobile number | Ignore
 
 These error conditions are evaluated when the user attempts to move to the next section, or submit.
 
-There is an option to ignore invalid numbers and if this is selected the user is able to continue to the next section or submit the form.
+There is an option to ignore invalid numbers and if this is selected the user is able to continue to the next section or submit the form. This is because sometimes the system will block legitimate entries.
 
 If the phone number is valid the number will be formatted according to standard internationl rules.  
 eg. for a format of 'International Mobile' with a Counrty Code set to 'NZ' an entry of `0223709899` will be formatted as `+64 22 370 9899`

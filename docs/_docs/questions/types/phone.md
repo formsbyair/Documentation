@@ -18,7 +18,7 @@ Free text entry of a phone number.
 Validation of phone numbers is done for for International and International Mobile numbers only and will need a valid country code.
 
 To configure this, go to Advanced Settings and set the format to 'International' or 'International Mobile' and then enter a valid Country Code. 
-eg. **NZ** for New Zealand or **AU** for Australia
+eg. **NZ** for New Zealand or **AU** for Australia  
 For other countries please refer to the Alpha-2 codes found on [the ISO website](https://www.iso.org/obp/ui/#search)
 
 If validation fails an error message will appear. eg. for an invalid New Zealand phone number  

@@ -24,7 +24,7 @@ For other countries please refer to the Alpha-2 codes found on [the ISO website]
 If validation fails an error message will appear. eg. for an invalid New Zealand phone number  
 "Not a valid NZ phone number, please check | Ignore"
 
-or for an invalid Internation Austrlian Mobile Number  
+or for an invalid International Australian Mobile Number  
 "Not a valid AU mobile number, please check | Ignore"
 
 These error conditions are evaluated when the user attempts to move to the next section, or submit.  

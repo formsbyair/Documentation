@@ -15,19 +15,21 @@ Free text entry of a phone number.
 
 #### Validation Errors  
 
-Validation of phone numbers is done for for International and International mobile numbers only and therefore need a valid country code.
+Validation of phone numbers is done for for International and International Mobile numbers only and will need a valid country code.
 
-To configure this, go to Advanced Settings and set the format to 'International' or 'International Mobile' and enter a valid Country Code. 
-eg. **NZ** for New Zealand or **AU** for Australia  
-(see Alpha-2 code in ISO 3166 country codes on https://www.iso.org/iso-3166-country-codes.html)  
+To configure this, go to Advanced Settings and set the format to 'International' or 'International Mobile' and then enter a valid Country Code. 
+eg. **NZ** for New Zealand or **AU** for Australia
+For other countries please refer to the Alpha-2 codes found on [the ISO website](https://www.iso.org/obp/ui/#search)
 
 If validation fails an error message will appear. eg. for an invalid New Zealand phone number  
-<span style="color:red">! Not a valid NZ phone number | Ignore</span>
+Not a valid NZ phone number | Ignore
 
-or for an invalid internation Austrlain mobile number  
-<span style="color:red">! Not a valid AU mobile number | Ignore</span>
+or for an invalid Internation Austrlian Mobile Number  
+Not a valid AU mobile number | Ignore
 
-There is an option to ignore invalid numbers.  
+These error conditions are evaluated when the user attempts to move to the next section, or submit.
+
+There is an option to ignore invalid numbers and if this is selected the user is able to continue to the next section or submit the form.
 
 If the phone number is valid the number will be formatted according to standard internationl rules.  
 eg. for a format of 'International Mobile' with a Counrty Code set to 'NZ' an entry of `0223709899` will be formatted as `+64 22 370 9899`

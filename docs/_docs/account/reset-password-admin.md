@@ -1,7 +1,6 @@
 ---
-title: Change Password
-category: Account
-order: 1
+layout: page
+permalink: /reset-password-admin
 ---
 
 \* work in progress \*  

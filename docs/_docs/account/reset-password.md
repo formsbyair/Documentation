@@ -1,6 +1,7 @@
 ---
 category: Account
 hidden: true
+nav_exclude: true
 ---
 
 \* work in progress \*  
@@ -11,7 +12,6 @@ hidden: true
 3. Select "Account" from the top of the menu
 4. Select "Manage Users"
 5. Locate the User and Select Action > Edit
-6. Select "Change" Password to complete the process.
-
-**What is Two Factor Authentication?**  
-In addition to the 'Email Address and Password'combination to log in the FormsByAir portal an extra layer of security can be added. FormsByAir uses the Google Authenticator app to add Two Factor authentication (2FA) to your login process. This generates an additional one-time password which must be entered in addition to the 'Email Address and Password' combination.
+6. Select "Reset Password"
+7. A new default password has now been generated and can be used to login
+8. (FormsByAir recommends that the user now logs in with their new password, changes their password and enables Two Factor authentication) 

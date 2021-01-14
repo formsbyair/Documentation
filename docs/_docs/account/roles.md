@@ -1,7 +1,7 @@
 ---
 title: Roles
 category: Account
-order: 1
+order: 2
 ---
 
 |Feature\Role|User|Workflow|Operations|Supervisor|Administrator|

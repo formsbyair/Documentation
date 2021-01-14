@@ -5,7 +5,7 @@ order: 1
 ---
 
 \* work in progress \*
-** To change your password: **
+*To change your password:*
 
 1. Log in to your Forms By Air account
 2. Select your email address at the top right-hand corner of the screen

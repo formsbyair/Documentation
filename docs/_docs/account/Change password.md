@@ -4,14 +4,14 @@ category: Account
 order: 1
 ---
 
-\* work in progress \*
+\* work in progress \*  
 **To change your password:**
 
 1. Log in to your Forms By Air account
 2. Select your email address at the top right-hand corner of the screen
 3. Select "Change Password" from the top of the menu
 4. Complete the fields for "Current Password", "New Password" and "Confirm Password"
-5. You can Setup Two Factor Authentication by selecting the button and following the instructions
+5. You can Setup Two Factor Authentication by selecting the button and following the instructions (these steps assume the Google Authenticator app is installed on your device)
 6. Select "Change" Password to complete the process.
 
 **What is Two Factor Authentication?**  

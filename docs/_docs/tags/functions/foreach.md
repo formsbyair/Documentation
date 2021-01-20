@@ -1,10 +1,10 @@
 ---
 title: Functions > ForEach
 category: Tags
-order: 5
+order: 6
 ---
 
-Iterates through a repeater and returns the concatenated output for all items
+Iterates through a repeater with optional filter and returns the concatenated output for all items
 
 ## Syntax
 

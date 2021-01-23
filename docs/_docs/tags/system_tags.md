@@ -41,6 +41,7 @@ These tags reference system and document information as opposed to form data.
 |&lt;&lt;[DocumentWorkflowApprovalDateTime]&gt;&gt;|Local DateTime that document was approved|1 Nov 2018 11:00.00|
 |&lt;&lt;[DocumentWorkflowDeclineComment]&gt;&gt;|Comment associated with declining a document|Does not meet our criteria|
 |&lt;&lt;[DocumentWorkflowReturnComment]&gt;&gt;|Comment associated with returning a document|Please correct your information|
+|&lt;&lt;[DocumentWorkflowComment]&gt;&gt;|Latest workflow comment for a document|Waiting for feedback|
 |&lt;&lt;[DocumentStage]&gt;&gt;|Last submitted stage where form is configured for staged submission|Enquiry|
 
 ### Document Delivery Tags

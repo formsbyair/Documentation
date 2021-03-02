@@ -26,6 +26,7 @@ These tags reference system and document information as opposed to form data.
 |&lt;&lt;[DocumentRequestedUserEmail]&gt;&gt;|Email address of User that requested document|joe@bloggs.com|
 |&lt;&lt;[DocumentRequestedDateTime]&gt;&gt;|Local DateTime that document was requested|1 Nov 2018 11:00.00|
 |&lt;&lt;[DocumentExpiryDateTime]&gt;&gt;|Local DateTime that requested document will expire|1 Nov 2018 11:00.00|
+|&lt;&lt;[DocumentPurgedDateTime]&gt;&gt;|Local DateTime that document was purged|1 Nov 2018 11:00.00|
 |&lt;&lt;[DocumentOwnerName]&gt;&gt;|Account name|FormsByAir|
 |&lt;&lt;[DocumentUserName]&gt;&gt;|Name of User that submitted document|Joe Bloggs|
 |&lt;&lt;[DocumentUserEmail]&gt;&gt;|Email address of User that submitted document|joe@bloggs.com|

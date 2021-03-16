@@ -53,6 +53,7 @@ These tags reference system and document information as opposed to form data.
 |&lt;&lt;[DocumentDeliveryDateTime]&gt;&gt;|Local DateTime that document delivery was queued|1 Nov 2018 11:00.00|
 |&lt;&lt;[DocumentDeliveryReference: *DeliveryChannelName* or *SubscriptionId*]&gt;&gt;|Last successful delivery reference for a given delivery channel or subscription|132345564|
 |&lt;&lt;[DocumentDeliveryLink: *DeliveryChannelName* or *SubscriptionId*]&gt;&gt;|Last successful delivery link for a given delivery channel or subscription|https://s.com/r/132345564|
+|&lt;&lt;[DocumentDeliveryException: *DeliveryChannelName* or *SubscriptionId*]&gt;&gt;|Last exception (if any) for a given delivery channel or subscription|Email bounce joe@bloggs.com|
 
 ### Aggregate Tags
 

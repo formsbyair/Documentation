@@ -4,7 +4,7 @@ category: Forms
 order: 6
 ---
 
-|Status|Authentication Required|Credentials|
+|Status|Authentication Required|Integration Credentials|
 |---|---|---|
 |Draft|Yes|Production|
 |Published (Public)|No|Production|

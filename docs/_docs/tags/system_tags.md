@@ -71,4 +71,5 @@ These tags reference system and document information as opposed to form data.
 |---|---|---|
 |&lt;&lt;[BaseURL]&gt;&gt;|Base URL for account|https://fba.formsbyair.com|
 |&lt;&lt;[FileNumber]&gt;&gt;|Sequential number for a file attachment|1|
+|&lt;&lt;[Filter]&gt;&gt;|Used to filter the response in a Lookup integration for a Typeahead|joe bl|
 |&lt;&lt;RequestEmailMessage&gt;&gt;|Third party request message|Hi Joe, please add your details to this form|

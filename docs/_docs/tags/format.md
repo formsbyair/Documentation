@@ -20,5 +20,5 @@ Custom format string, see [Numeric](https://docs.microsoft.com/en-us/dotnet/stan
 
 |Format|Result|
 |---|---|
-|&lt;&lt;Amount\|000000&gt;&gt;]&gt;&gt;|000100|
-|&lt;&lt;OrderDate\|ddMMyyyy&gt;&gt;]&gt;&gt;|20012021|
+|&lt;&lt;Amount\|000000&gt;&gt;|000100|
+|&lt;&lt;OrderDate\|ddMMyyyy&gt;&gt;|20012021|

@@ -8,5 +8,5 @@ type: platform
 * 30 days (or as configured for form) after request was generated; or
 * 30 days after last save
 
-We've applied an update so that forms with a fixed **Close Date/Time** will override this behaviour and requested/saved documents will remain active up until the close date/time.
+We've applied an update so that forms with a fixed **Close Date/Time** will now override this behaviour and requested/saved documents will remain active up until the form closes.
 

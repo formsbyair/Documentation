@@ -11,4 +11,4 @@ FormsByAir will now include the following system properties in auto generated (n
 |_DocumentFormName|&lt;&lt;[DocumentFormName]&gt;&gt;|
 |_DocumentOwnerName|&lt;&lt;[DocumentOwnerName]&gt;&gt;|
 
-If you're generating *custom* JSON you can reference any [System Tag]({{ site.baseurl }}/tags/system_tags) in your map.
+If you're generating *custom* JSON you can reference [System Tags]({{ site.baseurl }}/tags/system_tags) directly in your map.

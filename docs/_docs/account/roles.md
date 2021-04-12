@@ -21,8 +21,8 @@ order: 2
 |Workflow [Revalidate Document]({{ site.baseurl }}/documents/actions/revalidate)||||X|X|
 |View Documents|||X|X|X|
 |Redeliver Document|||X|X|X|
-|[Rework Document]({{ site.baseurl }}/documents/actions/rework) Post-Delivery|||||X|
-|Return Document Post-Delivery|||||X|
+|[Rework Document]({{ site.baseurl }}/documents/actions/rework) Post Delivery|||||X|
+|Return Document Post Delivery|||||X|
 |Delete Document|||||X|
 |Restore Document|||||X|
 |Update Tables|||||X|

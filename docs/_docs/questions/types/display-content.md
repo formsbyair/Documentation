@@ -4,11 +4,11 @@ category: Questions
 order: 5
 ---
 
-Display static text and images in a form e.g. terms and conditions
+Display static text and images in a form
 
 #### Basic formatting
 
-Use the toolbar in *Editor* view to make text Bold/Italic/Underline, and insert hyperlinks and images.
+Use the toolbar in **Editor** view to make text Bold/Italic/Underline, and insert hyperlinks and images.
 
 Image URLs must point to existing images on the internet, you can't upload custom images currently.
 
@@ -29,17 +29,15 @@ HTML tags &lt;ol&gt; &lt;ul&gt; may render OK in your form but won't be translat
 
 #### Advanced formatting
 
-You can apply custom CSS classes to Display Content as follows:
-
-In the form designer, select the Style tab and define a custom CSS class, for example:
+To apply custom formatting to Display Content, select the Style tab in the form designer and define a custom CSS class, for example:
 
 &lt;style&gt;  
 .my-class {  
-&nbsp;&nbsp;&nbsp;color: red;  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: red;  
 }  
 &lt;style&gt;
 
-Then use the *HTML* view for your Display Content to add a span with class name around your text as follows:
+Then use the **HTML** view for your Display Content to add a span including class name containing your text as follows:
 
 &lt;span class=&quot;my-class&quot;&gt;My text&lt;/span&gt;
 

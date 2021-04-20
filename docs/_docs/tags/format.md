@@ -15,9 +15,7 @@ Tag name of element
 
 #### Format
 
-Only [Date/Time](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings) formats are supported in client-side tags.
-
-However, Format can be left blank, in which case the value will be formatted using the underlying Type or Format of the element.
+Only [Date/Time](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings) formats are supported in client-side tags. Alternatively Format can be left blank, in which case the value will be formatted using the underlying Type or Format of the element.
 
 Server-side tags support [Numeric](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-numeric-format-strings) and [Date/Time](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings) formats.
 

@@ -16,7 +16,7 @@ Hyperlinks and images can be edited by clicking on them and using the popup tool
 
 #### Bullet points and numbering
 
-Use the following markdown-based syntax for bullet points and numbered lists. This will ensure they are correctly formatted in your form and output documents. 
+Use the following markdown-based syntax for bullet points and numbered lists. This will ensure they are formatted correctly in your form and output documents. 
 
 \*(space)My bullet point  
 (space)(space)\*(space)My indented bullet point  

@@ -18,8 +18,8 @@ Hyperlinks and images can be edited by clicking on them and using the popup tool
 
 Use the following markdown-based syntax for bullet points and numbered lists. This will ensure they are correctly formatted in your form and output documents. 
 
-*(space)My bullet point  
-(space)(space)*(space)My indented bullet point  
+\*(space)My bullet point  
+(space)(space)\*(space)My indented bullet point  
 
 1.(space)My numbered point  
 a.(space)My numbered point  
@@ -35,7 +35,7 @@ In the form designer, select the Style tab and define a custom CSS class, for ex
 
 &lt;style&gt;  
 .my-class {  
-    color: red;  
+&nbsp;&nbsp;&nbsp;color: red;  
 }  
 &lt;style&gt;
 

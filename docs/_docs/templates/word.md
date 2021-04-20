@@ -6,6 +6,8 @@ order: 1
 
 #### Custom styles
 
+Add styles with the following names to your template to override default formatting:
+
 * Form Title
 * Form Section
 * Form Group

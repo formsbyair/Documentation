@@ -10,7 +10,7 @@ Display static text and images in a form
 
 Use the toolbar in **Editor** view to make text Bold/Italic/Underline, and insert hyperlinks and images.
 
-Image URLs must point to existing images on the internet, you can't upload custom images currently.
+Image URLs must point to existing images on the internet, you can't upload custom images via our portal or API currently.
 
 Hyperlinks and images can be edited by clicking on them and using the popup toolbar.
 
@@ -22,10 +22,11 @@ Use the following markdown-based syntax for bullet points and numbered lists. Th
 (space)(space)\*(space)My indented bullet point  
 
 1.(space)My numbered point  
-a.(space)My numbered point  
-(space)(space)a.(space)My indented numbered point
+b.(space)My numbered point  
+iii.(space)My numbered point  
+(space)(space)1.(space)My indented numbered point
 
-HTML tags &lt;ol&gt; &lt;ul&gt; may render OK in your form but won't be translated correctly in output documents.
+HTML tags &lt;ul&gt; &lt;ol&gt; may render OK in your form but won't be translated correctly in output documents.
 
 #### Advanced formatting
 

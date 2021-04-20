@@ -1,7 +1,7 @@
 ---
 title: Types > Phone
 category: Questions
-order: 7
+order: 8
 ---
 
 \* Under Construction \*  

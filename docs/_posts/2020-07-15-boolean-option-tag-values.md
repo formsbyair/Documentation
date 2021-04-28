@@ -5,7 +5,7 @@ type: platform
 
 Tags for **True/False** and **Option** type questions are evaluated as follows:
 
-|Tag|Result in-form|Result everywhere else|
+|Tag|Client result|Server result|
 |---|---|---|
 |&lt;&lt;MyTrueFalseQuestion&gt;&gt;|true or false|Yes or No|
 |&lt;&lt;MyOption&gt;&gt;|true or false|Question Title or &lt;blank&gt;|

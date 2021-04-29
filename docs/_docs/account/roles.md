@@ -17,6 +17,7 @@ order: 2
 |Workflow Override Assignment||||X|X|
 |Workflow Request Authorisation||X|X|X|X|
 |Workflow Authorise||X|X|X|X|
+|Workflow Deauthorise||X|X|X|X|
 |Workflow Edit Document||||X|X|
 |Workflow [Revalidate Document]({{ site.baseurl }}/documents/actions/revalidate)||||X|X|
 |View Documents|||X|X|X|

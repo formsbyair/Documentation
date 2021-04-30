@@ -9,4 +9,4 @@ You've always been able to set the **System Download** flag on multiple File int
 
 As before, if the document has client or server side attachments, these will be included in the ZIP. If there are no System Download File integrations configured then FormsByAir will return an auto-generated PDF with no attachments.
 
-The intent behind the Download function remains the same in that it is a convenience feature for adhoc use. Any files you rely on must be delivered via other, automated channels.
+The intent behind the Download function remains the same in that it is a convenience feature for adhoc use. Any files you rely on should be delivered via other, automated channels.

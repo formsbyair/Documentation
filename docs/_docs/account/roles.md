@@ -26,5 +26,6 @@ order: 2
 |Return Document Post Delivery|||||X|
 |Delete Document|||||X|
 |Restore Document|||||X|
-|Update Tables|||||X|
+|Manage Forms|||||X|
+|Manage Tables|||||X|
 |Manage Account|||||X|

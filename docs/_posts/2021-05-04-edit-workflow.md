@@ -5,7 +5,7 @@ type: platform
 
 **Workflow** elements in FormsByAir are the "for office use only" equivalent of traditional forms. Content contained within a Workflow element is hidden from form users, and only available when a document is in Workflow status.
 
-By default, workflow content can be edited directly in the portal where it is highlighted with a blue background.
+By default, workflow content can be edited directly in the portal where it is flagged with a blue background.
 
 However, the Document viewer only supports basic form functionality like Text and Option questions. If you have more advanced requirements for workflow data capture, FormsByAir now offers the ability to edit workflow content like a regular form.
 

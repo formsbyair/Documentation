@@ -6,7 +6,9 @@ order: 8
 
 These tags reference system and document information as opposed to form data.
 
-&lt;&lt;[DocumentId]&gt;&gt; can be used client and server side, all other tags can only be used server side.
+System tag names are enclosed in &lt;&lt;[ and ]&gt;&gt; to differentiate from form tags.
+
+&lt;&lt;[DocumentId]&gt;&gt; can be used client and server side, all other system tags can only be used server side.
 
 ### Document Tags
 

@@ -28,6 +28,6 @@ https://formsbyair.com/forms/my-form?ReturnOnSubmit=1
 |---|---|---|
 |ReturnOnSubmit|1|Show the form's confirmation message in a modal popup on submit. When the user dismisses the message, redirect immediately to either the Account's website address or the ReturnUrl.
 |SubmitOnLoad|1|Automatically submit the form when it's opened, this should be used in conjunction with form tag parameters to populate data.|
-|ReturnUrl|formsbyair.com|Redirect to this URL when the user clicks **Close** after submit, overriding the ReturnUrl for the form (if any) and the Account's website address.|
+|ReturnUrl|formsbyair.com|Redirect to this URL when the user closes the form, overriding the ReturnUrl setting for the form (if any) and the account's Website Address.|
 |SubmitUrl|formsbyair.com|Redirect to this URL immediately after submit, no confirmation message will be shown.|
 |Note|This is urgent|Add or override the instructional note that appears at the start of the form.|

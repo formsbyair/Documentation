@@ -51,6 +51,8 @@ See [Document Workflow Status]({{ site.baseurl }}/documents/workflow-status)
 
 ### Document Workflow Tags (Deprecated)
 
+|Tag|Definition|Example|
+|---|---|---|
 |&lt;&lt;[DocumentWorkflowAssignmentUserName]&gt;&gt;|Name of User that assigned document|Mary Bloggs|
 |&lt;&lt;[DocumentWorkflowAssignmentUserEmail]&gt;&gt;|Email address of User that assigned document|mary@bloggs.com|
 |&lt;&lt;[DocumentWorkflowAssignmentComment]&gt;&gt;|Comment associated with assignment of document to current user|Please review|

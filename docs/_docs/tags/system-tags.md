@@ -23,7 +23,6 @@ System tag names are enclosed in &lt;&lt;[ and ]&gt;&gt; to differentiate from f
 |&lt;&lt;[DocumentReference]&gt;&gt;|Document reference|ABC123 Joe Bloggs|
 |&lt;&lt;[DocumentBatchReference]&gt;&gt;|Batch reference for imported documents|Batch001|
 |&lt;&lt;[DocumentStatus]&gt;&gt;|Current document status|Workflow|
-|&lt;&lt;[DocumentWorkflowStatus]&gt;&gt;|Current document workflow status|Pending|
 |&lt;&lt;[DocumentReceivedDateTime]&gt;&gt;|Local DateTime that document was received|1 Nov 2018 11:00.00|
 |&lt;&lt;[DocumentRequestedUserEmail]&gt;&gt;|Email address of User that requested document|joe@bloggs.com|
 |&lt;&lt;[DocumentRequestedDateTime]&gt;&gt;|Local DateTime that document was requested|1 Nov 2018 11:00.00|
@@ -33,9 +32,25 @@ System tag names are enclosed in &lt;&lt;[ and ]&gt;&gt; to differentiate from f
 |&lt;&lt;[DocumentUserName]&gt;&gt;|Name of User that submitted document|Joe Bloggs|
 |&lt;&lt;[DocumentUserEmail]&gt;&gt;|Email address of User that submitted document|joe@bloggs.com|
 |&lt;&lt;[DocumentUserManagerEmail]&gt;&gt;|Email address of Manager for User that submitted document|mary@bloggs.com|
+|&lt;&lt;[DocumentStage]&gt;&gt;|Last submitted stage where form is configured for staged submission|Enquiry|
+
+### Document Workflow Tags
+
+|Tag|Definition|Example|
+|---|---|---|
+|&lt;&lt;[DocumentWorkflowStatus]&gt;&gt;|Current document workflow status|Pending|
 |&lt;&lt;[DocumentWorkflowUserName]&gt;&gt;|Name of User that document is currently assigned to|Jane Bloggs|
 |&lt;&lt;[DocumentWorkflowUserEmail]&gt;&gt;|Email address of User that document is currently assigned to|jane@bloggs.com|
 |&lt;&lt;[DocumentWorkflowUserManagerEmail]&gt;&gt;|Email address of Manager for User that document is currently assigned to|mary@bloggs.com|
+|&lt;&lt;[DocumentWorkflowUserName: *WorkflowStatus*]&gt;&gt;|Last User for a given status|Mary Bloggs|
+|&lt;&lt;[DocumentWorkflowUserEmail: *WorkflowStatus*]&gt;&gt;|Email address of last User for a given status|mary@bloggs.com|
+|&lt;&lt;[DocumentWorkflowComment: *WorkflowStatus*]&gt;&gt;|Last Comment for a given status|Please review|
+|&lt;&lt;[DocumentWorkflowDateTime: *WorkflowStatus*]&gt;&gt;|Last Local DateTime for a given status|1 Nov 2018 11:00.00|
+
+See [Document Workflow Status]({{ site.baseurl }}/documents/workflow-status)
+
+### Document Workflow Tags (Deprecated)
+
 |&lt;&lt;[DocumentWorkflowAssignmentUserName]&gt;&gt;|Name of User that assigned document|Mary Bloggs|
 |&lt;&lt;[DocumentWorkflowAssignmentUserEmail]&gt;&gt;|Email address of User that assigned document|mary@bloggs.com|
 |&lt;&lt;[DocumentWorkflowAssignmentComment]&gt;&gt;|Comment associated with assignment of document to current user|Please review|
@@ -46,7 +61,6 @@ System tag names are enclosed in &lt;&lt;[ and ]&gt;&gt; to differentiate from f
 |&lt;&lt;[DocumentWorkflowDeauthoriseComment]&gt;&gt;|Comment associated with deauthorising a document|Something has changed|
 |&lt;&lt;[DocumentWorkflowReturnComment]&gt;&gt;|Comment associated with returning a document|Please correct your information|
 |&lt;&lt;[DocumentWorkflowComment]&gt;&gt;|Latest workflow comment for a document|Waiting for feedback|
-|&lt;&lt;[DocumentStage]&gt;&gt;|Last submitted stage where form is configured for staged submission|Enquiry|
 
 ### Document Delivery Tags
 

@@ -5,4 +5,4 @@ type: feature
 
 Added Document Form Name tag
 
-See [System Tags]({{ site.baseurl }}/tags/system_tags)
+See [System Tags]({{ site.baseurl }}/tags/system-tags)

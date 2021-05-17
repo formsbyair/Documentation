@@ -43,6 +43,7 @@ System tag names are enclosed in &lt;&lt;[ and ]&gt;&gt; to differentiate from f
 |&lt;&lt;[DocumentWorkflowApprovalUserEmail]&gt;&gt;|Email address of User that approved document|mary@bloggs.com|
 |&lt;&lt;[DocumentWorkflowApprovalDateTime]&gt;&gt;|Local DateTime that document was approved|1 Nov 2018 11:00.00|
 |&lt;&lt;[DocumentWorkflowDeclineComment]&gt;&gt;|Comment associated with declining a document|Does not meet our criteria|
+|&lt;&lt;[DocumentWorkflowDeauthoriseComment]&gt;&gt;|Comment associated with deauthorising a document|Something has changed|
 |&lt;&lt;[DocumentWorkflowReturnComment]&gt;&gt;|Comment associated with returning a document|Please correct your information|
 |&lt;&lt;[DocumentWorkflowComment]&gt;&gt;|Latest workflow comment for a document|Waiting for feedback|
 |&lt;&lt;[DocumentStage]&gt;&gt;|Last submitted stage where form is configured for staged submission|Enquiry|

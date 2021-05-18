@@ -47,7 +47,7 @@ System tag names are enclosed in &lt;&lt;[ and ]&gt;&gt; to differentiate from f
 |&lt;&lt;[DocumentWorkflowComment: *WorkflowStatus*]&gt;&gt;|Last Comment for a given status|Please review|
 |&lt;&lt;[DocumentWorkflowDateTime: *WorkflowStatus*]&gt;&gt;|Last Local DateTime for a given status|1 Nov 2018 11:00.00|
 
-See [Document Workflow Status]({{ site.baseurl }}/documents/workflow-status)
+See [Document Workflow Status]({{ site.baseurl }}/documents/workflow-status) for a list of workflow status names
 
 ### Document Workflow Tags (Deprecated)
 

@@ -7,4 +7,4 @@ We've added a new setting to defer the validation of individual sections until a
 
 This may be useful for very large forms where users can move ahead and complete as much as they can without being blocked by a few mandatory questions that they can answer later.
 
-This is not recommended for any sections that drive significant conditional content later in the form.
+This is not recommended for any section that drives significant conditional content later in the form.

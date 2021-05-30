@@ -6,7 +6,6 @@ order: 3
 
 |Status|Description|
 |---|---|
-
 |Template||
 |Created||
 |Requested|Document has been prefilled and is awaiting completion, hasn't been saved, subject to Request Expiry Period for form|

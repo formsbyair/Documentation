@@ -3,7 +3,7 @@ title: Generate map for import
 type: platform
 ---
 
-FormsByAir can now generate a map for import integrations based on the current version of a form.
+FormsByAir can now generate maps for import integrations based on the current version of a form.
 
 Click **Generate Map** while editing an Import integration to generate and download a map that you can use as the basis of a custom map.
 

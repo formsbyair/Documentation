@@ -22,6 +22,6 @@ When accessing the link, FormsByAir will check for a valid "Private Form" authen
 
 At login, FormsByAir scans the response from the validation request (from a data table or API) for URLs from supported storage services, and stores a hash of each one against the authentication ticket.
 
-This allows us to compare a hash of the URL being requested to hash codes in the ticket. If there's a match, we read the file from the storage service using credentials in the FormsByAir account, and return it to the user.
+This allows us to compare a hash of the URL being requested to hash codes in the ticket. If there's a match on either the full URL or the Host, we read the file from the storage service using credentials in the FormsByAir account, and return it to the user.
 
 "Private Form" authentication cookies are session-based and expire after 2 hours.

@@ -42,10 +42,10 @@ System tag names are enclosed in &lt;&lt;[ and ]&gt;&gt; to differentiate from f
 |&lt;&lt;[DocumentWorkflowUserName]&gt;&gt;|Name of User that document is currently assigned to|Jane Bloggs|
 |&lt;&lt;[DocumentWorkflowUserEmail]&gt;&gt;|Email address of User that document is currently assigned to|jane@bloggs.com|
 |&lt;&lt;[DocumentWorkflowUserManagerEmail]&gt;&gt;|Email address of Manager for User that document is currently assigned to|mary@bloggs.com|
-|&lt;&lt;[DocumentWorkflowByUserName: *WorkflowStatus*]&gt;&gt;|Name of User that last changed document to a given status|Mary Bloggs|
-|&lt;&lt;[DocumentWorkflowByUserEmail: *WorkflowStatus*]&gt;&gt;|Email address of User that last changed document to a given status|mary@bloggs.com|
 |&lt;&lt;[DocumentWorkflowUserName: *WorkflowStatus*]&gt;&gt;|Name of User that document was last assigned to for a given status|Mary Bloggs|
 |&lt;&lt;[DocumentWorkflowUserEmail: *WorkflowStatus*]&gt;&gt;|Email address of User that document was last assigned to for a given status|mary@bloggs.com|
+|&lt;&lt;[DocumentWorkflowByUserName: *WorkflowStatus*]&gt;&gt;|Name of User that last changed document to a given status|Mary Bloggs|
+|&lt;&lt;[DocumentWorkflowByUserEmail: *WorkflowStatus*]&gt;&gt;|Email address of User that last changed document to a given status|mary@bloggs.com|
 |&lt;&lt;[DocumentWorkflowComment: *WorkflowStatus*]&gt;&gt;|Last Comment for a given status|Please review|
 |&lt;&lt;[DocumentWorkflowDateTime: *WorkflowStatus*]&gt;&gt;|Last Local DateTime for a given status|1 Nov 2018 11:00.00|
 

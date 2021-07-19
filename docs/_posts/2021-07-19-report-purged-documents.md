@@ -9,4 +9,4 @@ We've since determined that including purged documents is a special case that sh
 
 As such we've reverted the previous change so the option **Document report, sent daily** will now exclude purged documents.
 
-We've then added a new option **Document log (including purged), sent once** that will include purged documents, and will only run once unless manually triggered again.
+We've added a new option **Document log (including purged), sent once** that will include purged documents, and only run once unless manually triggered again.

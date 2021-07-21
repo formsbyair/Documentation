@@ -1,7 +1,7 @@
 ---
 title: File
 category: Integrations
-order: 3
+order: 2
 ---
 
 Send form data in a file.

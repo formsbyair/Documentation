@@ -1,6 +1,6 @@
 ---
 title: Models
-category: API
+category: Integrations
 order: 1
 ---
 

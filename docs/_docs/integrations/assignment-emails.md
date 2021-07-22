@@ -1,7 +1,7 @@
 ---
 title: Assignment emails
 category: Integrations
-order: 1
+order: 2
 ---
 
 Send custom emails on workflow assignment.

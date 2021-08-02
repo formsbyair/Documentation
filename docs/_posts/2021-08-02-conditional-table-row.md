@@ -3,7 +3,7 @@ title: Conditional table row
 type: platform
 ---
 
-We've updated our Word Document template engine to support conditional table rows using &lt;&lt;[Condition:Expression]&gt;&gt 
+We've updated our Word Document template engine to support conditional table rows using &lt;&lt;[Condition:Expression]&gt;&gt;
 
 The Condition tag can be included in any cell but must only appear once per row.
 

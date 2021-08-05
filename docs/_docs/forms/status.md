@@ -8,7 +8,7 @@ order: 6
 |---|---|---|
 |Draft|Yes|Production|
 |Published (Public)|No|Production|
-|Active (Private)|Yes|Production|
+|Published (Private)|Yes|Production|
 |Test (Private)|Yes|Test|
 |Test (Public)|No|Test|
 |Archived|N/A|N/A|

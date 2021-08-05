@@ -3,4 +3,4 @@ title: Form filters
 type: platform
 ---
 
-We've added filters for Title and Status to the Form view for Administrators in the portal to make it easier to navigate when you've got a lot of forms.
+We've added the ability for Administrators to filter forms by title and status in the portal to make it easier to navigate when you've got a lot of forms.

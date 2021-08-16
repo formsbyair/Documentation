@@ -6,7 +6,6 @@ order: 3
 
 |Status|Description|
 |---|---|
-|Template||
 |Started|Blank form has been opened for at least 10 seconds, or user has logged in to portal form|
 |Requested|Document has been imported/prefilled and is awaiting completion, subject to Request Expiry Period for form|
 |Saved|Form user has made changes and saved their progress so far, subject to Save Expiry Period (30 days)|

@@ -18,7 +18,7 @@ Use A for letters and 9 for digits, or a &lt;&lt;tag&gt;&gt; referencing a mask.
 * 999
 * AA-9999
 
-#### Pattern
+#### Validation Expression
 A regex pattern or a &lt;&lt;tag&gt;&gt; referencing a regex pattern. For example...
 
 * [0-9][0-9][0-9]

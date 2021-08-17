@@ -4,16 +4,16 @@ category: Questions
 order: 8
 ---
 
-Free text entry validated against a specific pattern, all letters are capitalised by default.
+Free text or masked input validated against a regular expression.
 
-A tick is displayed in the right margin as-you-type to confirm valid input.
+Questions will display the mask format in the right margin for reference, which is replaced with a tick when the validation expression is satisfied.
 
 A validation error is displayed on Submit or Next for invalid input.
 
 ## Properties
 
-#### Placeholder Text
-A sample of the required pattern or a &lt;&lt;tag&gt;&gt; referencing a sample patttern. For example...
+#### Input Mask
+Use A for letters and 9 for digits, or a &lt;&lt;tag&gt;&gt; referencing a mask. For example...
 
 * 999
 * AA-9999

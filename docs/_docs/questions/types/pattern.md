@@ -19,7 +19,7 @@ Use A for letters and 9 for digits, or a &lt;&lt;tag&gt;&gt; referencing a mask.
 * AA-9999
 
 #### Validation Expression
-A regex pattern or a &lt;&lt;tag&gt;&gt; referencing a regex pattern. For example...
+A regular expression or a &lt;&lt;tag&gt;&gt; referencing a regular expression. For example...
 
 * [0-9][0-9][0-9]
 * [a-Z][a-Z]-[0-9][0-9][0-9][0-9]

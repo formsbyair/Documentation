@@ -4,9 +4,11 @@ category: Questions
 order: 8
 ---
 
-Free text or masked input validated against a regular expression.
+Masked input and/or regular expression validation.
 
-Questions will display the mask format in the right margin for reference, which is replaced with a tick when the validation expression is satisfied.
+Questions will display the mask format (if provided) in the right margin so that users are aware of the specific input that is required.
+
+A tick is displayed when the mask and/or validation expression are valid.
 
 A validation error is displayed on Submit or Next for invalid input.
 

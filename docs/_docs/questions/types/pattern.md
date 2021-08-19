@@ -6,9 +6,9 @@ order: 8
 
 Masked input and/or regular expression validation.
 
-Questions will display the mask format (if provided) in the right margin so that users are aware of the specific input that is required.
+Questions will display the mask format (if provided) in the right margin so that users are aware of the specific input required.
 
-A tick is displayed when the mask and/or validation expression are valid.
+A tick is displayed when the input is valid for the mask and/or validation expression.
 
 A validation error is displayed on Submit or Next for invalid input.
 

@@ -5,7 +5,7 @@ type: platform
 
 We've applied the following changes as part of an on-going effort to improve analytics within FormsByAir.
 
-* We've renamed Documents > Statistics to Documents > Analytics in the portal.
+* We've renamed Documents &gt; Statistics to Documents &gt; Analytics in the portal.
 
 * We now capture a "Start" event for blank forms after they've been open for 10 seconds, as we previously had no way to track forms that were opened, started, and then abandonded.
 

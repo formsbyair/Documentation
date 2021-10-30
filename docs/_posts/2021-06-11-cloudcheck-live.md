@@ -1,6 +1,6 @@
 ---
 title: Cloudcheck Live
-type: platform
+type: integration
 ---
 
 We've updated our Cloudcheck Live integration to help improve the rate of successful verifications.

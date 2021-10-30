@@ -1,6 +1,6 @@
 ---
 title: MBIE Beneficial Owners
-type: platform
+type: integration
 ---
 
 We've added a new option to our NZ MBIE integration to return Beneficial Owners as follows:

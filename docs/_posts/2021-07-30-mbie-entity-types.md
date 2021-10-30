@@ -1,6 +1,6 @@
 ---
 title: MBIE entity types
-type: platform
+type: integration
 ---
 
 We've updated our NZ MBIE integration as follows:

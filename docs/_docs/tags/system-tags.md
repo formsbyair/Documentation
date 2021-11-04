@@ -72,6 +72,7 @@ See [Document Workflow Status]({{ site.baseurl }}/documents/workflow-status) for
 |---|---|---|
 |&lt;&lt;[DocumentDeliveryId]&gt;&gt;|Unique Document Delivery Id|3a09db8d-4582-45b3-8c67-40b1fdb95298|
 |&lt;&lt;[DocumentDeliveryDateTime]&gt;&gt;|Local DateTime that document delivery was queued|1 Nov 2018 11:00.00|
+|&lt;&lt;[DocumentDeliveryFileId]&gt;&gt;|Last queued file delivery id|bfef5a5f-bd0b-464f-a219-b689fdfcbe85|
 |&lt;&lt;[DocumentDeliveryReference: *DeliveryChannelName* or *SubscriptionId*]&gt;&gt;|Last successful delivery reference for a given delivery channel or subscription|132345564|
 |&lt;&lt;[DocumentDeliveryLink: *DeliveryChannelName* or *SubscriptionId*]&gt;&gt;|Last successful delivery link for a given delivery channel or subscription|https://s.com/r/132345564|
 |&lt;&lt;[DocumentDeliveryException: *DeliveryChannelName* or *SubscriptionId*]&gt;&gt;|Last exception (if any) for a given delivery channel or subscription|Email bounce joe@bloggs.com|

@@ -1,7 +1,7 @@
 ---
 title: Functions > ForEach
 category: Tags
-order: 7
+order: 8
 ---
 
 Iterates through a repeater with optional filter and returns the concatenated output for all items

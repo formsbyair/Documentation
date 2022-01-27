@@ -1,7 +1,7 @@
 ---
 title: Functions > Expression
 category: Tags
-order: 5
+order: 6
 ---
 
 Evaluates a ternary expression and returns the result

@@ -4,7 +4,7 @@ category: Tags
 order: 4
 ---
 
-Returns the number of instances of a given Repeater, or evaluates a ternary expression using the number of instances.
+Returns the number of instances of a given repeater, or evaluates a ternary expression using the number of instances.
 
 ## Syntax
 

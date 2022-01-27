@@ -4,7 +4,7 @@ category: Tags
 order: 4
 ---
 
-Returns the number of instances of a given Repeater, or evaluates a boolean expression using the number of instances.
+Returns the number of instances of a given Repeater, or evaluates a ternary expression using the number of instances.
 
 ## Syntax
 
@@ -14,7 +14,7 @@ Returns the number of instances of a given Repeater, or evaluates a boolean expr
 Tag name of repeater
 
 #### Expression
-Boolean expression e.g. &apos;&lt;&lt;Option&gt;&gt;&apos; == &apos;A&apos;
+Ternary expression using **@Count** to reference count e.g. @Count > 1 ? &apos;Contacts&apos; : &apos;Contact&apos;]&gt;&gt;
 
 ## Examples
 

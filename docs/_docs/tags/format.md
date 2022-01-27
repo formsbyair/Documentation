@@ -1,7 +1,7 @@
 ---
 title: Format
 category: Tags
-order: 7
+order: 8
 ---
 
 Applies a custom format to the value of an element

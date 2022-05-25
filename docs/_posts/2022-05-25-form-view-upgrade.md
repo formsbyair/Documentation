@@ -9,7 +9,11 @@ Your forms will look and behave almost exactly the same as they do today, they'l
 
 A big part of the efficiency and performance improvements come from us being able to leverage functionality now built-in to modern web browsers like Chrome, Edge, Safari & Firefox, but it does mean we'll need to end support for all versions of Internet Explorer.
 
-Microsoft has been phasing out IE in favour of Edge for some time. It's currently running at ~0.5% global use, and will be officially retired by Microsoft on 15 June 2022. Any users that do access your forms with IE will be advised that they need to upgrade their browser, and directed to Microsoft's IE->Edge upgrade page.
+Microsoft has been phasing out IE in favour of Edge for some time. It's currently running at ~0.5% global use, and will be officially retired by Microsoft on 15 June 2022. Any users that do access your forms with IE will be presented with the following message:
+
+Our forms require a modern web browser to run.
+Internet Explorer has been retired by Microsoft, please upgrade using the link below.
+[Get Started with Microsoft Edge](https://go.microsoft.com/fwlink/?linkid=2192466)
 
 We're planning to execute this upgrade in two phases beginning Wednesday 1st June 2022. You will receive more details about the process via email.
 

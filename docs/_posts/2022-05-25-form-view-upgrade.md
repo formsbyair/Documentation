@@ -29,3 +29,8 @@ Here is a summary of the technical changes in our form view upgrade:
 * Slight colour change to buttons (unless overridden with custom styling)
 * Slimmer progress bar
 * New "outline style" icons for warning & validation messages
+
+Try sample forms here...
+
+* [New Patient](https://fba.formsbyair.com/forms/new-patient)
+* [Customer Due Diligence](https://financialservices.formsbyair.com/forms/cdd)

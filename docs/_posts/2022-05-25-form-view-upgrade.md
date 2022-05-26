@@ -23,4 +23,9 @@ Here is a summary of the technical changes in our form view upgrade:
 * Upgrade from Bootstrap 3.4.1 to [Bootstrap 5.1.3](https://getbootstrap.com/)
 * Upgrade from Angular UI Bootstrap 2.5.0 to [Angular Bootstrap 12.1.2](https://ng-bootstrap.github.io/#/home)
 * Drop support for all versions of Internet Explorer
-* Font size has been increased by 1pt for desktop and mobile view
+* Default font size has been increased by 1pt for desktop and mobile view
+* Removed drop-shadow from form border
+* Improved Date Picker
+* Slight colour change to buttons (unless overridden with custom styling)
+* Slimmer progress bar
+* New "outline style" icons for warning & validation messages

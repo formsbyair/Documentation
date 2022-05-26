@@ -15,7 +15,7 @@ Microsoft has been phasing out IE in favour of Edge for some time. It's currentl
 * Internet Explorer has been retired by Microsoft, please upgrade using the link below.
 * [Get Started with Microsoft Edge](https://go.microsoft.com/fwlink/?linkid=2192466)
 
-We're planning to execute this upgrade in two phases beginning Wednesday 1st June 2022. You will receive more details about the process via email.
+We're planning to execute this upgrade in two phases beginning **Wednesday 1st June 2022**. You will receive more details about the process via email.
 
 Here is a summary of the technical changes in our form view upgrade:
 

@@ -10,7 +10,7 @@ order: 5
 
 #### Default File Types
 
-|Mime Type|
+|File Type|
 |---|
 |application/pdf|
 |application/msword|
@@ -24,7 +24,10 @@ order: 5
 |image/jpeg|
 |image/png|
 |image/gif|
+|image/tiff|
 |audio/mpeg|
 |video/mp4|
 |video/mpeg|
 |application/zip|
+|.msg|
+|.eml|

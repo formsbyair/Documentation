@@ -10,7 +10,7 @@ We've changed **Attachment** questions to filter for specific file types by defa
 
 The default file types are listed below:
 
-|Mime Type|
+|File Type|
 |---|
 |application/pdf|
 |application/msword|
@@ -24,7 +24,10 @@ The default file types are listed below:
 |image/jpeg|
 |image/png|
 |image/gif|
+|image/tiff|
 |audio/mpeg|
 |video/mp4|
 |video/mpeg|
 |application/zip|
+|.msg|
+|.eml|

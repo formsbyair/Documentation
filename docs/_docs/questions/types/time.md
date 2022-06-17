@@ -1,7 +1,7 @@
 ---
 title: Types > Time
 category: Questions
-order: 10
+order: 11
 ---
 
 Numeric entry of time of day in hours and minutes.  

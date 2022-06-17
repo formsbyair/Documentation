@@ -1,7 +1,7 @@
 ---
 title: Types > True/False
 category: Questions
-order: 11
+order: 12
 ---
 
 Checkbox question

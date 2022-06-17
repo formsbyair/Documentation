@@ -1,7 +1,7 @@
 ---
 title: Types > Display Content
 category: Questions
-order: 5
+order: 6
 ---
 
 Display static text and images in a form

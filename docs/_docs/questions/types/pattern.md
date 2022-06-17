@@ -1,7 +1,7 @@
 ---
 title: Types > Pattern
 category: Questions
-order: 8
+order: 9
 ---
 
 Masked input and/or regular expression validation.

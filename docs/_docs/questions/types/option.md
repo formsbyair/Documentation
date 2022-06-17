@@ -1,7 +1,7 @@
 ---
 title: Types > Option
 category: Questions
-order: 7
+order: 8
 ---
 
 Checkbox question, often used for multi-selects

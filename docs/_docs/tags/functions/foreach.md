@@ -20,8 +20,8 @@ Boolean expression to filter repeater items e.g. {&apos;&lt;&lt;Type&gt;&gt;&apo
 Custom separator between the output for each item (defaults to a space) e.g. [ and ]
 
 #### Output <span class="badge platform">Required</span>
-Text and &lt;&lt;tags&gt;&gt; for each repeater item e.g. &lt;&lt;FirstName&gt;&gt; &lt;&lt;LastName&gt;&gt;
-Use @Index to refer to the index of the current item
+Text and &lt;&lt;tags&gt;&gt; for each repeater item. Use @Index to refer to the index of the current item e.g. @Index - &lt;&lt;FirstName&gt;&gt; &lt;&lt;LastName&gt;&gt;
+
 
 ## Examples
 

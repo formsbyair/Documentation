@@ -1,5 +1,5 @@
 ---
-title: Legal Office
+title: LegalOffice
 type: integration
 ---
 

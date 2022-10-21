@@ -8,7 +8,7 @@ order: 2
 |---|---|
 |Open Private Form|X||X|X|X|
 |Prefill Form|X||X|X|X|
-|View Documents|||X|X|X|
+|View Workflow Documents||X|X|X|X|
 |Workflow Review||X|X|X|X|
 |Workflow Approve||X|X|X|X|
 |Workflow Decline||X|X|X|X|
@@ -19,6 +19,7 @@ order: 2
 |Workflow Authorise||X|X|X|X|
 |Workflow Deauthorise||X|X|X|X|
 |Manage Workflow||||X|X|
+|View All Documents|||X|X|X|
 |Redeliver Document|||X|X|X|
 |Edit Document||||X|X|
 |[Revalidate Document]({{ site.baseurl }}/documents/actions/revalidate)||||X|X|

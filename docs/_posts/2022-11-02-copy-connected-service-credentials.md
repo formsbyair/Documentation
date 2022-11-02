@@ -7,4 +7,4 @@ We've added the ability to copy the credentials for a connected service from Pro
 
 We'll also display an arrow icon next to each service to indicate that Production and Test are using the same credentials.
 
-Read about how [Form Status]({{ site.baseurl }}/forms/status/) relates to Production/Test credentials.
+See how [Form Status]({{ site.baseurl }}/forms/status/) relates to Production/Test credentials.

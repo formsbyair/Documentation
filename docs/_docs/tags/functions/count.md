@@ -8,7 +8,7 @@ Returns the number of instances of a given repeater, or evaluates a ternary expr
 
 ## Syntax
 
-&lt;&lt;[**Count**:Repeater:Expression]&gt;&gt; <span class="badge platform">Server</span>
+&lt;&lt;[**Count**:Repeater:Expression]&gt;&gt; <span class="badge platform">Client</span>&nbsp;<span class="badge platform">Server</span>
 
 #### Repeater <span class="badge platform">Required</span>
 Tag name of repeater

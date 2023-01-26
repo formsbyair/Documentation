@@ -7,4 +7,4 @@ We've added a new option **Authorised Only** for Workflow elements, which is ava
 
 Content within a Workflow element with this option enabled will only be displayed when a document's workflow status is **Authorized**
 
-This may be useful where you have additional information that should only be captured once a form has been authorised.
+This may be useful where you have additional information that should only be captured or mandatory once a form has been authorised.

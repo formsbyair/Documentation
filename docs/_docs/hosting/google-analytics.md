@@ -6,7 +6,7 @@ order: 2
 
 We emit the following events for Google Analytics and Google Tag Manager.
 
-We also populate user_id/userId with our unique DocumentId so you can track user activity across sessions.
+We also populate **userId** with our unique DocumentId so you can track user activity across sessions.
 
 |Event|Category|Action|Label|
 |---|---|---|---|

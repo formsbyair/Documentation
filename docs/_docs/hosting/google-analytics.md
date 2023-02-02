@@ -11,7 +11,7 @@ We also populate **userId** with our unique DocumentId so you can track user act
 |Event|Category|Action|Label|
 |---|---|---|---|
 |eventTracking|form|start|{Tracking Label} or {Form Title}|
-|eventTracking|form|open|{Tracking Label} or {Form Title – Section Title}|
+|eventTracking|form|open|{Tracking Label} or {Form Title}|
 |eventTracking|form|section|{Tracking Label} or {Form Title – Section Title}|
 |eventTracking|form|save|{Tracking Label} or {Form Title – Section Title}|
 |eventTracking|form|submit|{Tracking Label} or {Form Title}|

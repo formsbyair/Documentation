@@ -33,6 +33,9 @@ System tag names are enclosed in &lt;&lt;[ and ]&gt;&gt; to differentiate from f
 |&lt;&lt;[DocumentUserEmail]&gt;&gt;|Email address of User that submitted document|joe@bloggs.com|
 |&lt;&lt;[DocumentUserManagerEmail]&gt;&gt;|Email address of Manager for User that submitted document|mary@bloggs.com|
 |&lt;&lt;[DocumentStage]&gt;&gt;|Last submitted stage where form is configured for staged submission|Enquiry|
+|&lt;&lt;[DocumentReferrer]&gt;&gt;|First Referrer header to access the document|https://anotherwebsite.com|
+|&lt;&lt;[DocumentIpAddress]&gt;&gt;|Last IP address to access the document|1.2.3.4|
+|&lt;&lt;[DocumentUserAgent]&gt;&gt;|Last Useragent to access the document|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36|
 
 ### Document Workflow Tags
 

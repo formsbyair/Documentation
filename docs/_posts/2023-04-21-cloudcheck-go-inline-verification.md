@@ -7,4 +7,4 @@ We've extended our Cloudcheck Go integration to support **inline** identity veri
 
 This may be useful where you have very complex forms completed over a period of several weeks or months.
 
-Post-submit verification is useful where you want to minimise the upfront hurdles to submission.
+Post-submit verification is useful where you want to minimise the upfront effort for submission.

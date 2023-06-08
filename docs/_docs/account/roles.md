@@ -19,6 +19,7 @@ order: 2
 |Workflow Authorise||X|X|X|X|X|
 |Workflow Deauthorise||X|X|X|X|X|
 |Manage Workflow||||X|X|X|
+|View Analytics|||X|X|X|X|
 |View All Documents|||X|X|X|X|
 |Redeliver Document|||X|X|X|X|
 |Edit Document||||X|X|X|

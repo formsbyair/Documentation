@@ -18,10 +18,10 @@ order: 2
 |Workflow Request Authorisation||X|X|X|X|X|
 |Workflow Authorise||X|X|X|X|X|
 |Workflow Deauthorise||X|X|X|X|X|
-|Manage Workflow||||X|X|X|
 |View Analytics|||X|X|X|X|
 |View All Documents|||X|X|X|X|
 |Redeliver Document|||X|X|X|X|
+|Manage Workflow||||X|X|X|
 |Edit Document||||X|X|X|
 |[Revalidate Document]({{ site.baseurl }}/documents/actions/revalidate)||||X|X|X|
 |[Rework Delivered Document]({{ site.baseurl }}/documents/actions/rework)|||||X|X|

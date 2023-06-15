@@ -3,7 +3,7 @@ title: Form Analytics
 type: platform
 ---
 
-We've added new analytics to provide insights in to how form fillers and your team are using your forms including:
+We've added new per-form analytics to provide insights in to how form fillers and your team are using your forms including:
 
 * Median completion time
 * Drop outs per section
@@ -11,6 +11,6 @@ We've added new analytics to provide insights in to how form fillers and your te
 * Median time in workflow
 * Return rate
 
-Form analytics can be accessed in our portal by selecting Action > Analytics against a form.
+Administrators can access form analytics by selecting Action > Analytics against a form in our portal.
 
-As part of this change we've renamed Documents > Analytics to Documents > Activity. You can access analytics from here by clicking on a form.
+In addition, we've renamed Documents > Analytics to Documents > Activity and added a click through to form analytics from here, which is available to everyone in the Operations role or higher.

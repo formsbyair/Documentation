@@ -4,14 +4,14 @@ category: Hosting
 order: 2
 ---
 
-We emit the following events for Google Analytics and Google Tag Manager.
+We emit the following events for Google Analytics (GA4) and Google Tag Manager.
 
 We also populate **userId** with our unique DocumentId so you can track user activity across sessions.
 
-|Event|Category|Action|Label|
+|Event|Category|Label|
 |---|---|---|---|
-|eventTracking|form|start|{Tracking Label} or {Form Title}|
-|eventTracking|form|open|{Tracking Label} or {Form Title}|
-|eventTracking|form|section|{Tracking Label} or {Form Title – Section Title}|
-|eventTracking|form|save|{Tracking Label} or {Form Title – Section Title}|
-|eventTracking|form|submit|{Tracking Label} or {Form Title}|
+|start|form|{Tracking Label} or {Form Title}|
+|open|form|{Tracking Label} or {Form Title}|
+|section|form|{Tracking Label} or {Form Title – Section Title}|
+|save|form|{Tracking Label} or {Form Title – Section Title}|
+|submit|form|{Tracking Label} or {Form Title}|

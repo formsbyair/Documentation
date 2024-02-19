@@ -15,7 +15,7 @@ order: 2
 |Workflow Decline||X|X|X|X|X|X|
 |Workflow Return||X|X|X|X|X|X|
 |Workflow Comment||X|X|X|X|X|X|
-|Workflow Assign||X||XX|X|X|X|
+|Workflow Assign||X|X|X|X|X|X|
 |Workflow Request Authorisation||X|X|X|X|X|X|
 |Workflow Authorise||X|X|X|X|X|X|
 |Workflow Deauthorise||X|X|X|X|X|X|

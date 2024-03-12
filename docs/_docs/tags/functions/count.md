@@ -8,10 +8,13 @@ Returns the number of instances of a given repeater, or evaluates a ternary expr
 
 ## Syntax
 
-&lt;&lt;[**Count**:Repeater:Expression]&gt;&gt; <span class="badge platform">Client</span>&nbsp;<span class="badge platform">Server</span>
+&lt;&lt;[**Count**:Repeater{Filter}:Expression]&gt;&gt; <span class="badge platform">Client</span>&nbsp;<span class="badge platform">Server</span>
 
 #### Repeater <span class="badge platform">Required</span>
 Tag name of repeater
+
+#### Filter
+Boolean expression to filter repeater items e.g. {&apos;&lt;&lt;Type&gt;&gt;&apos; == &apos;Primary&apos;}
 
 #### Expression
 Ternary expression using **@Count** to reference count e.g. @Count > 1 ? &apos;Contacts&apos; : &apos;Contact&apos;]&gt;&gt;

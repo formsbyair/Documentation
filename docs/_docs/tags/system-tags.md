@@ -37,6 +37,8 @@ System tag names are enclosed in &lt;&lt;[ and ]&gt;&gt; to differentiate from f
 |&lt;&lt;[DocumentReferrer]&gt;&gt;|First Referrer header to access the document|https://anotherwebsite.com|
 |&lt;&lt;[DocumentIpAddress]&gt;&gt;|Last IP address to access the document|1.2.3.4|
 |&lt;&lt;[DocumentUserAgent]&gt;&gt;|Last Useragent to access the document|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36|
+|&lt;&lt;[DocumentRequestedEmail]&gt;&gt;|Email address that document was requested for|joe@bloggs.com|
+|&lt;&lt;[DocumentSubmitCode]&gt;&gt;|Current submit code|ABC123|
 
 ### Document Workflow Tags
 

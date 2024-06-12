@@ -3,7 +3,7 @@ title: Form element class names
 type: platform
 ---
 
-We've added explicit class names to key form elements so you can customize, move or hide them with custom CSS
+We've added explicit class names to key form elements so you can customize, move or hide them with CSS
 
 form-background  
 form-status  

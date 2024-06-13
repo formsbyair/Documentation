@@ -3,7 +3,7 @@ title: Stage 2 AML/CFT regulation changes
 type: compliance
 ---
 
-Additional AMl/CFT regulations have come in to force for NZ reporting entities as of 1 June 2024, please see link below...
+Additional AML/CFT regulations have come in to force for NZ reporting entities as of 1 June 2024, please see link below...
 
 <https://www.fma.govt.nz/assets/Guidance/Supervisory-approach_new-AMLCFT-Regs_17-May-2024.pdf>
 

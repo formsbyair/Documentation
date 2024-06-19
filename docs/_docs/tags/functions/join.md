@@ -13,8 +13,8 @@ Join multiple tag values with optional separator
 #### Tags <span class="badge platform">Required</span>
 Two or more tags to join
 
-#### Leading or Trailing Separator
-Custom separator between the output for each tag (defaults to a trailing space) e.g. [, ]
+#### Separator
+Leading or trailing separator between the output for each tag e.g. [, ] defaults to a trailing space
 
 
 ## Examples
@@ -22,4 +22,4 @@ Custom separator between the output for each tag (defaults to a trailing space) 
 |Function|Result|
 |---|---|
 |&lt;&lt;[Join:&lt;&lt;FirstName&gt;&gt;&lt;&lt;MiddleName&gt;&gt;&lt;&lt;LastName&gt;&gt;]&gt;&gt;|Joe Bloggs|
-|&lt;&lt;[Join:&lt;&lt;Address&gt;&gt; &lt;&lt;City&gt;&gt;&lt;PostalCode&gt;&gt;[, ]]&gt;&gt;|100 Queen Street, Auckland, 1000|
+|&lt;&lt;[Join:&lt;&lt;Address&gt;&gt;&lt;&lt;City&gt;&gt;&lt;PostalCode&gt;&gt;[, ]]&gt;&gt;|100 Queen Street, Auckland, 1000|

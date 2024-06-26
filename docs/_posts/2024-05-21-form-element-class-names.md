@@ -12,6 +12,6 @@ form-status-right
 form-button-back  
 form-button-next  
 form-button-submit  
-form-button-request-share
-form-button-request-copy
+form-button-request-share  
+form-button-request-copy  
 form-button-request-open

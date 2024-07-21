@@ -87,12 +87,12 @@ See [Document Workflow Status]({{ site.baseurl }}/documents/workflow-status) for
 
 |Tag|Definition|Example|
 |---|---|---|
-|&lt;&lt;Element.[SectionValidationResult]&gt;&gt;|Current status of validation|Pass, Fail, Check, Ok, Requesting, Captured|
-|&lt;&lt;Element.[SectionValidationDateTime]&gt;&gt;|Local DateTime that status changed|1 Nov 2018 11:00.00|
-|&lt;&lt;Element.[SectionValidationReference]&gt;&gt;|Unique reference returned from validation service|e6a267fa-ebc7-4d65-b506-8cad4e835aa8|
-|&lt;&lt;Element.[SectionValidationMessage]&gt;&gt;|Message returned from validation service|Partial pass, facial match needs review|
-|&lt;&lt;Element.[SectionValidationData]&gt;&gt;|Data returned from validation service|{&quot;name&quot;: &quot;test&quot;}|
-|&lt;&lt;Element.[DocumentDeliveryId]&gt;&gt;|Associated Document Delivery Id|b664b162-78c3-49da-b4aa-2c69f3cf6f4e|
+|&lt;&lt;Test.[SectionValidationResult]&gt;&gt;|Current status of validation|Pass, Fail, Check, Ok, Requesting, Captured|
+|&lt;&lt;Test.[SectionValidationDateTime]&gt;&gt;|Local DateTime that status changed|1 Nov 2018 11:00.00|
+|&lt;&lt;Test.[SectionValidationReference]&gt;&gt;|Unique reference returned from validation service|e6a267fa-ebc7-4d65-b506-8cad4e835aa8|
+|&lt;&lt;Test.[SectionValidationMessage]&gt;&gt;|Message returned from validation service|Partial pass, facial match needs review|
+|&lt;&lt;Test.[SectionValidationData]&gt;&gt;|Data returned from validation service|{&quot;name&quot;: &quot;test&quot;}|
+|&lt;&lt;Test.[DocumentDeliveryId]&gt;&gt;|Associated Document Delivery Id|b664b162-78c3-49da-b4aa-2c69f3cf6f4e|
 
 ### Aggregate Tags
 

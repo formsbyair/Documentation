@@ -87,7 +87,7 @@ See [Document Workflow Status]({{ site.baseurl }}/documents/workflow-status) for
 
 |Tag|Definition|Example|
 |---|---|---|
-|&lt;&lt;[SectionValidationResult]&gt;&gt;|Current status of validation|Pass/Fail/Check/Ok/Requesting/Captured|
+|&lt;&lt;[SectionValidationResult]&gt;&gt;|Current status of validation|Pass, Fail, Check, Ok, Requesting, Captured|
 |&lt;&lt;[SectionValidationDateTime]&gt;&gt;|Local DateTime that status changed|1 Nov 2018 11:00.00|
 |&lt;&lt;[SectionValidationReference]&gt;&gt;|Unique reference returned from validation service|e6a267fa-ebc7-4d65-b506-8cad4e835aa8|
 |&lt;&lt;[SectionValidationMessage]&gt;&gt;|Message returned from validation service|Partial pass, facial match needs review|

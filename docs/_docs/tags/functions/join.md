@@ -22,4 +22,4 @@ Leading or trailing separator between the output for each tag e.g. [, ] defaults
 |Function|Result|
 |---|---|
 |&lt;&lt;[Join:&lt;&lt;FirstName&gt;&gt;&lt;&lt;MiddleName&gt;&gt;&lt;&lt;LastName&gt;&gt;]&gt;&gt;|Joe Bloggs|
-|&lt;&lt;[Join:&lt;&lt;Address&gt;&gt;&lt;&lt;City&gt;&gt;&lt;PostalCode&gt;&gt;[, ]]&gt;&gt;|100 Queen Street, Auckland, 1000|
+|&lt;&lt;[Join:&lt;&lt;Address1&gt;&gt;&lt;&lt;Address2&gt;&gt;&lt;&lt;City&gt;&gt;&lt;&lt;PostalCode&gt;&gt;[, ]]&gt;&gt;|100 Queen Street, Auckland, 1000|

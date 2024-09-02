@@ -10,7 +10,7 @@ Display static text and images in a form
 
 Use the toolbar in **Editor** view to make text Bold/Italic/Underline, and insert hyperlinks and images.
 
-Image URLs must point to existing images on the internet, you can't upload custom images via our portal or API currently.
+Images and hyperlinks can point to existing files on the internet, or an asset that's been uploaded for a form.
 
 Hyperlinks and images can be edited by clicking on them and using the popup toolbar.
 

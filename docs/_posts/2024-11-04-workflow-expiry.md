@@ -3,7 +3,7 @@ title: Workflow expiry
 type: platform
 ---
 
-As part of our data retention policy to minimise the time that form data is held in our system, we are planning to introduce rolling expiry to Workflow effective **1 December 2024**
+As part of our data retention policy to minimise the time that form data is held in our system, we're planning to introduce rolling expiry to Workflow effective **1 December 2024**
 
 The default workflow expiry period will be **60 days** but this can be adjusted per form between 10 and 90 days.
 
@@ -13,7 +13,7 @@ In addition, we're adding a **Snooze** function so you can hold a document in Wo
 
 We'll display the expiry date for all workflow documents in our portal and allow you to filter for documents that are expiring soon.
 
-On expiry, our system will send an automated email notification to the assignee or team. The document can then be restored if necessary within the data retention period for your account.
+On expiry, our system will send an automated email notification to the relevant assignee or team. The document can then be restored if necessary within the data retention period for your account.
 
 You can continue to set custom reminder emails at any frequency for documents in Workflow.
 

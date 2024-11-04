@@ -15,7 +15,7 @@ On expiry, our system will send an automated email notification to the relevant 
 
 We also plan to make the following related changes:
 
-* Documents in **Requesting** status after 30 days will now automatically move to Workflow. "Requesting" means a form has been submitted but is waiting on post-submit ID verification. You can continue to set custom reminders at any frequency for documents in Requesting status.
+* Documents in **Requesting** status after 30 days will now automatically move to Workflow Pending status for review. "Requesting" means a form has been submitted but is waiting on post-submit ID verification. You can continue to set custom reminders at any frequency for documents in Requesting status.
 
 * The **Edited** workflow status will be retired, as this masks a document's true status, and we already record edits in the Workflow log
 

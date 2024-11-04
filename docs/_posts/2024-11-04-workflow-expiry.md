@@ -17,12 +17,12 @@ On expiry, our system will send an automated email notification to the relevant 
 
 You can continue to set custom reminder emails at any frequency for documents in Workflow.
 
-We'll be in touch before this change goes live if you have a large number of documents in workflow older than 60 days so we can discuss options to bulk export or expire them.
-
 We also plan to make the following related changes:
 
-* Documents in **Requesting** status after 30 days will now automatically move to Workflow. You can continue to set custom reminders at any frequency for documents in Requesting status.
+* Documents in **Requesting** status after 30 days will now automatically move to Workflow. "Requesting" means a form has been submitted but is waiting on post-submit ID verification. You can continue to set custom reminders at any frequency for documents in Requesting status.
 
 * The **Edited** workflow status will be retired, as this masks a document's true status, and we already record edits in the Workflow log
 
+We'll reset the expiry clock on all documents in Workflow when we apply this change on 1 December, even if they've already been in workflow for some time. As such the earliest that any document will expire (assuming the 60 day default) is 30 January 2025.
 
+We'll be in touch directly if you have a large number of very old documents in workflow so we can discuss options to bulk export or expire them.

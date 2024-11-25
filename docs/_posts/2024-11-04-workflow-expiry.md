@@ -11,7 +11,7 @@ In addition, we're adding a **Snooze** function so you can hold a document in Wo
 
 We'll display the expiry date for all workflow documents in our portal and allow you to filter for documents that are expiring soon.
 
-On expiry, our system will send an automated email notification to the relevant assignee or team. The document can then be restored if necessary within the data retention period for your account. You can continue to set custom reminder emails at any frequency for documents in Workflow.
+On expiry, our system will send an automated email notification to the assignee, or users that have interacted with the document, or all workflow/admin users. The document can then be restored if necessary within the data retention period for your account. You can continue to set custom reminder emails at any frequency for documents in Workflow.
 
 We also plan to make the following related changes:
 

@@ -19,6 +19,6 @@ We also plan to make the following related changes:
 
 * The **Edited** workflow status will be retired, as this masks a document's true status, and we already record edits in the Workflow log
 
-We'll reset the expiry clock on all documents in Workflow when we apply this change on 1 December, even if they've already been in workflow for some time. As such the earliest that any document will expire (assuming the 60 day default) is 30 January 2025.
+We'll reset the expiry clock on all documents in Workflow when we apply this change on 1 December, even if they've already been in workflow for some time. As such the earliest that any document in Workflow will expire (assuming the 60 day default) is 30 January 2025.
 
 We'll be in touch directly if you have a large number of very old documents in workflow so we can discuss options to bulk export or expire them.

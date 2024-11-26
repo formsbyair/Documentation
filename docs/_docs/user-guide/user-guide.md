@@ -34,3 +34,6 @@ Reminders can be setup to flag documents that have been in workflow beyond a cer
 An audit log provides a permanent record of all workflow actions over time.
 
 ![]({{ site.baseurl }}/images/workflow/workflow4.png)
+
+image test
+![]({{ site.baseurl }}/images/workflow/Lifecycle.svg)

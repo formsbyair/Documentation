@@ -1,11 +1,8 @@
 ---
-title: Introduction
-category: User Guide
-order: 0
+title: Workflow
+category: Documents
+order: 5
 ---
-
-Intro to user guide here...
-*work in progress*
 
 **FormsByAir Workflow**  
 
@@ -25,13 +22,16 @@ After reviewing a document, workflow users can take one of the following actions
   * If the document needs review by another person, it can be **Assigned** to them with a comment.
   * If the review process has started but is going to take more time, the form can be set to **Reviewed** status to differentiate it from documents that haven’t been looked at yet.
   * In rare cases where the document cannot proceed, it can be **Declined**, which will remove it from the workflow queue, and prevent delivery to external systems.
+  * If a document can’t be processed immediately, you can  **Snooze** it to hold it in Workflow for a specific period of time. Snoozed documents will be hidden by default unless you specifically filter for them, and will reappear at the end of the snooze period.
 
   ![]({{ site.baseurl }}/images/workflow/workflow3.png)
 
  All workflow actions can trigger email notifications to your team or form fillers.
 Authorisation can be enabled if certain documents require sign-off from a senior manager in addition to operational approval.
-Reminders can be setup to flag documents that have been in workflow beyond a certain threshold. Documents in workflow are subject to an extended data retention period compared to regular submissions.
-An audit log provides a permanent record of all workflow actions over time.
+Reminders can be setup to flag documents that have been in workflow beyond a certain threshold. There’s  a Workflow ‘rolling expiry’ period - meaning that the expiry period will reset every time you take some action e.g. reassign, comment, authorise, so a document will never expire while you’re actively working on it. An audit log provides a permanent record of all workflow actions over time.
 
 ![]({{ site.baseurl }}/images/workflow/workflow4.png)
 
+Workflow diagram
+
+![]({{ site.baseurl }}/images/workflow/workflowdiagram.svg)

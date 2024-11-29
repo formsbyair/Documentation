@@ -34,4 +34,4 @@ Reminders can be setup to flag documents that have been in workflow beyond a cer
 
 Workflow diagram
 
-![]({{ site.baseurl }}/images/workflow/workflowdiagram.svg)
+![]({{ site.baseurl }}/images/workflow/workflowcycle.svg)

@@ -21,7 +21,7 @@ After reviewing a document, workflow users can take one of the following actions
 * If the document requires more information or changes, it can be **Returned** to the form filler so they can update and re-submit it.
 * If the document needs review by another person, it can be **Assigned** to them with a comment.
 * If the review process has started but is going to take more time, the form can be set to **Reviewed** status to differentiate it from documents that haven’t been looked at yet.
-* If a document can’t be processed for a period of time, it can be **Snoozed** to hold it in Workflow. Snoozed documents will be hidden by default unless you specifically filter for them, and will reappear at the end of the snooze period.
+* If a document can’t be processed for a specific period of time, it can be **Snoozed** which will hide it from the workflow queue until the end of the snooze period.
 * In rare cases where the document cannot proceed, it can be **Declined**, which will remove it from the workflow queue, and prevent delivery to external systems.
 
 ![]({{ site.baseurl }}/images/workflow/workflow3.png)
@@ -39,5 +39,6 @@ An audit log provides a permanent record of all workflow actions over time.
 ![]({{ site.baseurl }}/images/workflow/workflow4.png)
 
 ### Workflow status diagram
+
 
 ![]({{ site.baseurl }}/images/workflow/workflowcycle.svg)

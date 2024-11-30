@@ -40,5 +40,4 @@ An audit log provides a permanent record of all workflow actions over time.
 
 ### Status flow diagram
 <br>
-<br>
-![]({{ site.baseurl }}/images/workflow/Workflow-2024-11-29-235138.svg)
+![]({{ site.baseurl }}/images/workflow/Workflow-2024-11-30-010925.svg)

@@ -44,21 +44,21 @@ An audit log provides a permanent record of all workflow actions over time.
 
 #### Key
 
-User["USER"] -- SUBMIT --> Pending("PENDING")  
+User -- SUBMIT --> Pending  
 Pending -- RETURN --> User  
-Pending -- REVIEW --> Reviewed("REVIEWED")  
-Pending -- SNOOZE --> Snoozed("SNOOZED")  
-Pending -- REQUEST AUTH --> Authorisation("AUTHORISATION")  
-Pending -- APPROVE --> Approved("APPROVED")  
-Pending -- DECLINE --> Declined("DECLINED")  
-Pending -- EXPIRE --> Expired("EXPIRED")  
+Pending -- REVIEW --> Reviewed  
+Pending -- SNOOZE --> Snoozed  
+Pending -- REQUEST AUTH --> Authorisation  
+Pending -- APPROVE --> Approved  
+Pending -- DECLINE --> Declined  
+Pending -- EXPIRE --> Expired  
 Reviewed -- RETURN --> User  
 Reviewed -- SNOOZE --> Snoozed  
 Reviewed -- REQUEST AUTH --> Authorisation  
 Reviewed -- APPROVE --> Approved  
 Reviewed -- DECLINE --> Declined  
 Reviewed -- EXPIRE --> Expired  
-Authorisation -- AUTHORISE --> Authorised("AUTHORISED")  
+Authorisation -- AUTHORISE --> Authorised  
 Authorisation -- DECLINE --> Pending  
 Authorisation -- EXPIRE --> Expired  
 Authorised -- APPROVE --> Approved  

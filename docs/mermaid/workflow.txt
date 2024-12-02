@@ -1,0 +1,46 @@
+---
+config:
+  layout: elk
+  look: classic
+  theme: default
+---
+flowchart TD
+    User["USER"] -- SUBMIT --> Pending("PENDING")
+    Pending -- RETURN --> User
+    Pending -- REVIEW --> Reviewed("REVIEWED")
+    Pending -- SNOOZE --> Snoozed("SNOOZED")
+    Pending -- REQUEST AUTH --> Authorisation("AUTHORISATION")
+    Pending -- APPROVE --> Approved("APPROVED")
+    Pending -- DECLINE --> Declined("DECLINED")
+    Pending -- EXPIRE --> Expired("EXPIRED")
+    Reviewed -- RETURN --> User
+    Reviewed -- SNOOZE --> Snoozed
+    Reviewed -- REQUEST AUTH --> Authorisation
+    Reviewed -- APPROVE --> Approved
+    Reviewed -- DECLINE --> Declined
+    Reviewed -- EXPIRE --> Expired
+    Authorisation -- AUTHORISE --> Authorised("AUTHORISED")
+    Authorisation -- DECLINE --> Pending
+    Authorisation -- EXPIRE --> Expired
+    Authorised -- APPROVE --> Approved
+    Authorised -- DECLINE --> Declined
+    Authorised -- DEAUTHORISE --> Pending
+    Authorised -- EXPIRE --> Expired
+    Snoozed -- RESUME --> Pending
+    Approved -- REWORK --> Pending
+    Declined -- RESTORE --> Pending
+    User@{ icon: "fa:user"}
+     Pending:::Blue
+     Reviewed:::Info
+     Snoozed:::Secondary
+     Authorisation:::Secondary
+     Approved:::Success
+     Declined:::Danger
+     Expired:::Danger
+     Authorised:::Success
+    classDef Info stroke-width:1px, stroke-dasharray:none, fill:#0dcaf0, color:#FFF, stroke:transparent
+    classDef Danger stroke-width:1px, stroke-dasharray: none, fill:#dc3545, color:#FFF, stroke:transparent
+    classDef Secondary stroke-width:1px, stroke-dasharray:none, fill:#6c757d, color:#FFF, stroke:transparent
+    classDef Blue stroke-width:1px, stroke-dasharray:none, fill:#0d6efd, color:#FFF, stroke:transparent
+    classDef Success stroke-width:1px, stroke-dasharray:none, fill:#198754, color:#FFF, stroke:transparent
+    style User stroke:#0d6efd

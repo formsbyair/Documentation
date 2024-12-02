@@ -1,0 +1,55 @@
+---
+config:
+  layout: elk
+  look: classic
+  theme: default
+---
+flowchart TD
+    User[" "] -- FILL OUT BLANK FORM --> Started["STARTED"]
+    Prefill[" "] -- PREFILL/IMPORT --> Requested["REQUESTED"]
+    Started -- SUBMIT --> Validation["VALIDATION"]
+    Requested -- SUBMIT --> Validation
+    Validation -- " " --> External[" "]
+    Validation -- " " --> Delivery["DELIVERY"]
+    Validation -- " " --> Spam["SPAM"]
+    Validation -- " " --> Requesting["REQUESTING"]
+    External -- " " --> Validation
+    Requested -- SAVE --> Saved["SAVED"]
+    Requesting -- " " --> Workflow["WORKFLOW"]
+    Requesting -. EXPIRY .-> Workflow
+    Requesting -- " " --> User2[" "]
+    Saved -- SAVE --> Saved
+    Saved -- SUBMIT --> Validation
+    Spam -- KEEP --> Validation
+    Spam -- DELETE --> Deleted["DELETED"]
+    Delivered["Delivered"] -- DATA RETENTION PERIOD --> Delivered-Purged["DELIVERED PURGED"]
+    Deleted -- DATA RETENTION PERIOD --> Deleted-Purged["DELETED PURGED"]
+    Delivery -- " " --> ExternalCloud[" "]
+    ExternalCloud -- " " --> Delivery
+    Workflow -- DECLINED --> Deleted
+    Delivery -- After all integrations completed or cancelled --> Delivered["DELIVERED"]
+    Workflow -- APPROVED --> Delivery
+    User@{ icon: "fa:user"}
+    Prefill@{ icon: "gcp:datashare", pos: "b"}
+    External@{ icon: "gcp:cloud-audit-logs", pos: "b"}
+    User2@{ icon: "fa:user"}
+    ExternalCloud@{ icon: "azure:elastic-san", pos: "b"}
+     Started:::Secondary
+     Requested:::Secondary
+     Validation:::Secondary
+     Delivery:::Check
+     Spam:::Check
+     Requesting:::Secondary
+     Saved:::Secondary
+     Workflow:::Blue
+     Deleted:::Danger
+     Delivered:::Success
+     Delivered-Purged:::Success
+     Deleted-Purged:::Danger
+    classDef Info stroke-width:1px, stroke-dasharray:none, fill:#0dcaf0, color:#FFF, stroke:transparent
+    classDef Danger stroke-width:1px, stroke-dasharray: none, fill:#dc3545, color:#FFF, stroke:transparent
+    classDef Secondary stroke-width:1px, stroke-dasharray:none, fill:#6c757d, color:#FFF, stroke:transparent
+    classDef Blue stroke-width:1px, stroke-dasharray:none, fill:#0d6efd, color:#FFF, stroke:transparent
+    classDef Success stroke-width:1px, stroke-dasharray:none, fill:#198754, color:#FFF, stroke:transparent
+    classDef Check stroke-width:1px, stroke-dasharray:none, fill:#FFc107, color:#FFF, stroke:transparent
+    style User stroke:#0d6efd

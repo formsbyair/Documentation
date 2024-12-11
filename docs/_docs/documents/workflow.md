@@ -38,33 +38,6 @@ An audit log provides a permanent record of all workflow actions over time.
 
 ![]({{ site.baseurl }}/images/workflow/workflow4.png)
 
-### Status flow diagram
+### Complex workflow example
 <br>
-![]({{ site.baseurl }}/images/workflow/Workflow-2024-12-01-014440.svg)
-
-#### Key
-
-User -- SUBMIT --> Pending  
-Pending -- RETURN --> User  
-Pending -- REVIEW --> Reviewed  
-Pending -- SNOOZE --> Snoozed  
-Pending -- REQUEST AUTH --> Authorisation  
-Pending -- APPROVE --> Approved  
-Pending -- DECLINE --> Declined  
-Pending -- EXPIRE --> Expired  
-Reviewed -- RETURN --> User  
-Reviewed -- SNOOZE --> Snoozed  
-Reviewed -- REQUEST AUTH --> Authorisation  
-Reviewed -- APPROVE --> Approved  
-Reviewed -- DECLINE --> Declined  
-Reviewed -- EXPIRE --> Expired  
-Authorisation -- AUTHORISE --> Authorised  
-Authorisation -- DECLINE --> Pending  
-Authorisation -- EXPIRE --> Expired  
-Authorised -- APPROVE --> Approved  
-Authorised -- DECLINE --> Declined  
-Authorised -- DEAUTHORISE --> Pending  
-Authorised -- EXPIRE --> Expired  
-Snoozed -- RESUME --> Pending  
-Approved -- REWORK --> Pending  
-Declined -- RESTORE --> Pending
+![]({{ site.baseurl }}/images/workflow/workflow-sequence-complex.svg)

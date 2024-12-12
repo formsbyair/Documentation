@@ -38,6 +38,10 @@ An audit log provides a permanent record of all workflow actions over time.
 
 ![]({{ site.baseurl }}/images/workflow/workflow4.png)
 
+### Typical workflow example
+<br>
+![]({{ site.baseurl }}/images/workflow/workflow-sequence-typical.svg)
+
 ### Complex workflow example
 <br>
 ![]({{ site.baseurl }}/images/workflow/workflow-sequence-complex.svg)

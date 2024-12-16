@@ -16,17 +16,21 @@ Hyperlinks and images can be edited by clicking on them and using the popup tool
 
 #### Bullet points and numbering
 
-Use the following markdown-based syntax for bullet points and numbered lists. This will ensure they are formatted correctly in your form and output documents. 
+Use the following markdown-based syntax for bullet points and numbered lists. This will ensure they are formatted correctly both in your form and auto-generated output documents. 
 
 \*(space)My bullet point  
 (space)(space)\*(space)My indented bullet point  
+(space)(space)(space)(space)\*(space)My second level indented bullet point  
 
 1.(space)My numbered point  
 b.(space)My numbered point  
 iii.(space)My numbered point  
-(space)(space)1.(space)My indented numbered point
+(space)(space)1.(space)My indented numbered point  
+(space)(space)(space)(space)a.(space)My second level indented numbered point  
 
-HTML tags &lt;ul&gt; &lt;ol&gt; may render OK in your form but won't be translated correctly in output documents.
+List items can be indented up to 5 levels.
+
+HTML tags &lt;ul&gt; &lt;ol&gt; may render OK in your form but won't be translated correctly in auto-generated output documents.
 
 #### Advanced formatting
 
@@ -38,9 +42,6 @@ To apply custom formatting to Display Content, select the Style tab in the form 
 }  
 &lt;style&gt;
 
-Then use the **HTML** view for your Display Content to add a span including class name containing your text as follows:
+Then set **CSS Class** for your Display Content element to the name of your class e.g. my-class
 
-&lt;span class=&quot;my-class&quot;&gt;My text&lt;/span&gt;
-
-
-Advanced formatting or any HTML tags apart from those used for Basic formatting will not be rendered in output documents.
+Advanced formatting or any HTML tags apart from those used for Basic formatting will not be rendered in auto-generated output documents.

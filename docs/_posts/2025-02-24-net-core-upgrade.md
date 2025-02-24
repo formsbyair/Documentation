@@ -21,4 +21,4 @@ PUT /api/v1/documents/{id}/restore
 
 * All API endpoints that return JSON will now **exclude** null properties by default, in line with modern REST API standards
 
-* Existing API keys will be deprecated, and you will need to generate new API Keys soon. That's because .NET Core doesn't natively support the original OWIN-based bearer tokens from .NET Framework. We have moved to encrypted JWT bearer tokens with .NET Core. New API Keys will work exactly the same way with our API, and have the same 3 year expiry. We'll continue to support existing API Keys until we've confirmed that the last API user has migrated to a new key.
+* Existing API keys will be deprecated, and you will need to generate new API Keys soon after the upgrade. That's because .NET Core doesn't natively support the original OWIN-based bearer tokens from .NET Framework. We have migrated to encrypted JWT bearer tokens with .NET Core. New API Keys will work exactly the same way with our API, and have the same 3 year expiry. We'll continue to support existing API Keys until we've confirmed that the last API user has migrated to a new key.

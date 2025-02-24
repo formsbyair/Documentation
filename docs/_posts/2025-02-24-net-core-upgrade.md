@@ -15,8 +15,8 @@ There are no functional changes to forms, our portal, or our API **except** for 
 
 * The API endpoints below return a string instead of JSON, our new application will correctly return a Content-Type header of text/plain instead of application/json for these:
 
-DELETE /api/v1/documents/deliveries/{id} 
-PUT /api/v1/documents/{id}/return 
+DELETE /api/v1/documents/deliveries/{id}  
+PUT /api/v1/documents/{id}/return  
 PUT /api/v1/documents/{id}/restore
 
 * All API endpoints that return JSON will now **exclude** null properties by default, in line with modern REST API standards

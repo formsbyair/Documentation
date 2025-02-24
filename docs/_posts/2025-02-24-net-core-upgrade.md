@@ -7,16 +7,16 @@ We've been working on a code framework upgrade for our application for some time
 
 This upgrade will take us from .NET Framework 4.8.1 to .NET Core 8, which is the latest LTS version of .NET, and will keep us current with all security and performance improvements, and potential new features.
 
-We're aiming to apply the upgrade on **Saturday 1st March 3pm NZT**
+We're aiming to apply the upgrade on **Saturday 1st March 3pm NZT.**
 
-**There will be no downtime during the upgrade**
+**There will be no downtime during the upgrade.**
 
-There are no functional changes to forms, our portal, or our API **except** for the minor items listed below. The only noticeable difference should be a performance improvement :)
+There are no functional changes to forms, our portal, or our API **except** for the minor items listed below. The only noticeable difference should be a performance improvement!
 
 * The API endpoints below return a string instead of JSON, our new application will correctly return a Content-Type header of text/plain instead of application/json for these:
 
-DELETE /api/v1/documents/deliveries/{id}
-PUT /api/v1/documents/{id}/return
+DELETE /api/v1/documents/deliveries/{id} 
+PUT /api/v1/documents/{id}/return 
 PUT /api/v1/documents/{id}/restore
 
 * All API endpoints that return JSON will now **exclude** null properties by default, in line with modern REST API standards

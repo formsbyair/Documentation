@@ -8,7 +8,7 @@ order: 5
 
 20MB per attachment and a total of 200MB per form submission
 
-#### Default File Types
+#### Acceptable File Types
 
 |File Type|
 |---|

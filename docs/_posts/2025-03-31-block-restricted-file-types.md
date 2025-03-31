@@ -1,5 +1,6 @@
 ---
 title: Block restricted file types
+type: platform
 ---
 
 When attaching files to a form, we automatically apply a filter to the file selection dialog so that only acceptable file types are listed e.g. PDF or JPG

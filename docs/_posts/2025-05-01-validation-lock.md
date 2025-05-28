@@ -9,4 +9,4 @@ This option is slighly counter-intuitive, as it won't actually trigger any valid
 
 This may be useful where you have an element or elements that heavily influence content in the rest of the form, and you don't want users to switch values once selected.
 
-We offer similar fuctionality with the **Forward-Only** option for sections, but that applies to a whole section, and you can't read the values once you've passed the relevant section.
+We offer similar fuctionality with the **Forward-Only** option for sections, but that applies to a whole section, and doesn't allow you to go back and view those details once you have moved to the next section.

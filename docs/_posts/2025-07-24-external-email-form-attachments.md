@@ -1,5 +1,5 @@
 ---
-title: Email form attachments
+title: External email form attachments
 type: platform
 ---
 

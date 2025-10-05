@@ -1,5 +1,5 @@
 ---
-title: Angular 19 Upgrade
+title: Angular 19 upgrade
 type: platform
 ---
 

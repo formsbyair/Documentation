@@ -1,7 +1,7 @@
 ---
 title: Functions > Join
 category: Tags
-order: 9
+order: 10
 ---
 
 Join multiple tag values with optional separator

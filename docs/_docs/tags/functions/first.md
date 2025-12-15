@@ -1,7 +1,7 @@
 ---
 title: Functions > First
 category: Tags
-order: 7
+order: 8
 ---
 
 Returns output for the first item in a repeater with optional filter

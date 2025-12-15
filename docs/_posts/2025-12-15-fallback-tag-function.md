@@ -7,5 +7,5 @@ We've added a new tag function **Fallback** to return the first non empty value 
 
 This may be useful if you need to provide a default value where a tag is empty.
 
-See [Display Content]({{ site.baseurl }}/tags/functions/fallback/)
+See [Fallback]({{ site.baseurl }}/tags/functions/fallback/)
 

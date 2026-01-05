@@ -5,7 +5,7 @@ type: platform
 
 GBG Cloudcheck **Live** and **IDscan** verification usually includes validation of identity details with a document issuer in addition to biometric checks.
 
-But sometimes this validation may not happen, for example, where the identity document was issued by a foreign country that GBG doesn't support, or the API for the issuer is temporarily unavailable.
+Sometimes this validation may not happen, for example, where the identity document was issued by a foreign country that GBG doesn't support, or the API for the issuer is temporarily unavailable.
 
 In those cases we receive a biometric result, but no verified identity details.
 

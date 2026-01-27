@@ -22,6 +22,7 @@ order: 2
 |View Analytics||||X|X|X|X|
 |View All Documents||||X|X|X|X|
 |Redeliver Document||||X|X|X|X|
+|Workflow Notifications||X|||X|X|X|
 |Manage Workflow|||||X|X|X|
 |Edit Document|||||X|X|X|
 |[Revalidate Document]({{ site.baseurl }}/documents/actions/revalidate)|||||X|X|X|

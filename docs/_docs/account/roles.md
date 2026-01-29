@@ -26,6 +26,7 @@ order: 2
 |Manage Workflow|||||X|X|X|
 |Edit Document|||||X|X|X|
 |[Revalidate Document]({{ site.baseurl }}/documents/actions/revalidate)|||||X|X|X|
+|Rework Saved Document|||||X|X|X|
 |[Rework Delivered Document]({{ site.baseurl }}/documents/actions/rework)||||||X|X|
 |Return Delivered Document||||||X|X|
 |Delete Document||||||X|X|

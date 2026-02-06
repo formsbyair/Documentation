@@ -43,6 +43,11 @@ collections:
     permalink: /:path/
     output: true
 
+  kb:
+    title: Stack Overflow Archive
+    permalink: /kb/:title/
+    output: true
+
 defaults:
   -
     scope:

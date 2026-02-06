@@ -1,0 +1,47 @@
+---
+layout: default
+---
+<div class="qna-container">
+    <h1>{{ page.title }}</h1>
+    <p class="post-meta">Asked on {{ page.date | date: "%b %d, %Y" }}</p>
+
+    <div class="tags">
+        {% for tag in page.tags %}
+        <span class="tag-pill">{{ tag }}</span>
+        {% endfor %}
+    </div>
+
+    <hr>
+
+    <div class="question-content">
+        {{ content }}
+    </div>
+</div>
+
+<style>
+    .qna-container {
+        line-height: 1.6;
+        color: #333;
+    }
+
+    .tag-pill {
+        background: #e1ecf4;
+        color: #39739d;
+        padding: 4px 8px;
+        border-radius: 3px;
+        font-size: 0.85em;
+    }
+
+    .accepted-answer-box {
+        background-color: #f6faf6;
+        border-left: 5px solid #5eba7d;
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    blockquote {
+        border-left: 3px solid #eee;
+        padding-left: 15px;
+        color: #666;
+    }
+</style>

@@ -1,0 +1,25 @@
+---
+layout: default
+title: Knowledge Base
+permalink: /kb/
+---
+
+# Knowledge Base Archive
+*Internal Q&A migrated from Stack Overflow*
+
+<div class="kb-summary-list">
+	{% assign sorted_kb = site.kb | sort: 'date' | reverse %}
+	{% for item in sorted_kb %}
+	<div class="kb-summary-item" style="border-bottom: 1px solid #eee; padding: 15px 0;">
+		<h3 style="margin-bottom: 5px;">
+			<a href="{{ item.url }}">{{ item.title }}</a>
+		</h3>
+		<div style="font-size: 0.85em; color: #666;">
+			<span>Asked on {{ item.date | date: "%b %d, %Y" }}</span>
+			{% if item.tags %}
+			<span style="margin-left: 15px;">Tags: {{ item.tags | join: ", " }}</span>
+			{% endif %}
+		</div>
+	</div>
+	{% endfor %}
+</div>

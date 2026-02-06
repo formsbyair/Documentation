@@ -55,7 +55,7 @@
 
 				<ul>
 					<li class="nav-item top-level {% if page.url == '/kb/' %}current{% endif %}">
-						{% assign changelog = site.html_pages | where: 'url', '/kb/' | first %}
+						{% assign kb = site.html_pages | where: 'url', '/kb/' | first %}
 						<a href="{{ site.baseurl }}/kb/">{{ kb.title }}</a>
 					</li>
 				</ul>

@@ -57,6 +57,12 @@ defaults:
   -
     scope:
       path: ""
+      type: "kb" # This must match the collection key above
+    values:
+      layout: qna
+  -
+    scope:
+      path: ""
       type: "docs"
     values:
       seo:

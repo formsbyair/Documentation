@@ -14,4 +14,6 @@ form-button-next
 form-button-submit  
 form-button-request-share  
 form-button-request-copy  
-form-button-request-open
+form-button-request-open  
+form-button-repeater-add  
+form-button-repeater-add-another

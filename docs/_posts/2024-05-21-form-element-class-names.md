@@ -12,6 +12,8 @@ form-status-right
 form-button-back  
 form-button-next  
 form-button-submit  
+form-button-file-select  
+form-button-file-cancel  
 form-button-request-share  
 form-button-request-copy  
 form-button-request-open  

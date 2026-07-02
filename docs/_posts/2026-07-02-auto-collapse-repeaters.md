@@ -1,5 +1,5 @@
 ---
-title: Auto-collpase repeaters
+title: Auto-collapse repeaters
 type: platform
 ---
 

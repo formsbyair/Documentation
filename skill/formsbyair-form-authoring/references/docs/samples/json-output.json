@@ -1,0 +1,30 @@
+{
+  "FirstName": "Joe",
+  "LastName": "Bloggs",
+  "PhoneNumber": "+641234567",
+  "EmailAddress": "hello@formsbyair.com",
+  "DateOfBirth": "1993-02-01",
+  "ResidentialAddress": {
+    "aa8f23777ed2444bbdb8d68a01789345e": "100 Queen Street, Auckland CBD, Auckland, New Zealand",
+    "Address1": "100 Queen Street",
+    "Address2": "Auckland CBD",
+    "City": "Auckland",
+    "State": "Auckland",
+    "PostalCode": "1010",
+    "Country": "New Zealand"
+  },
+  "Attachment": "Please attach a document - Testing.pdf",
+  "Option": "Option Two",
+  "References": [
+    {
+      "Reference": {
+        "ContactName": "Mary James"
+      }
+    },
+    {
+      "Reference": {
+        "ContactName": "Jim Smith"
+      }
+    }
+  ]
+}

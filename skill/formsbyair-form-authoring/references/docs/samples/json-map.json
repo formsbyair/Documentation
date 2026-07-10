@@ -1,0 +1,39 @@
+{
+  "Attributes": [
+    {
+      "Name": "DocumentId",
+      "Value": "<<[DocumentId]>>"
+    },
+    {
+      "Name": "Name",
+      "Value": "<<FirstName>> <<LastName>>"
+    },
+    {
+      "Name": "Custom",      
+      "Value": "<<FirstName>> was born in <<DateOfBirth|yyyy>>"
+    },
+    {
+      "Name": "PostalCode",
+      "Filter": "'<<Option>>' == 'Two'",
+      "Value": "<<PostalCode>>",
+      "Setter": "float"
+    },
+    {
+      "Name": "Submitted",
+      "Value": "<<[DocumentReceivedDateTime|yyyy-MM-ddTHH:mm:ssZ]>>"
+    }
+  ],
+  "Entities": [
+    {
+      "Name": "References",
+      "ForEach": "Reference",
+      "Setter": "array",
+      "Attributes": [
+        {
+          "Name": "Name",
+          "Value": "<<ContactName>>"
+        }
+      ]
+    }
+  ]
+}

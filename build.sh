@@ -34,9 +34,17 @@ cp -r "$DOCS_SRC/forms"     "$SKILL_SRC/references/docs/"
 cp -r "$DOCS_SRC/integrations" "$SKILL_SRC/references/docs/"
 cp "$DOCS_SRC/tutorials/build-form.md" "$SKILL_SRC/references/docs/"
 
-# Release-note posts: how the system has changed over time. Merged into a
-# single file — Claude Code rejects skill zips with more than 200 files.
-python3 - "$REPO_ROOT/docs/_posts" "$SKILL_SRC/references/docs/changelog.md" <<'EOF'
+# Sample outputs referenced by docs/integrations/file.md (text formats only)
+mkdir -p "$SKILL_SRC/references/docs/samples"
+for s in json-map.json json-map-output.json xml-map.json xml-map-output.xml \
+         json-output.json xml-output.xml; do
+  cp "$REPO_ROOT/docs/samples/$s" "$SKILL_SRC/references/docs/samples/"
+done
+
+# Release-note posts and knowledge-base articles: each merged into a single
+# file — Claude Code rejects skill zips with more than 200 files.
+merge_posts() {
+python3 - "$1" "$2" "$3" <<'EOF'
 import pathlib, re, sys
 
 posts_dir, out_path = pathlib.Path(sys.argv[1]), pathlib.Path(sys.argv[2])
@@ -60,11 +68,16 @@ for p in sorted(posts_dir.rglob("*.md")):
     posts.append((m.group(1), f"## {m.group(1)} — {title}{suffix}\n\n{body.strip()}\n"))
 
 posts.sort(key=lambda x: x[0], reverse=True)
-header = ("# FormsByAir changelog\n\nDated release notes, newest first, "
-          "merged from the documentation site's posts.\n\n")
+header = sys.argv[3] + "\n\n"
 out_path.write_text(header + "\n".join(entry for _, entry in posts), encoding="utf-8")
-print(f"changelog.md: merged {len(posts)} posts")
+print(f"{out_path.name}: merged {len(posts)} posts")
 EOF
+}
+
+merge_posts "$REPO_ROOT/docs/_posts" "$SKILL_SRC/references/docs/changelog.md" \
+  $'# FormsByAir changelog\n\nDated release notes, newest first, merged from the documentation site\'s posts.'
+merge_posts "$REPO_ROOT/docs/_kb" "$SKILL_SRC/references/docs/kb.md" \
+  $'# FormsByAir knowledge base\n\nQ&A-style troubleshooting articles, newest first, merged from the documentation site\'s knowledge base.'
 
 # 2. Stamp the version (frontmatter line and body footer)
 sed -i.bak -E "s/^version: .*/version: $VERSION/" "$SKILL_SRC/SKILL.md"

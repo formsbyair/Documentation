@@ -13,10 +13,15 @@ data shape; the form's UI and logic live in
 
 ## Before any edit
 
-1. Read `references/annotations.md` — the property vocabulary.
+1. Read `references/annotations.md` — the complete property vocabulary
+   (verified against the platform source).
 2. Read `references/patterns.md` — canonical XML shapes for every field/structure type.
-3. If the task involves formulas, tags (`<<...>>`), question types, or document
-   templates, read the matching official doc under `references/docs/`
+3. If the task involves tags (`<<...>>`), read `references/tag-engine.md` —
+   exact resolution semantics distilled from the platform's tag engine.
+   For integration maps, read `references/integration-map-format.md`.
+   For "does FormsByAir integrate with X?", see `references/connectors.md`.
+4. If the task involves formulas, question types, or document templates,
+   read the matching official doc under `references/docs/`
    (mirrors https://docs.formsbyair.com/):
    - `docs/questions/types/*.md` — per-question-type behaviour
    - `docs/questions/properties/*.md` — default value, read-only, autocomplete
@@ -28,7 +33,9 @@ data shape; the form's UI and logic live in
      feature's behaviour seems version-dependent or a doc mentions something
      that used to work differently
    - `docs/integrations/*.md` — sending form data to other applications
-     (file formats, JSON/XML maps)
+     (file formats, JSON/XML maps); `docs/samples/` — official map samples
+     with their outputs
+   - `docs/kb.md` — Q&A troubleshooting articles from the knowledge base
 
 For live/latest documentation, docs.formsbyair.com is the authoritative source;
 the bundled copies are a snapshot.
@@ -60,9 +67,13 @@ the bundled copies are a snapshot.
   (`&lt;&lt;Tag&gt;&gt;` for `<<Tag>>`).
 - Do not touch the root `Form` element's `save*`/owner/workflow annotations or
   the schema `version` attribute unless asked.
-- Formulas (`fba:formula` `hint`) are JavaScript-compatible expressions;
-  string comparisons quote tag references: `'<<ClientType>>' == 'Trust'`.
-  Date math uses moment.js: `moment().diff(moment('<<DOB>>'), 'years')`.
+- Formulas (`fba:formula` `hint`) are JavaScript-compatible expressions
+  evaluated client-side; string comparisons quote tag references:
+  `'<<ClientType>>' == 'Trust'`. Date math uses moment.js:
+  `moment().diff(moment('<<DOB>>'), 'years')`. Server-side expressions —
+  `[Expression:...]` tags, `[Condition:...]`/`{...}` filters, map filters —
+  use NCalc instead (no moment.js, no JS objects); see
+  `references/tag-engine.md`.
 
 ## After every edit
 
@@ -86,19 +97,11 @@ validation switches, and a document reference using `[ForEach:...]`. When
 unsure how a construct fits together, find a live instance in this file.
 
 `assets/example-integration-map.json` is a production-style integration map
-(investment application → wealth-administration platform) showing how form
-data is mapped to another application's model:
-
-- Nested `Entities`, each with a `Name`, optional `Filter`, and `Attributes`
-  (`Name`/`Value` pairs, again with optional `Filter`).
-- `Filter` expressions use the same syntax as form formulas; repeating an
-  attribute name with mutually exclusive filters expresses conditional cases
-  (if/else-if chains), including fallback defaults.
-- `ForEach: "<GroupName>"` on an entity emits one instance per occurrence of
-  a repeating group; tags inside resolve relative to that occurrence.
-- `Value` uses the full document-tag syntax from `docs/tags/` — indexed paths
-  (`Person[0].PersonIRD`), filtered functions (`[Any:...]`, `[First:...{...}]`,
-  `[ForEach:...]`), `[Expression:...]`, and section-validation data paths.
+(investment application → wealth-administration platform) showing entity
+nesting, conditional attribute filters (if/else-if chains), `ForEach` over
+repeating groups, and full document-tag syntax in mapped values. The exact
+evaluation semantics are in `references/integration-map-format.md`; simpler
+official samples with their outputs are in `references/docs/samples/`.
 
 ---
 Skill version: 2026.7.10 — when reporting issues with this skill, quote this version.

@@ -4,9 +4,22 @@ Form behaviour is defined in `<xs:documentation source="PROPERTY">VALUE</xs:docu
 elements inside each element's `<xs:annotation>`. The XSD types define data shape;
 annotations define UI and logic.
 
-Properties observed in production templates, grouped by purpose.
-Items marked ⚠ are inferred from examples — verify semantics before relying on them
-in unusual contexts.
+This is the complete vocabulary, verified against the XSD serializer
+(`FormsByAir.Factory/FormFactory.cs` in the private FormsByAir.Web
+repository, July 2026 snapshot). Boolean properties take the literal string
+`True` (absence means false).
+
+## Element kind (how a complex element is classified)
+
+A complex (container) element's role is decided by the **first** of these
+annotations present: `workflow` → workflow step; `section` → form
+section/page; `validationService` → section-validation service call;
+`paymentService` → payment step; `request` → third-party request block;
+none of them → plain group. A group nested under an option/boolean question
+with a `visibility` annotation is a conditional branch — it renders only
+when the parent question's value equals the `visibility` value
+(case-insensitive). `maxOccurs="unbounded"` (any explicit `maxOccurs`)
+marks a repeater; `minOccurs="1"` means required.
 
 ## Display & labelling
 
@@ -14,80 +27,107 @@ in unusual contexts.
 |---|---|
 | `title` | Heading for a section or group. On the root `Form` element, the form's display name. |
 | `prompt` | Question/field label shown to the user. |
-| `note` | Help/informational text. On `fba:note` elements it is the content itself (may contain HTML links). |
+| `note` | Help/informational text. On `fba:note` elements it is the content itself (may contain HTML). |
 | `popupnote` | `True` = note displays as a popup instead of inline. |
 | `hint` | On input fields: helper/placeholder text. On `fba:formula` fields: the formula expression itself. Context-dependent — check the element type. |
 | `width` | Grid width of the field (12-column grid). |
-| `format` | Rendering/formatting mode. Observed values: `titleCase`, `upperCase`, `post`, `inline`, `international-mobile`. `inline` on a repeating group renders rows inline. |
-| `section` | Value `section` marks a top-level section (form page). |
-| `inline` | ⚠ Inline rendering flag (rare). |
+| `format` | Rendering/formatting mode. Per-type: e.g. `titleCase`/`upperCase` (text), `year`/`month` (date), `12` (time), `post`, `inline`, `international-mobile` (phone), `date`/`number`/`percent`/`currency` (formula output type). |
+| `inline` | Inline rendering flag. |
+| `cssclass` | Custom CSS class(es) applied to the element. |
+| `sort` | Sort order for list/lookup options. |
+| `autocollapse` | `True` on a repeater = rows auto-collapse (first row expanded on open). |
 
 ## Structure & conditionality
 
 | Property | Meaning |
 |---|---|
-| `visibility` | Conditional display. On a group that follows a controlling option field, the value matches one of that option's enumeration values — the group shows only when that option is selected (e.g. Investor Type branches: `Trust`, `Company`, `Estate`). |
-| `hidden` | `True` = element not shown during form-fill. Used for computed `fba:formula` fields and validation switches. Visible in Workflow via the "Formulas" toggle. |
+| `visibility` | Conditional display. On a group following a controlling option field, the value matches one of that option's enumeration values — the group shows only when selected. |
+| `hidden` | `True` = element not shown during form-fill. Used for computed `fba:formula` fields and validation switches. |
 | `readonly` | `True` = display-only field. |
-| `arrayexpression` | ⚠ Expression controlling repeater rows from data. |
-| `linkedrepeater` | ⚠ Links a repeater to another repeater's rows. |
+| `readonlyprefill` | `True` = field becomes read-only when prefilled. |
+| `arrayexpression` | Expression producing/controlling repeater rows from data. |
+| `linkedrepeater` | Autofillkey of another repeater whose rows this repeater's rows pair with (row *n* links to row *n*). Affects tag scope escalation. |
+| `canduplicate` | `True` = user can duplicate a repeater row. |
+| `cansubmitpartial` | `True` on a section = section can be submitted partially complete. |
+| `defervalidation` | `True` on a section = validation deferred. |
+| `limit` | Maximum rows / selection count / attachment limit. |
 
 ## Data & identity
 
 | Property | Meaning |
 |---|---|
-| `autofillkey` | The logical field name. Used in `<<Tag>>` references, data binding, document templates, and export. This is the "real" field name; element names are opaque IDs. |
-| `default` | Pre-populated value. Often a tag expression, e.g. `'<<ClientName.CompanyNumber>>'`. |
-| `subscriptionid` | GUID linking a typeahead/lookup to an external data source (e.g. Companies Office). |
-| `tableid` | GUID linking a field to a lookup table. |
-| `getextendeddata` | `True` = lookup returns extended data fields accessible as `<<Key.SubField>>`. |
-| `matchstart` | Typeahead matching from start of string (`True`/`False`). |
+| `autofillkey` | The logical field name. Used in `<<Tag>>` references, data binding, document templates, and export. Element names are opaque IDs. |
+| `default` | Pre-populated value; may be a tag expression. |
+| `subscriptionid` | GUID linking a typeahead/lookup/validation/payment element to an external service subscription. Never invent — reuse or ask. |
+| `tableid` | GUID linking a field to a lookup table. Never invent — reuse or ask. |
+| `getextendeddata` | `True` = lookup stores the full response; sub-fields readable as `<<Key.SubField>>`. |
+| `matchstart` | Typeahead matches from start of string. |
 | `allowmanualentry` | `True` = user may type a value not in the lookup. |
-| `attachresponse` | ⚠ `True` = attach the lookup/validation service response to the document. |
-| `validationService` | ⚠ Invokes a validation service on the group (seen alongside Companies Office lookup). |
+| `forcedropdown` | Deprecated. |
+| `attachresponse` | `True` = attach the validation-service response to the document. |
 | `autocomplete` | Browser autocomplete hint (e.g. `email`). |
+| `displayproperty` | Which property of a lookup result to display. |
+| `filter` | Filter expression applied to lookup/typeahead results. |
+| `filenameformat` | Filename template for attachments (tag syntax allowed). |
+| `postsubmit` | Deprecated (equivalent to `format` = `post` on validation services). |
 
 ## Selection lists
 
 | Property | Meaning |
 |---|---|
-| `listtype` | How an enumerated field renders: `dropdown`, `radio`, `toggle`. Options are `xs:enumeration` values in an `xs:restriction`; each may carry a `name` annotation when display label differs from stored value. |
-| `name` | On an `xs:enumeration`: the display label for that option. |
+| `listtype` | How an enumerated field renders: `dropdown`, `radio`, `toggle`. Options are `xs:enumeration` values in an `xs:restriction`. |
+| `name` | On an `xs:enumeration`: the display label when it differs from the stored value. |
+| `note` | On an `xs:enumeration`: help text for that option. |
 
 ## Validation
 
 | Property | Meaning |
 |---|---|
-| (element) `minOccurs="1"` | Required field (attribute, not annotation). |
-| `validationmethod` | `expression` = validate via the element's formula (`hint`); a `<<CountryTag.Code>>` value = country-specific validation (addresses, phone). |
+| (attribute) `minOccurs="1"` | Required field (XSD attribute, not annotation). |
+| `validationmethod` | `expression` = validate via the element's formula (`hint`); a country code/tag = country-specific validation (addresses, phone). On sections: the section-validation method. |
 | `validationmessage` | Custom error text when validation fails. |
-| `validationinline` | Whether the error shows inline (`True`/`False`). |
+| `validationinline` | Error shows inline. |
 | `min` / `max` | Numeric/date bounds. |
-| `decimals` | Decimal places for currency/number fields. |
-
-## Numbers & money
-
-`fba:currency` with `decimals`; `min`/`max` for bounds.
+| `step` | Slider step increment. |
+| `decimals` | Decimal places for currency/number/percent fields. |
+| `country` | Country context for address/phone validation. |
+| `confirmationmessage` | On sections/validation services: message shown on completion. |
 
 ## Form-level (root `Form` element only)
 
-`documentreference` (document reference template using tags and `[ForEach:...]`),
-`owner`, `ownerId`, `hiderestart`, `request`, `workflow`,
-and the `save*` flags (`savecompletedsections`, `savedocumentdeliveryid`,
+Identity/metadata: `title`, `note`, `owner`, `ownerId`, `name`.
+Behaviour: `documentreference` (document reference template using tag
+syntax), `style`, `header`, `footer`, `validationscript`, `trackingscript`,
+`trackinglabel`, `confirmationmessage`, `submiturl`, `returnurl`,
+`documentnotfoundmessage`, `closedmessage`, `hidetitle`, `hiderestart`,
+`hidenavfirstsection`, `hideformaftersubmit`, `blocksave`,
+`blocksavecookie`, `blocksubmitonenter`, `autosavesections`,
+`autogeneratemissingtags`.
+Save flags: `savecompletedsections`, `savedocumentdeliveryid`,
 `saverequestdocumentid`, `saverequestcompleted`, `savesectionvalidationdata`,
-`savesectionvalidationmessage`, `savesectionvalidationreference`, `savetrycount`).
-Do not modify these unless explicitly asked.
+`savesectionvalidationmessage`, `savesectionvalidationreference`,
+`savetrycount`.
+Workflow/request markers: `workflow`, `request`, `section`.
 
-## Element types
+Do not modify form-level annotations unless explicitly asked.
 
-FormsByAir types (namespace `fba:`, imported from `https://formsbyair.com/schema/1/fba.xsd`):
+## Question types
 
-`fba:formula` (computed/hidden expression), `fba:lookup` (table lookup),
-`fba:comment` (multi-line text), `fba:attachment` (file upload), `fba:option`
-(selection), `fba:note` (display content), `fba:typeahead` (search-as-you-type
-against a subscription), `fba:addressPicker`, `fba:email`, `fba:phone`,
-`fba:currency`, `fba:nzird` (NZ IRD number), `fba:nzbank` (NZ bank account).
+FormsByAir types (namespace `fba:`, imported from
+`https://formsbyair.com/schema/1/fba.xsd`) — complete list from the
+serializer: `name`, `email`, `phone`, `comment` (multi-line text),
+`address`, `signature`, `attachment`, `rating`, `note` (display content),
+`caps`, `option` (selection), `lookup` (table lookup), `formula`
+(computed expression), `diagram`, `number`, `addressPicker`, `currency`,
+`percent`, `map`, `typeahead` (search-as-you-type against a subscription),
+`terms`, `optionText`, `nzird` (NZ IRD number), `nzbank` (NZ bank account),
+`slider`, `nzpassportNumber`, `nzdriverlicenceNumber`,
+`nzdriverlicenceVersion`, `dataService`, `card`, `pattern`, `placeholder`.
 
-Standard types: `xs:string`, `xs:boolean` (checkbox), `xs:date`, `xs:int`.
+Standard XSD types: `xs:string`, `xs:boolean` (checkbox), `xs:date`,
+`xs:time`, `xs:int`. Enumerated fields use a named `xs:simpleType` with an
+`xs:restriction` (`nameValueList` behaviour when enumerations carry `name`
+annotations).
 
-See `references/docs/questions/` for official per-type documentation.
+See `references/docs/questions/` for official per-type documentation and
+`references/tag-engine.md` for how each type formats in tag output.

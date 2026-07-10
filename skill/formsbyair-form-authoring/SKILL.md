@@ -22,6 +22,10 @@ data shape; the form's UI and logic live in
    exact resolution semantics distilled from the platform's tag engine.
    For integration maps, read `references/integration-map-format.md`.
    For "does FormsByAir integrate with X?", see `references/connectors.md`.
+   Before structural edits (adding/moving groups, repeaters, conditions,
+   lists), read `references/builder-validation.md` — the rules the GUI form
+   builder enforces at save time; a hand-edited form that breaks them will
+   error when next opened in the builder.
 4. If the task involves formulas, question types, or document templates,
    read the matching official doc under `references/docs/`
    (mirrors https://docs.formsbyair.com/):

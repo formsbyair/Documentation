@@ -23,6 +23,9 @@ data shape; the form's UI and logic live in
    - `docs/tags/*.md` — tag syntax, functions (ForEach, Condition, Join...), format
    - `docs/forms/*.md` — form settings, parameters, status
    - `docs/build-form.md` — end-to-end form building tutorial
+   - `docs/changelog/` — dated release notes (2019–present) describing how the
+     system has changed over time; check here when a feature's behaviour seems
+     version-dependent or a doc mentions something that used to work differently
 
 For live/latest documentation, docs.formsbyair.com is the authoritative source;
 the bundled copies are a snapshot.

@@ -33,6 +33,9 @@ cp -r "$DOCS_SRC/tags"      "$SKILL_SRC/references/docs/"
 cp -r "$DOCS_SRC/forms"     "$SKILL_SRC/references/docs/"
 cp "$DOCS_SRC/tutorials/build-form.md" "$SKILL_SRC/references/docs/"
 
+# Release-note posts: how the system has changed over time
+cp -r "$REPO_ROOT/docs/_posts" "$SKILL_SRC/references/docs/changelog"
+
 # 2. Stamp the version (frontmatter line and body footer)
 sed -i.bak -E "s/^version: .*/version: $VERSION/" "$SKILL_SRC/SKILL.md"
 sed -i.bak -E "s/^Skill version: [^ ]*/Skill version: $VERSION/" "$SKILL_SRC/SKILL.md"
@@ -46,7 +49,12 @@ python3 "$SKILL_SRC/scripts/validate.py" "$SKILL_SRC"/assets/*.xsd > /dev/null \
 mkdir -p "$DIST"
 OUT="$DIST/formsbyair-form-authoring-$VERSION.zip"
 rm -f "$OUT"
-(cd "$(dirname "$SKILL_SRC")" && zip -qr "$OUT" "$(basename "$SKILL_SRC")")
+if command -v zip > /dev/null; then
+  (cd "$(dirname "$SKILL_SRC")" && zip -qr "$OUT" "$(basename "$SKILL_SRC")")
+else
+  # zip is missing on e.g. Git Bash for Windows; python3 is already required above
+  (cd "$(dirname "$SKILL_SRC")" && python3 -m zipfile -c "$OUT" "$(basename "$SKILL_SRC")")
+fi
 
 echo "Built $OUT"
-unzip -l "$OUT" | tail -1
+python3 -m zipfile -l "$OUT" | tail -1

@@ -26,6 +26,8 @@ data shape; the form's UI and logic live in
    - `docs/changelog/` — dated release notes (2019–present) describing how the
      system has changed over time; check here when a feature's behaviour seems
      version-dependent or a doc mentions something that used to work differently
+   - `docs/integrations/*.md` — sending form data to other applications
+     (file formats, JSON/XML maps)
 
 For live/latest documentation, docs.formsbyair.com is the authoritative source;
 the bundled copies are a snapshot.
@@ -81,6 +83,21 @@ template (Retail Investment Application v5): sections, entity-type branches
 via `visibility`, repeaters, Companies Office typeahead lookups, FATCA/CRS
 validation switches, and a document reference using `[ForEach:...]`. When
 unsure how a construct fits together, find a live instance in this file.
+
+`assets/example-integration-map.json` is a production-style integration map
+(investment application → wealth-administration platform) showing how form
+data is mapped to another application's model:
+
+- Nested `Entities`, each with a `Name`, optional `Filter`, and `Attributes`
+  (`Name`/`Value` pairs, again with optional `Filter`).
+- `Filter` expressions use the same syntax as form formulas; repeating an
+  attribute name with mutually exclusive filters expresses conditional cases
+  (if/else-if chains), including fallback defaults.
+- `ForEach: "<GroupName>"` on an entity emits one instance per occurrence of
+  a repeating group; tags inside resolve relative to that occurrence.
+- `Value` uses the full document-tag syntax from `docs/tags/` — indexed paths
+  (`Person[0].PersonIRD`), filtered functions (`[Any:...]`, `[First:...{...}]`,
+  `[ForEach:...]`), `[Expression:...]`, and section-validation data paths.
 
 ---
 Skill version: 2026.7.10 — when reporting issues with this skill, quote this version.

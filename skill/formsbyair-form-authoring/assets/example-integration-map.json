@@ -1,0 +1,346 @@
+{
+  "Entities": [
+    {
+      "Name": "Investor",
+      "Attributes": [
+        {
+          "Name": "legalType",
+          "Filter": "'<<ClientType>>' != 'Joint'",
+          "Value": "Individual"
+        },
+        {
+          "Name": "legalType",
+          "Filter": "'<<ClientType>>' == 'Joint'",
+          "Value": "Joint"
+        },
+        {
+          "Name": "eligibilityType",
+          "Value": "Retail"
+        },
+        {
+          "Name": "kiwiSaver",
+          "Filter": "'<<InvestmentType>>' == 'KiwiSaver'",
+          "Value": "true"
+        },
+        {
+          "Name": "distributionMethod",
+          "Value": "Reinvest"
+        },
+        {
+          "Name": "entityName",
+          "Value": "<<[DocumentReference]>>"
+        },
+        {
+          "Name": "country",
+          "Filter": "'<<Person[0].CloudcheckBiometric.[SectionValidationData.address.countryCode]>>' != ''",
+          "Value": "<<Person[0].CloudcheckBiometric.[SectionValidationData.address.countryCode]>>"
+        },
+        {
+          "Name": "country",
+          "Filter": "'<<Person[0].CloudcheckBiometric.[SectionValidationData.address.countryCode]>>' == '' && '<<Person[0].PersonCountry.Code>>' != ''",
+          "Value": "<<Person[0].PersonCountry.Code>>"
+        },
+        {
+          "Name": "country",
+          "Filter": "'<<Person[0].CloudcheckBiometric.[SectionValidationData.address.countryCode]>>' == '' && '<<Person[0].PersonCountry.Code>>' == ''",
+          "Value": "NZ"
+        },
+        {
+          "Name": "foreignReporting",
+          "Value": "<<[Any:PersonTaxResidency]>>"
+        },
+        {
+          "Name": "irdNumber",
+          "Filter": "'<<Person[0].PersonPIR>>' == '' || '<<[First:Person{'<<Relationship>>' == 'Joint Applicant'}:<<PersonPIR>>]>>' == ''",
+          "Value": "<<Person[0].PersonIRD>>"
+        },
+        {
+          "Name": "irdNumber",
+          "Filter": "'<<Person[0].PersonPIR>>' != '' && '<<[First:Person{'<<Relationship>>' == 'Joint Applicant'}:<<PersonPIR>>]>>' != ''",
+          "Value": "<<<[Expression:<<[First:Person{'<<Relationship>>' == 'Joint Applicant'}:<<PersonPIR>>]>> > <<Person[0].PersonPIR>> ? '<<[First:Person{'<<Relationship>>' == 'Joint Applicant'}:<<PersonIRD>>]>>' : '<<Person[0].PersonIRD>>' ]>>>"
+        },
+        {
+          "Name": "isUsResident",
+          "Value": "<<[Any:PersonTaxResidency{'<<TaxCountry.Code>>' == 'US'}]>>"
+        },
+        {
+          "Name": "tinNumber",
+          "Value": "<<[ForEach:PersonTaxResidency{'<<TaxCountry.Code>>' == 'US'}:<<TIN>>]>>"
+        },
+        {
+          "Name": "physicalAddress",
+          "Filter": "'<<Person[0].CloudcheckBiometric.[SectionValidationData.address.countryCode]>>' == ''",
+          "Value": "<<Person[0].PersonAddress1>> <<Person[0].PersonAddress2>> <<Person[0].PersonCity>> <<Person[0].PersonState>> <<Person[0].PersonPostalCode>> NZ"
+        },
+        {
+          "Name": "physicalAddress",
+          "Filter": "'<<Person[0].CloudcheckBiometric.[SectionValidationData.address.countryCode]>>' != ''",
+          "Value": "<<Person[0].CloudcheckBiometric.[SectionValidationData.address.street]>> <<Person[0].CloudcheckBiometric.[SectionValidationData.address.suburb]>> <<Person[0].CloudcheckBiometric.[SectionValidationData.address.city]>> <<Person[0].CloudcheckBiometric.[SectionValidationData.address.state]>> <<Person[0].CloudcheckBiometric.[SectionValidationData.address.postcode]>> <<Person[0].CloudcheckBiometric.[SectionValidationData.address.countryCode]>>"
+        },
+        {
+          "Name": "taxRate",
+          "Filter": "'<<Person[0].PersonPIR>>' == ''",
+          "Value": "0.28"
+        },
+        {
+          "Name": "taxRate",
+          "Filter": "'<<Person[0].PersonPIR>>' != '' && '<<[First:Person{'<<Relationship>>' == 'Joint Applicant'}:<<PersonPIR>>]>>' == ''",
+          "Value": "<<Person[0].PersonPIR>>"
+        },
+        {
+          "Name": "taxRate",
+          "Filter": "'<<Person[0].PersonPIR>>' != '' && '<<[First:Person{'<<Relationship>>' == 'Joint Applicant'}:<<PersonPIR>>]>>' != ''",
+          "Value": "<<<[Expression:(<<[First:Person{'<<Relationship>>' == 'Joint Applicant'}:<<PersonPIR>>]>> > <<Person[0].PersonPIR>> ? <<[First:Person{'<<Relationship>>' == 'Joint Applicant'}:<<PersonPIR>>]>> : <<Person[0].PersonPIR>>) ]>>>"
+        },
+        {
+          "Name": "nrwt",
+          "Filter": "'<<Person[0].PersonPIR>>' == ''",
+          "Value": "true"
+        },
+        {
+          "Name": "investorStatus",
+          "Value": "Active"
+        },
+        {
+          "Name": "riskRating",
+          "Filter": "'<<RiskRating>>' == ''",
+          "Value": "Low"
+        },
+        {
+          "Name": "riskRating",
+          "Filter": "'<<RiskRating>>' != ''",
+          "Value": "<<RiskRating>>"
+        },
+        {
+          "Name": "contributionRate",
+          "Filter": "'<<EmployeeContributionRate>>' != ''",
+          "Value": "<<EmployeeContributionRate>>"
+        },
+        {
+          "Name": "authorisers",
+          "Value": "1"
+        },
+        {
+          "Name": "amountValue",
+          "Value": "0"
+        },
+        {
+          "Name": "startDate",
+          "Value": "<<[DocumentDeliveryDateTime]>>"
+        }      
+      ],
+      "Entities": [
+        {
+          "Name": "Tag",
+          "Filter": "'<<PaperBased.Value>>' == 'true'",
+          "Attributes": [
+            {
+              "Name": "tagId",
+              "Value": "1"
+            }
+          ]
+        },
+        {
+          "Name": "Document",
+          "Attributes": [
+            {
+              "Name": "documentType",
+              "Value": "8"
+            },
+            {
+              "Name": "Attachment",
+              "Value": "false"
+            },
+            {
+              "Name": "UseSetupKey",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "Name": "BankAccount",
+          "Filter": "'<<BankAccountNumber>>' != ''",
+          "Attributes": [
+            {
+              "Name": "BankAccountName",
+              "Value": "<<BankAccountName>>"
+            },
+            {
+              "Name": "BankAccountNumber",
+              "Value": "<<BankAccountNumber>>"
+            },
+            {
+              "Name": "Currency",
+              "Value": "NZD"
+            }
+          ]
+        },
+        {
+          "Name": "position",
+          "Filter": "'<<FG>>' != '' && '<<FG>>' != '0.00' && '<<FG>>' != '0'",
+          "Attributes": [
+            {
+              "Name": "securityId",
+              "Value": "123"
+            },
+            {
+              "Name": "percent",
+              "Value": "<<FG>>"
+            }
+          ]
+        },
+        {
+          "Name": "Member",
+          "ForEach": "Person",
+          "Attributes": [
+            {
+              "Name": "email",
+              "Value": "<<PersonEmailAddress>>"
+            },
+            {
+              "Name": "taxNumber",
+              "Value": "<<PersonIRD>>"
+            },
+            {
+              "Name": "isUsResident",
+              "Value": "<<[Any:PersonTaxResidency{'<<TaxCountry.Code>>' == 'US'}]>>"
+            },
+            {
+              "Name": "tinNumber",
+              "Value": "<<[ForEach:PersonTaxResidency{'<<TaxCountry.Code>>' == 'US'}:<<TIN>>]>>"
+            },
+            {
+              "Name": "foreignReporting",
+              "Value": "<<[Any:PersonTaxResidency]>>"
+            },
+            {
+              "Name": "firstName",
+              "Value": "<<PersonFirstName>>"
+            },
+            {
+              "Name": "middleName",
+              "Value": "<<PersonMiddleNames>>"
+            },
+            {
+              "Name": "lastName",
+              "Value": "<<PersonLastName>>"
+            },
+            {
+              "Name": "dateOfBirth",
+              "Filter": "'<<CloudcheckBiometric.[SectionValidationData.dateofbirth]>>' != ''",
+              "Value": "<<CloudcheckBiometric.[SectionValidationData.dateofbirth]>>"
+            },
+            {
+              "Name": "dateOfBirth",
+              "Filter": "'<<CloudcheckBiometric.[SectionValidationData.dateofbirth]>>' == ''",
+              "Value": "<<PersonDateOfBirth>>"
+            },
+            {
+              "Name": "mobilePhone",
+              "Value": "<<PersonPhoneNumber>>"
+            },
+            {
+              "Name": "streetName",
+              "Filter": "'<<CloudcheckBiometric.[SectionValidationData.address.street]>>' != ''",
+              "Value": "<<CloudcheckBiometric.[SectionValidationData.address.street]>>"
+            },
+            {
+              "Name": "streetName",
+              "Filter": "'<<CloudcheckBiometric.[SectionValidationData.address.street]>>' == ''",
+              "Value": "<<PersonAddress1>>"
+            },
+            {
+              "Name": "suburb",
+              "Filter": "'<<CloudcheckBiometric.[SectionValidationData.address.suburb]>>' != ''",
+              "Value": "<<CloudcheckBiometric.[SectionValidationData.address.suburb]>>"
+            },
+            {
+              "Name": "suburb",
+              "Filter": "'<<CloudcheckBiometric.[SectionValidationData.address.suburb]>>' == ''",
+              "Value": "<<PersonAddress2>>"
+            },
+            {
+              "Name": "city",
+              "Filter": "'<<CloudcheckBiometric.[SectionValidationData.address.city]>>' != ''",
+              "Value": "<<CloudcheckBiometric.[SectionValidationData.address.city]>>"
+            },
+            {
+              "Name": "city",
+              "Filter": "'<<CloudcheckBiometric.[SectionValidationData.address.city]>>' == ''",
+              "Value": "<<PersonCity>>"
+            },
+            {
+              "Name": "postcode",
+              "Filter": "'<<CloudcheckBiometric.[SectionValidationData.address.postcode]>>' != ''",
+              "Value": "<<CloudcheckBiometric.[SectionValidationData.address.postcode]>>"
+            },
+            {
+              "Name": "postcode",
+              "Filter": "'<<CloudcheckBiometric.[SectionValidationData.address.postcode]>>' == ''",
+              "Value": "<<PersonPostalCode>>"
+            },
+            {
+              "Name": "country",
+              "Filter": "'<<CloudcheckBiometric.[SectionValidationData.address.countryCode]>>' != ''",
+              "Value": "<<CloudcheckBiometric.[SectionValidationData.address.countryCode]>>"
+            },
+            {
+              "Name": "country",
+              "Filter": "'<<CloudcheckBiometric.[SectionValidationData.address.countryCode]>>' == '' && '<<PersonCountry.Code>>' != ''",
+              "Value": "<<PersonCountry.Code>>"
+            },
+            {
+              "Name": "country",
+              "Filter": "'<<CloudcheckBiometric.[SectionValidationData.address.countryCode]>>' == '' && '<<PersonCountry.Code>>' == ''",
+              "Value": "NZ"
+            },
+            {
+              "Name": "Role",
+              "Filter": "'<<PersonRelationship>>' == 'Parent/Guardian'",
+              "Value": "1"
+            },
+            {
+              "Name": "Role",
+              "Filter": "'<<PersonRelationship>>' != 'Parent/Guardian'",
+              "Value": "2"
+            },
+            {
+              "Name": "taxRate",
+              "Filter": "'<<PersonPIR>>' != ''",
+              "Value": "<<PersonPIR>>"
+            },
+            {
+              "Name": "taxRate",
+              "Filter": "'<<PersonPIR>>' == ''",
+              "Value": "0.28"
+            }
+          ],
+          "Entities": [
+            {
+              "Name": "foreignTaxResidence",
+              "ForEach": "PersonTaxResidency",
+              "Attributes": [
+                {
+                  "Name": "countryCode",
+                  "Value": "<<TaxCountry.UNCode>>"
+                },
+                {
+                  "Name": "tin",
+                  "Value": "<<TIN>>"
+                },
+                {
+                  "Name": "tinNotProvidedReason",
+                  "Value": "<<NoTINReason>>"
+                },
+                {
+                  "Name": "explanationForTinNotIssued",
+                  "Value": "<<BExplanation>>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

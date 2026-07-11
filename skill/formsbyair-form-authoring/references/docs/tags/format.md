@@ -19,6 +19,8 @@ Client-side tags only support [Date/Time](https://docs.microsoft.com/en-us/dotne
 
 Server-side tags support [Numeric](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-numeric-format-strings) and [Date/Time](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings) formats.
 
+For attachment questions in template-driven documents, provide a width to output the attached image at that size instead of the filename e.g. &lt;&lt;Photo\|500&gt;&gt;. Supported image types are png, jpg, jpeg, gif and bmp - for any other file type the filename is output as usual.
+
 ## Examples
 
 |Context|Format|Result|
@@ -26,3 +28,4 @@ Server-side tags support [Numeric](https://docs.microsoft.com/en-us/dotnet/stand
 |Client|&lt;&lt;Total\|&gt;&gt;|$100.00|
 |Server|&lt;&lt;Amount\|000000&gt;&gt;|000100|
 |Both|&lt;&lt;OrderDate\|ddMMyyyy&gt;&gt;|20012021|
+|Server|&lt;&lt;Photo\|500&gt;&gt;|Attached image displayed at width 500|

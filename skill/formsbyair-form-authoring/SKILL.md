@@ -1,6 +1,6 @@
 ---
 name: formsbyair-form-authoring
-version: 2026.7.10
+version: 2026.7.11
 metadata:
   author: FormsByAir
 description: Author and edit FormsByAir form definitions (XSD schema files). Use this skill whenever the user wants to create, modify, review, or understand a FormsByAir form — adding/removing questions, sections, dropdown options, conditional visibility, repeating groups, formulas, validation rules, lookups, or document tags — or mentions FormsByAir, a form schema/XSD, form builder output, or files like "*_Form_*.xsd". Also use it when asked how a FormsByAir feature (questions, tags, workflow, templates) works.
@@ -45,6 +45,28 @@ data shape; the form's UI and logic live in
 
 For live/latest documentation, docs.formsbyair.com is the authoritative source;
 the bundled copies are a snapshot.
+
+## Form design principles
+
+When building a form from scratch or converting an existing form (uploaded
+PDF/Word/paper form or a description), apply good digital form design rather
+than copying the source layout literally:
+
+- **Repeating elements → repeater.** If the source has numbered duplicates
+  ("Person 1", "Person 2", "Beneficiary 1/2/3"...), model it once as a
+  repeating group (`maxOccurs="unbounded"`), not as copies. Users add rows
+  as needed.
+- **"If yes, please provide detail" → conditional path.** Put the follow-up
+  question(s) in a conditional branch (`visibility`) on the previous
+  question that displays only when Yes (or the relevant option) is selected,
+  and **omit the "if yes" wording** from the follow-up's prompt — the
+  condition already expresses it.
+- **Email and phone get their specific types.** If a question is clearly an
+  email address or a phone number, use `fba:email` / `fba:phone` (not
+  `xs:string`) so input is validated as the user types.
+- **Most fields are required by default.** Mark fields required
+  (`minOccurs="1"`) unless they are clearly optional; don't leave
+  requiredness off just because the source form didn't state it.
 
 ## Reading a form
 
@@ -110,4 +132,4 @@ evaluation semantics are in `references/integration-map-format.md`; simpler
 official samples with their outputs are in `references/docs/samples/`.
 
 ---
-Skill version: 2026.7.10 — when reporting issues with this skill, quote this version.
+Skill version: 2026.7.11 — when reporting issues with this skill, quote this version.

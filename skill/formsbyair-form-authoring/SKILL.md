@@ -1,6 +1,6 @@
 ---
 name: formsbyair-form-authoring
-version: 2026.7.11
+version: 2026.7.13
 metadata:
   author: FormsByAir
 description: Author and edit FormsByAir form definitions (XSD schema files). Use this skill whenever the user wants to create, modify, review, or understand a FormsByAir form — adding/removing questions, sections, dropdown options, conditional visibility, repeating groups, formulas, validation rules, lookups, or document tags — or mentions FormsByAir, a form schema/XSD, form builder output, or files like "*_Form_*.xsd". Also use it when asked how a FormsByAir feature (questions, tags, workflow, templates) works.
@@ -22,6 +22,14 @@ data shape; the form's UI and logic live in
    exact resolution semantics distilled from the platform's tag engine.
    For integration maps, read `references/integration-map-format.md`.
    For "does FormsByAir integrate with X?", see `references/connectors.md`.
+   When referencing extended data from a data-service lookup/typeahead
+   (`<<Key.SubField>>`), get the exact property names from
+   `references/integration-models.swagger.json` — the platform's external
+   integration models (MBIE/Companies Office entities, NZ Charities,
+   Australian Business Register, FSPR, CarJam, Equifax, CreditorWatch,
+   and the shared Address/Officer/Shareholder/BeneficialOwner shapes).
+   Don't guess property names; a misspelled sub-property silently resolves
+   to an empty string.
    Before structural edits (adding/moving groups, repeaters, conditions,
    lists), read `references/builder-validation.md` — the rules the GUI form
    builder enforces at save time; a hand-edited form that breaks them will
@@ -57,13 +65,37 @@ than copying the source layout literally:
   repeating group (`maxOccurs="unbounded"`), not as copies. Users add rows
   as needed.
 - **"If yes, please provide detail" → conditional path.** Put the follow-up
-  question(s) in a conditional branch (`visibility`) on the previous
-  question that displays only when Yes (or the relevant option) is selected,
-  and **omit the "if yes" wording** from the follow-up's prompt — the
-  condition already expresses it.
+  question(s) in a conditional branch (`visibility`) **as a child of** the
+  controlling question that displays only when Yes (or the relevant option)
+  is selected, and **omit the "if yes" wording** from the follow-up's
+  prompt — the condition already expresses it. A condition group must be
+  nested inside the question it switches on, never placed as a sibling —
+  see the conditional-branch patterns in `references/patterns.md`.
 - **Email and phone get their specific types.** If a question is clearly an
   email address or a phone number, use `fba:email` / `fba:phone` (not
   `xs:string`) so input is validated as the user types.
+- **Person names are plain text.** `fba:name` is deprecated — use
+  `xs:string` with `autocomplete` = `name`.
+- **Addresses get a Typeahead — not a Lookup.** A Lookup (`fba:lookup`)
+  renders as a drop-down, so it only suits lists up to the hundreds of
+  rows; addresses number in the millions and need a Typeahead
+  (`fba:typeahead`). Model address questions as `fba:typeahead` with
+  `allowmanualentry` and `getextendeddata`, so an address service (e.g.
+  NZ Post for NZ addresses) can be connected. Leave `subscriptionid` off —
+  the user connects the service in the builder.
+- **Always set a Document Reference.** On any new form, set the form-level
+  `documentreference` annotation to a tag holding a relevant unique
+  identifier for the submission — generally a name of some kind (e.g. the
+  applicant, company, or vendor name) — so submitted documents are
+  identifiable in the workflow list.
+- **Company/registered names get a typeahead.** Model them as
+  `fba:typeahead` with `getextendeddata` so a companies-register service
+  (e.g. MBIE/Companies Office in NZ) can prefill sibling fields such as
+  the business number via `'<<Key.SubField>>'` defaults — e.g.
+  `'<<ClientName.NZBN>>'` for an NZ Business Number (prefer `NZBN` over
+  `CompanyNumber`, which only exists for companies). Property names come
+  from `references/integration-models.swagger.json`. Leave
+  `subscriptionid` off for the user to connect.
 - **Most fields are required by default.** Mark fields required
   (`minOccurs="1"`) unless they are clearly optional; don't leave
   requiredness off just because the source form didn't state it.
@@ -132,4 +164,4 @@ evaluation semantics are in `references/integration-map-format.md`; simpler
 official samples with their outputs are in `references/docs/samples/`.
 
 ---
-Skill version: 2026.7.11 — when reporting issues with this skill, quote this version.
+Skill version: 2026.7.13 — when reporting issues with this skill, quote this version.

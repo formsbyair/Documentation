@@ -41,7 +41,7 @@ marks a repeater; `minOccurs="1"` means required.
 
 | Property | Meaning |
 |---|---|
-| `visibility` | Conditional display. On a group following a controlling option field, the value matches one of that option's enumeration values — the group shows only when selected. |
+| `visibility` | Conditional display. On a group nested **as a child of** the controlling question, the value matches one of that question's enumeration values (`True`/`False` for a boolean parent) — the group shows only when selected. The controlling question hosts its branches in its `<xs:sequence>` and moves its own value to an `<xs:attribute name="value">`; see the conditional-branch patterns. |
 | `hidden` | `True` = element not shown during form-fill. Used for computed `fba:formula` fields and validation switches. |
 | `readonly` | `True` = display-only field. |
 | `readonlyprefill` | `True` = field becomes read-only when prefilled. |
@@ -115,9 +115,13 @@ Do not modify form-level annotations unless explicitly asked.
 
 FormsByAir types (namespace `fba:`, imported from
 `https://formsbyair.com/schema/1/fba.xsd`) — complete list from the
-serializer: `name`, `email`, `phone`, `comment` (multi-line text),
+serializer: `name` (**deprecated** — the builder no longer offers it as a
+question type; use `xs:string` with `autocomplete` = `name` instead),
+`email`, `phone`, `comment` (multi-line text),
 `address`, `signature`, `attachment`, `rating`, `note` (display content),
-`caps`, `option` (selection), `lookup` (table lookup), `formula`
+`caps`, `option` (selection), `lookup` (table lookup — renders as a
+drop-down, so only suits lists up to the hundreds of rows; for large
+datasets like addresses use `typeahead`), `formula`
 (computed expression), `diagram`, `number`, `addressPicker`, `currency`,
 `percent`, `map`, `typeahead` (search-as-you-type against a subscription),
 `terms`, `optionText`, `nzird` (NZ IRD number), `nzbank` (NZ bank account),

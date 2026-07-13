@@ -53,19 +53,73 @@ All elements are `nillable="true"`. Required fields add `minOccurs="1"`.
 
 ## Conditional branch (visibility)
 
-A group shown only when a controlling option field has a given value.
-The group is a sibling that follows the controlling field; `visibility`
-holds the matching enumeration value.
+A group shown only when a controlling question has a given value.
+The condition group must be a **child of the question it switches on** —
+not a sibling. The controlling question becomes a complex element: its
+condition branches go in the `<xs:sequence>`, and its own value moves to
+an `<xs:attribute name="value">` (which carries the enumerated simpleType
+for a list question, or `xs:boolean` for a checkbox). `visibility` holds
+the matching enumeration value (or `True`/`False` for a boolean parent).
+
+List question with condition branches as children:
+
+```xml
+<xs:element minOccurs="1" name="aNEWID" nillable="true">
+  <xs:annotation>
+    <xs:documentation source="prompt">Investor Type</xs:documentation>
+    <xs:documentation source="autofillkey">ClientType</xs:documentation>
+    <xs:documentation source="listtype">toggle</xs:documentation>
+  </xs:annotation>
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="aNEWID2" nillable="true">
+        <xs:annotation>
+          <xs:documentation source="visibility">Trust</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <!-- fields shown only for Trust -->
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!-- more branches -->
+    </xs:sequence>
+    <xs:attribute name="value">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Trust">
+            <xs:annotation>
+              <xs:documentation source="name">Trust</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <!-- more enumerations -->
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+</xs:element>
+```
+
+Boolean (checkbox) question with a condition branch as child:
 
 ```xml
 <xs:element name="aNEWID" nillable="true">
   <xs:annotation>
-    <xs:documentation source="visibility">Trust</xs:documentation>
+    <xs:documentation source="prompt">Street address is different from postal address</xs:documentation>
+    <xs:documentation source="autofillkey">StreetAddressDifferent</xs:documentation>
   </xs:annotation>
   <xs:complexType>
     <xs:sequence>
-      <!-- fields shown only for Trust -->
+      <xs:element name="aNEWID2" nillable="true">
+        <xs:annotation>
+          <xs:documentation source="visibility">True</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence><!-- fields shown when ticked --></xs:sequence>
+        </xs:complexType>
+      </xs:element>
     </xs:sequence>
+    <xs:attribute name="value" type="xs:boolean" />
   </xs:complexType>
 </xs:element>
 ```
@@ -187,7 +241,11 @@ renders rows inline. Repeated groups end with the standard attribute trio.
 ```
 
 Extended data from the lookup is referenced as `'<<Key.SubField>>'`,
-e.g. a sibling field defaulting to `'<<ClientName.CompanyNumber>>'`.
+e.g. a sibling field defaulting to `'<<ClientName.NZBN>>'`. The available
+sub-property names per integration are defined in
+`references/integration-models.swagger.json` — check there rather than
+guessing (for MBIE entities prefer `NZBN` over `CompanyNumber`, which only
+exists for companies).
 Never invent `subscriptionid`/`tableid` GUIDs — reuse ones already in the
 form or ask the user for the correct ID.
 

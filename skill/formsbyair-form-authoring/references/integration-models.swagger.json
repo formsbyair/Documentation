@@ -1,0 +1,436 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "V1",
+    "title": "FormsByAir Integration Models"
+  },
+  "definitions": {
+    "ANZSIC Code": {
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Code": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Australian Business Register Entity": {
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "ABN": {
+          "type": "string"
+        },
+        "ACN": {
+          "type": "string"
+        },
+        "Address": { "$ref": "#/definitions/Address" }
+      },
+      "type": "object"
+    },
+    "CarJam Vehicle": {
+      "properties": {
+        "year_of_manufacture": {
+          "type": "string"
+        },
+        "make": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "vehicle_type": {
+          "type": "string"
+        },
+        "body_style": {
+          "type": "string"
+        },
+        "gross_vehicle_mass": {
+          "type": "string"
+        },
+        "vin": {
+          "type": "string"
+        },
+        "expiry_date_of_last_successful_wof": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "type": "object"
+    },
+    "Creditor Watch Report": {
+      "properties": {
+        "abr_data": {
+          "properties": {
+            "abn": {
+              "type": "string"
+            },
+            "asicnumber": {
+              "type": "string"
+            },
+            "businessname_organisationname": {
+              "items": { "type": "string" },
+              "type": "array"
+            },
+            "entitytype_entitydescription": {
+              "type": "string"
+            },
+            "mainname_organisationname": {
+              "type": "string"
+            },
+            "maintradingname_organisationname": {
+              "type": "string"
+            },
+            "legalname_familyname": {
+              "type": "string"
+            },
+            "legalname_givenname": {
+              "type": "string"
+            },
+            "legalname_othergivenname": {
+              "type": "string"
+            },
+            "entitystatus_entitystatuscode": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "organisation": {
+          "type": "object"
+        },
+        "company_addresses": {
+          "items": { "type": "object" },
+          "type": "array"
+        },
+        "current_directors": {
+          "items": { "type": "object" },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "Financial Service Providers Register": {
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "fspRegistrationNumber": {
+          "type": "string"
+        },
+        "fspType": {
+          "type": "string"
+        },
+        "registrationDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "fspStatus": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Equifax Consumer Credit Check Report": {
+      "properties": {
+        "Reference": {
+          "type": "string"
+        },
+        "Error": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "DateOfBirth": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Gender": {
+          "type": "string"
+        },
+        "Address": {
+          "type": "string"
+        },
+        "CrossReferences": {
+          "type": "integer"
+        },
+        "LostStolenId": {
+          "type": "integer"
+        },
+        "PublicNotices": {
+          "type": "integer"
+        },
+        "Enquiries": {
+          "type": "integer"
+        },
+        "Insolvencies": {
+          "type": "integer"
+        },
+        "Judgements": {
+          "type": "integer"
+        },
+        "CollectionAgencyDefaults": {
+          "type": "integer"
+        },
+        "Defaults": {
+          "type": "integer"
+        },
+        "DefaultsValue": {
+          "type": "number"
+        },
+        "DefaultsBalance": {
+          "type": "number"
+        },
+        "DefaultsList": {
+          "type": "string"
+        },
+        "PublicNoticesList": {
+          "type": "string"
+        },
+        "InsolvenciesList": {
+          "type": "string"
+        },
+        "JudgementsList": {
+          "type": "string"
+        },
+        "CollectionAgencyDefaultsList": {
+          "type": "string"
+        },
+        "Score": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "NZ Charities Services Charity": {
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "NZBN": {
+          "type": "string"
+        },
+        "CharityRegistrationNumber": {
+          "type": "string"
+        },
+        "OrganisationId": {
+          "type": "string"
+        },
+        "RegistrationDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "StatusDescription": {
+          "type": "string"
+        },
+        "AnnualReturnFilingMonth": { "type": "integer" },
+        "PhysicalAddress": { "$ref": "#/definitions/Address" },
+        "PostalAddress": { "$ref": "#/definitions/Address" },
+        "CurrentOfficers": {
+          "items": { "$ref": "#/definitions/Officer" },
+          "type": "array"
+        },
+        "PreviousOfficers": {
+          "items": { "$ref": "#/definitions/Officer" },
+          "type": "array"
+        },
+        "BeneficialOwners": {
+          "items": { "$ref": "#/definitions/BeneficialOwner" },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "NZ Ministry of Business, Innovation, and Employment Entity": {
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "TradingName": {
+          "type": "string"
+        },
+        "UltimateHoldingCompanyName": {
+          "type": "string"
+        },
+        "NZBN": {
+          "type": "string"
+        },
+        "CompanyNumber": {
+          "type": "string"
+        },
+        "RegistrationDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "StatusDescription": {
+          "type": "string"
+        },
+        "TypeDescription": {
+          "type": "string"
+        },
+        "AnnualReturnFilingMonth": { "type": "integer" },
+        "NumberOfShares": {
+          "type": "number"
+        },
+        "RegisteredAddress": { "$ref": "#/definitions/Address" },
+        "PhysicalAddress": { "$ref": "#/definitions/Address" },
+        "PostalAddress": { "$ref": "#/definitions/Address" },
+        "CurrentDirectors": {
+          "items": { "$ref": "#/definitions/Officer" },
+          "type": "array"
+        },
+        "PreviousDirectors": {
+          "items": { "$ref": "#/definitions/Officer" },
+          "type": "array"
+        },
+        "CurrentShareholders": {
+          "items": { "$ref": "#/definitions/Shareholder" },
+          "type": "array"
+        },
+        "BeneficialOwners": {
+          "items": { "$ref": "#/definitions/BeneficialOwner" },
+          "type": "array"
+        },
+        "IndustryClassification": {
+          "properties": {
+            "ClassificationCode": {
+              "type": "string"
+            },
+            "ClassificationDescription": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "Address": {
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "UnitNumber": {
+          "type": "string"
+        },
+        "Level": {
+          "type": "string"
+        },
+        "StreetNumber": {
+          "type": "string"
+        },
+        "StreetName": {
+          "type": "string"
+        },
+        "StreetType": {
+          "type": "string"
+        },
+        "Address1": {
+          "type": "string"
+        },
+        "Address2": {
+          "type": "string"
+        },
+        "City": {
+          "type": "string"
+        },
+        "Area": {
+          "type": "string"
+        },
+        "State": {
+          "type": "string"
+        },
+        "StateCode": {
+          "type": "string"
+        },
+        "PostalCode": {
+          "type": "string"
+        },
+        "Country": {
+          "type": "string"
+        },
+        "CountryCode": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Officer": {
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "MiddleNames": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Address": { "$ref": "#/definitions/Address" },
+        "StartDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "EndDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "EntityName": { "type": "string" },
+        "Role": { "type": "string" }
+      },
+      "type": "object"
+    },
+    "Shareholder": {
+      "properties": {
+        "Share": {
+          "type": "number"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "MiddleNames": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Address": { "$ref": "#/definitions/Address" },
+        "EntityName": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "BeneficialOwner": {
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "MiddleNames": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Address": { "$ref": "#/definitions/Address" },
+        "EntityName": { "type": "string" },
+        "Relationship": { "type": "string" },
+        "Share": { "type": "number" }
+      },
+      "type": "object"
+    }
+  }
+}

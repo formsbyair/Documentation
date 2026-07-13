@@ -8,7 +8,7 @@ We've added support for displaying attached images in template-driven document o
 
 A template tag for an attachment question normally outputs the attachment filename e.g. &lt;&lt;Photo&gt;&gt;.
 
-You can now include a width to display the attached image at that size instead e.g. &lt;&lt;Photo|500&gt;&gt; - the same syntax as signature and diagram tags today.
+You can now include a width to display the attached image at that size instead e.g. &lt;&lt;Photo\|500&gt;&gt; - the same syntax as signature and diagram tags today.
 
 This also works inside &lt;&lt;[ForEach:...]&gt;&gt; table rows, so a repeating list of photos can be output as images.
 

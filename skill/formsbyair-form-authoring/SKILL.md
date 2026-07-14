@@ -1,6 +1,6 @@
 ---
 name: formsbyair-form-authoring
-version: 2026.7.13
+version: 2026.7.15
 metadata:
   author: FormsByAir
 description: Author and edit FormsByAir form definitions (XSD schema files). Use this skill whenever the user wants to create, modify, review, or understand a FormsByAir form — adding/removing questions, sections, dropdown options, conditional visibility, repeating groups, formulas, validation rules, lookups, or document tags — or mentions FormsByAir, a form schema/XSD, form builder output, or files like "*_Form_*.xsd". Also use it when asked how a FormsByAir feature (questions, tags, workflow, templates) works.
@@ -99,6 +99,18 @@ than copying the source layout literally:
 - **Most fields are required by default.** Mark fields required
   (`minOccurs="1"`) unless they are clearly optional; don't leave
   requiredness off just because the source form didn't state it.
+- **Preserve source-document formatting in display content.** When form
+  content originates from a Word/PDF/HTML source, never extract plain text
+  only — read run-level formatting (for docx: `w:b`, `w:i`, `w:u`,
+  `w:highlight` in `word/document.xml`) and carry it into `note`
+  (Display Content) values as inline HTML: `<strong>` for bold, `<em>` for
+  italic, `<u>` for underline, `<a href="...">` for hyperlinks, XML-escaped
+  in the XSD (`&lt;strong&gt;`), matching the builder's Editor toolbar
+  output. Keep bullets/numbering in the markdown-style `*` syntax, not
+  `<ul>`/`<ol>`, since HTML lists don't translate to auto-generated output
+  documents. Formatting is also data: highlighting, strikethrough, or
+  colour in a change-request document often encodes which items an
+  instruction applies to, so inspect it before acting.
 
 ## Reading a form
 
@@ -164,4 +176,4 @@ evaluation semantics are in `references/integration-map-format.md`; simpler
 official samples with their outputs are in `references/docs/samples/`.
 
 ---
-Skill version: 2026.7.13 — when reporting issues with this skill, quote this version.
+Skill version: 2026.7.15 — when reporting issues with this skill, quote this version.

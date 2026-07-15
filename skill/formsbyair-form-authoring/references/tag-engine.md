@@ -25,9 +25,12 @@ they're resolved at delivery time, so they survive this pass untouched.
 - The document tree is flattened (conditional branches only contribute the
   selected path) and **every** element whose `autofillkey` matches the tag
   (case-insensitive) contributes its value, concatenated with the separator
-  (default: one space). Empty values are skipped. Duplicate autofillkeys
-  across repeater rows therefore concatenate — use `Name[i].`, `[First:...]`
-  or `[ForEach:...]` to pick specific rows.
+  (default: one space). Empty values are skipped. So if the element sits
+  inside a repeater, or several elements share the autofillkey,
+  `<<PhoneNumber>>` outputs **all** instance values space-separated —
+  e.g. `021123123 021345122`. This confuses form authors constantly; when
+  a single value is wanted, use `Name[i].`, `[First:...]` or `[ForEach:...]`
+  to pick a specific row.
 - `<<Repeater[0].Tag>>` — indexed row access, **zero-based**; out-of-range
   resolves to empty.
 - `<<[This]>>` — the current repeater row's own value (inside `[ForEach:...]`
@@ -124,7 +127,11 @@ text **before** evaluation, with single quotes in values escaped, so:
 - A misspelled tag silently becomes an empty string — validate output.
 - Trailing separators are trimmed; leading separator only with the
   `[sep]`-before-name form and only when output is non-empty.
-- Multiple elements sharing an autofillkey concatenate in simple-tag context.
+- Multiple elements sharing an autofillkey concatenate in simple-tag
+  context — and an element inside a repeater is the same thing: with two
+  rows, `<<PhoneNumber>>` renders `021123123 021345122`, not one value.
+  This is the single most common tag-output surprise; reach for
+  `<<Repeater[0].PhoneNumber>>`, `[First:...]` or `[ForEach:...]` instead.
 - Curly/smart quotes (`‘’`) in filters are normalised to `'` — but write
   straight quotes anyway.
 - Newlines and tabs are stripped from expressions before evaluation.

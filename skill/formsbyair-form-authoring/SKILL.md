@@ -1,6 +1,6 @@
 ---
 name: formsbyair-form-authoring
-version: 2026.7.15
+version: 2026.7.16
 metadata:
   author: FormsByAir
 description: Author and edit FormsByAir form definitions (XSD schema files). Use this skill whenever the user wants to create, modify, review, or understand a FormsByAir form — adding/removing questions, sections, dropdown options, conditional visibility, repeating groups, formulas, validation rules, lookups, or document tags — or mentions FormsByAir, a form schema/XSD, form builder output, or files like "*_Form_*.xsd". Also use it when asked how a FormsByAir feature (questions, tags, workflow, templates) works.
@@ -118,6 +118,13 @@ than copying the source layout literally:
   `prompt`, `title`, or `autofillkey` annotations, never by element name.
 - `autofillkey` is the logical field name; `<<AutofillKey>>` tags reference it
   in formulas, defaults, validation, and document templates.
+- Autofillkeys are not unique per submission: if the element sits inside a
+  repeater, or several elements share the same autofillkey, a simple
+  `<<Tag>>` outputs **every** instance value separated by spaces — e.g.
+  `<<PhoneNumber>>` in a two-row repeater renders `021123123 021345122`.
+  This surprises form authors constantly. When one value is wanted, use
+  `<<Repeater[0].Tag>>`, `[First:...]` or `[ForEach:...]` — see
+  `references/tag-engine.md`.
 - Structure: root `Form` → sections (`source="section"`) → groups → fields.
   Groups with `visibility` are conditional branches; `maxOccurs="unbounded"`
   marks repeaters.
@@ -176,4 +183,4 @@ evaluation semantics are in `references/integration-map-format.md`; simpler
 official samples with their outputs are in `references/docs/samples/`.
 
 ---
-Skill version: 2026.7.15 — when reporting issues with this skill, quote this version.
+Skill version: 2026.7.16 — when reporting issues with this skill, quote this version.

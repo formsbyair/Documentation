@@ -1,6 +1,6 @@
 ---
 name: formsbyair-form-authoring
-version: 2026.7.16
+version: 2026.7.17
 metadata:
   author: FormsByAir
 description: Author and edit FormsByAir form definitions (XSD schema files). Use this skill whenever the user wants to create, modify, review, or understand a FormsByAir form — adding/removing questions, sections, dropdown options, conditional visibility, repeating groups, formulas, validation rules, lookups, or document tags — or mentions FormsByAir, a form schema/XSD, form builder output, or files like "*_Form_*.xsd". Also use it when asked how a FormsByAir feature (questions, tags, workflow, templates) works.
@@ -111,6 +111,18 @@ than copying the source layout literally:
   documents. Formatting is also data: highlighting, strikethrough, or
   colour in a change-request document often encodes which items an
   instruction applies to, so inspect it before acting.
+- **No layout HTML in display content — the PDF output can't render it.**
+  The form view renders arbitrary pasted HTML, but the auto-generated PDF
+  of a submitted document does not translate HTML layout: `<table>`-based
+  layouts, spacer rows/cells (`&nbsp;` with fixed heights), and
+  inline-styled `<div>` grids come out as each cell/block stacked on its
+  own line with large vertical gaps. Express structure with form
+  structure instead — groups (titles), separate `note` elements, and
+  markdown `*` bullets — and keep HTML inside a note to simple inline
+  tags (`<strong>`, `<em>`, `<u>`, `<a>`). When editing an existing form
+  that contains pasted layout HTML (a common artefact of copying from
+  Word/web), expect its PDF output to be broken and rebuild the content
+  as group + display content rather than patching the HTML.
 
 ## Reading a form
 
@@ -183,4 +195,4 @@ evaluation semantics are in `references/integration-map-format.md`; simpler
 official samples with their outputs are in `references/docs/samples/`.
 
 ---
-Skill version: 2026.7.16 — when reporting issues with this skill, quote this version.
+Skill version: 2026.7.17 — when reporting issues with this skill, quote this version.

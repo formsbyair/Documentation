@@ -27,7 +27,7 @@ marks a repeater; `minOccurs="1"` means required.
 |---|---|
 | `title` | Heading for a section or group. On the root `Form` element, the form's display name. |
 | `prompt` | Question/field label shown to the user. |
-| `note` | Help/informational text. On `fba:note` elements it is the content itself (may contain HTML). |
+| `note` | Help/informational text. On `fba:note` elements it is the content itself. May contain HTML, but keep it to simple inline tags (`<strong>`, `<em>`, `<u>`, `<a>`): layout HTML (tables, spacer rows, styled div grids) renders in form view but breaks the generated PDF output, which stacks each block with large vertical gaps. Use markdown `*` bullets and group structure instead. |
 | `popupnote` | `True` = note displays as a popup instead of inline. |
 | `hint` | On input fields: helper/placeholder text. On `fba:formula` fields: the formula expression itself. Context-dependent — check the element type. |
 | `width` | Grid width of the field (12-column grid). |

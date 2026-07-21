@@ -103,6 +103,11 @@ the formula result matches the branch's `visibility` value. See
 ## Form-level (root `Form` element only)
 
 Identity/metadata: `title`, `note`, `owner`, `ownerId`, `name`.
+On the root `Form` element, `note` is the form **Instruction**: it renders
+at the start of the form and is the right home for "about this form" /
+how-to-use guidance (not `fba:note` content elements). It may contain
+basic HTML tags such as `<br>` and `<strong>`, and the `Note` URL
+parameter adds to or overrides it per link.
 Behaviour: `documentreference` (document reference template using tag
 syntax), `style`, `header`, `footer`, `validationscript`, `trackingscript`,
 `trackinglabel`, `confirmationmessage`, `submiturl`, `returnurl`,

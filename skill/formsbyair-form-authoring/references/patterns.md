@@ -224,6 +224,21 @@ renders rows inline. Repeated groups end with the standard attribute trio.
 </xs:element>
 ```
 
+## Single-line address — addressPicker (Google lookup)
+
+The default for any non-NZ single-line address question. Needs no service
+subscription. (NZ addresses instead use a `fba:typeahead` connected to an
+NZ address service — see the address principle in SKILL.md.)
+
+```xml
+<xs:element minOccurs="1" name="aNEWID" nillable="true" type="fba:addressPicker">
+  <xs:annotation>
+    <xs:documentation source="prompt">Residential address</xs:documentation>
+    <xs:documentation source="autofillkey">ResidentialAddress</xs:documentation>
+  </xs:annotation>
+</xs:element>
+```
+
 ## Typeahead with external lookup (e.g. Companies Office)
 
 ```xml

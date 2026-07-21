@@ -84,12 +84,22 @@ than copying the source layout literally:
   `xs:string`) so input is validated as the user types.
 - **Person names are plain text.** `fba:name` is deprecated — use
   `xs:string` with `autocomplete` = `name`.
-- **Addresses get a Typeahead — not a Lookup.** A Lookup (`fba:lookup`)
-  renders as a drop-down, so it only suits lists up to the hundreds of
-  rows; addresses number in the millions and need a Typeahead
-  (`fba:typeahead`). Model address questions as `fba:typeahead` with
-  `allowmanualentry` and `getextendeddata`, so an address service (e.g.
-  NZ Post for NZ addresses) can be connected. Leave `subscriptionid` off —
+- **"About this form" guidance → the form Instruction, not content.** Put
+  any about-this-form / how-to-use text in the root `Form` element's `note`
+  annotation (the builder's Instruction setting) rather than creating
+  `fba:note` content elements for it. It renders at the start of the form,
+  may contain basic HTML tags such as `<br>` and `<strong>`, and can be
+  added to or overridden per-link with the `Note` URL parameter
+  (`docs/forms/parameters.md`). Reserve `fba:note` elements for guidance
+  tied to a specific section, group, or question.
+- **Addresses: addressPicker by default, Typeahead for NZ — never a
+  Lookup.** A Lookup (`fba:lookup`) renders as a drop-down, so it only
+  suits lists up to the hundreds of rows; addresses number in the
+  millions. Any non-NZ single-line address question defaults to
+  `fba:addressPicker` (Google address lookup — no service subscription
+  needed). NZ addresses use a Typeahead (`fba:typeahead`) with
+  `allowmanualentry` and `getextendeddata`, so an NZ address service
+  (e.g. NZ Post) can be connected. Leave `subscriptionid` off —
   the user connects the service in the builder.
 - **Always set a Document Reference.** On any new form, set the form-level
   `documentreference` annotation to a tag holding a relevant unique

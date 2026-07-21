@@ -1,6 +1,6 @@
 ---
 name: formsbyair-form-authoring
-version: 2026.7.17
+version: 2026.7.21
 metadata:
   author: FormsByAir
 description: Author and edit FormsByAir form definitions (XSD schema files). Use this skill whenever the user wants to create, modify, review, or understand a FormsByAir form — adding/removing questions, sections, dropdown options, conditional visibility, repeating groups, formulas, validation rules, lookups, or document tags — or mentions FormsByAir, a form schema/XSD, form builder output, or files like "*_Form_*.xsd". Also use it when asked how a FormsByAir feature (questions, tags, workflow, templates) works.
@@ -71,6 +71,14 @@ than copying the source layout literally:
   prompt — the condition already expresses it. A condition group must be
   nested inside the question it switches on, never placed as a sibling —
   see the conditional-branch patterns in `references/patterns.md`.
+- **Type-dependent steps → dynamic sections.** When a source form shows or
+  hides whole steps based on an early choice (e.g. investor type routing to
+  different certification steps), don't fold everything into shared static
+  sections — sections themselves can be conditional. Wrap the section(s) in
+  a hidden formula switch placed at the top level of the form (a sibling of
+  the other sections), and the wizard step appears only when the formula
+  matches — see "Conditional (dynamic) section" in `references/patterns.md`
+  and the live instances in `assets/example-wholesale-investment-v1.xsd`.
 - **Email and phone get their specific types.** If a question is clearly an
   email address or a phone number, use `fba:email` / `fba:phone` (not
   `xs:string`) so input is validated as the user types.
@@ -138,6 +146,9 @@ than copying the source layout literally:
   `<<Repeater[0].Tag>>`, `[First:...]` or `[ForEach:...]` — see
   `references/tag-engine.md`.
 - Structure: root `Form` → sections (`source="section"`) → groups → fields.
+  Sections can also sit inside the condition branch of a top-level hidden
+  formula switch — a dynamic section: the whole wizard step appears only
+  when the formula matches the branch's `visibility` value.
   Groups with `visibility` are conditional branches; `maxOccurs="unbounded"`
   marks repeaters.
 
@@ -187,6 +198,12 @@ via `visibility`, repeaters, Companies Office typeahead lookups, FATCA/CRS
 validation switches, and a document reference using `[ForEach:...]`. When
 unsure how a construct fits together, find a live instance in this file.
 
+`assets/example-wholesale-investment-v1.xsd` (Wholesale Investment
+Application v1) additionally shows **dynamic sections**: top-level hidden
+formula switches (e.g. "Wholesale Investor", "Other Investor") whose
+condition branches wrap whole Certification sections, so the wizard steps
+themselves change with the selected investor type.
+
 `assets/example-integration-map.json` is a production-style integration map
 (investment application → wealth-administration platform) showing entity
 nesting, conditional attribute filters (if/else-if chains), `ForEach` over
@@ -195,4 +212,4 @@ evaluation semantics are in `references/integration-map-format.md`; simpler
 official samples with their outputs are in `references/docs/samples/`.
 
 ---
-Skill version: 2026.7.17 — when reporting issues with this skill, quote this version.
+Skill version: 2026.7.21 — when reporting issues with this skill, quote this version.

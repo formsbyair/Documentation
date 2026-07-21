@@ -21,6 +21,13 @@ when the parent question's value equals the `visibility` value
 (case-insensitive). `maxOccurs="unbounded"` (any explicit `maxOccurs`)
 marks a repeater; `minOccurs="1"` means required.
 
+Sections are normally direct children of the root `Form` element, but a
+section may also sit inside the condition branch of a **top-level** hidden
+formula switch (itself a direct child of `Form`, alongside the other
+sections) — a *dynamic section*: the whole wizard step appears only when
+the formula result matches the branch's `visibility` value. See
+"Conditional (dynamic) section" in `references/patterns.md`.
+
 ## Display & labelling
 
 | Property | Meaning |

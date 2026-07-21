@@ -251,6 +251,9 @@ form or ask the user for the correct ID.
 
 ## Section (top-level page)
 
+Sections end with a `value` / `completed` / `data` attribute trio (the
+platform serializer emits these on every section).
+
 ```xml
 <xs:element name="aNEWID" nillable="true">
   <xs:annotation>
@@ -261,10 +264,69 @@ form or ask the user for the correct ID.
     <xs:sequence>
       <!-- groups and fields -->
     </xs:sequence>
+    <xs:attribute name="value" type="xs:string" />
+    <xs:attribute name="completed" type="xs:string" />
+    <xs:attribute name="data" type="xs:string" />
   </xs:complexType>
 </xs:element>
 ```
 
+## Conditional (dynamic) section — wizard steps that appear per answer
+
+Whole sections can be conditional. Place a hidden formula switch **at the
+top level of the form** (a direct child of the root `Form` element's
+`<xs:sequence>`, alongside the other sections) and nest the section(s)
+inside its condition branch. The section renders as a wizard step only
+when the formula result matches the branch's `visibility` value — this is
+how one form shows different steps per applicant/investor type.
+
+```xml
+<xs:element name="aNEWID" nillable="true">
+  <xs:annotation>
+    <xs:documentation source="prompt">Wholesale Investor</xs:documentation>
+    <xs:documentation source="hint">'&lt;&lt;InvestorType&gt;&gt;' == 'wholesale'</xs:documentation>
+    <xs:documentation source="hidden">True</xs:documentation>
+  </xs:annotation>
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="aNEWID2" nillable="true">
+        <xs:annotation>
+          <xs:documentation source="visibility">true</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <!-- one or more full sections, shown only when the formula matches -->
+            <xs:element name="aNEWID3" nillable="true">
+              <xs:annotation>
+                <xs:documentation source="title">Certification</xs:documentation>
+                <xs:documentation source="section">section</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence><!-- groups and fields --></xs:sequence>
+                <xs:attribute name="value" type="xs:string" />
+                <xs:attribute name="completed" type="xs:string" />
+                <xs:attribute name="data" type="xs:string" />
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="value" type="fba:formula" />
+  </xs:complexType>
+</xs:element>
+```
+
+A branch may hold multiple sections (several consecutive steps switched
+together), and one switch may carry several branches showing different
+sections per value (e.g. a group flag routing an individual step vs. two
+entity steps). Live instances: the top-level "Wholesale Investor" and
+"Other Investor" switches wrapping the Certification sections in
+`assets/example-wholesale-investment-v1.xsd`.
+
 For a full worked example see `assets/example-retail-investment-v5.xsd`
 (Retail Investment Application v5 — sections, branches per entity type,
-repeaters, lookups, FATCA/CRS validation switches).
+repeaters, lookups, FATCA/CRS validation switches) and
+`assets/example-wholesale-investment-v1.xsd` (Wholesale Investment
+Application v1 — dynamic sections via top-level formula switches,
+certification categories per investor type).

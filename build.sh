@@ -84,9 +84,13 @@ sed -i.bak -E "s/^version: .*/version: $VERSION/" "$SKILL_SRC/SKILL.md"
 sed -i.bak -E "s/^Skill version: [^ ]*/Skill version: $VERSION/" "$SKILL_SRC/SKILL.md"
 rm -f "$SKILL_SRC/SKILL.md.bak"
 
-# 3. Sanity checks: validator runs clean on the bundled example
-python3 "$SKILL_SRC/scripts/validate.py" "$SKILL_SRC"/assets/*.xsd > /dev/null \
-  || { echo "ERROR: validate.py failed on bundled example"; exit 1; }
+# 3. Sanity checks: validator runs clean on each bundled example
+# (one file per invocation — a second argument switches validate.py
+# into edited-vs-original comparison mode)
+for f in "$SKILL_SRC"/assets/*.xsd; do
+  python3 "$SKILL_SRC/scripts/validate.py" "$f" > /dev/null \
+    || { echo "ERROR: validate.py failed on $f"; exit 1; }
+done
 
 # 4. Package
 mkdir -p "$DIST"

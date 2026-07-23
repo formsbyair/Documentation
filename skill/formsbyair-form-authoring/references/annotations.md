@@ -56,7 +56,7 @@ the formula result matches the branch's `visibility` value. See
 | `linkedrepeater` | Autofillkey of another repeater whose rows this repeater's rows pair with (row *n* links to row *n*). Affects tag scope escalation. |
 | `canduplicate` | `True` = user can duplicate a repeater row. |
 | `cansubmitpartial` | `True` on a section = section can be submitted partially complete. |
-| `defervalidation` | `True` on a section = validation deferred. |
+| `defervalidation` | `True` on a section ("Defer Validation" in the builder) = clicking Next on that section does not fire validation; the section is validated at submit instead (the last section always validates on submit regardless). Some clients ask for all validation deferred to the end so the form can be freely navigated and filled in any order — set it on every section. Not recommended on a section that drives significant conditional content later in the form. |
 | `limit` | Maximum rows / selection count / attachment limit. |
 
 ## Data & identity

@@ -51,6 +51,54 @@ All elements are `nillable="true"`. Required fields add `minOccurs="1"`.
 </xs:element>
 ```
 
+## Yes/No question list (right-aligned options via width 2)
+
+For a list of several yes/no questions rendered as an inline radio or
+inline toggle with longer text prompts, set `width` to `2` on each
+question. This aligns the Yes/No options to the right-hand side of the
+12-column grid and minimises text wrapping of the question prompt.
+
+```xml
+<xs:element minOccurs="1" name="aNEWID" nillable="true">
+  <xs:annotation>
+    <xs:documentation source="prompt">Omitted income that ought to have been included in a return</xs:documentation>
+    <xs:documentation source="autofillkey">IncomeTax1</xs:documentation>
+    <xs:documentation source="listtype">toggle</xs:documentation>
+    <xs:documentation source="width">2</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Yes">
+        <xs:annotation>
+          <xs:documentation source="name">Yes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="No">
+        <xs:annotation>
+          <xs:documentation source="name">No</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+```
+
+## Attachment question with a longer prompt (full-width via width 12)
+
+For one or more attachment questions with a longer text prompt, set
+`width` to `12` so the "select file" button and the selected filename
+always appear on the next line below the prompt.
+
+```xml
+<xs:element name="aNEWID" nillable="true" type="fba:attachment">
+  <xs:annotation>
+    <xs:documentation source="prompt">Proof of residential address (dated within the last 3 months)</xs:documentation>
+    <xs:documentation source="autofillkey">DocProofOfResidentialAddress</xs:documentation>
+    <xs:documentation source="width">12</xs:documentation>
+  </xs:annotation>
+</xs:element>
+```
+
 ## Conditional branch (visibility)
 
 A group shown only when a controlling question has a given value.
@@ -195,6 +243,55 @@ Date-difference example (age check): `moment().diff(moment('<<PersonDateOfBirth>
     <xs:documentation source="validationinline">False</xs:documentation>
     <xs:documentation source="hidden">True</xs:documentation>
   </xs:annotation>
+</xs:element>
+```
+
+## Eligibility hard-stop (blocking validation)
+
+The standard pattern for blocking a user who gives a disqualifying answer —
+typically an eligibility question. Nest a validation switch whose expression
+is the literal `false` inside the condition branch of the disqualifying
+answer. When the branch becomes visible the validation can never pass, so
+the red alert shows **immediately** (not on Next/submit) and the user is
+blocked from moving forward or submitting. The `validationmessage` is the
+text shown in the alert.
+
+```xml
+<xs:element minOccurs="1" name="aNEWID" nillable="true">
+  <xs:annotation>
+    <xs:documentation source="prompt">Are you eligible</xs:documentation>
+  </xs:annotation>
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="aNEWID2" nillable="true">
+        <xs:annotation>
+          <xs:documentation source="visibility">No</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="aNEWID3" nillable="true" type="fba:formula">
+              <xs:annotation>
+                <xs:documentation source="prompt">Validation</xs:documentation>
+                <xs:documentation source="hint">false</xs:documentation>
+                <xs:documentation source="validationmethod">expression</xs:documentation>
+                <xs:documentation source="validationmessage">You can't proceed with the form</xs:documentation>
+                <xs:documentation source="validationinline">False</xs:documentation>
+                <xs:documentation source="hidden">True</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="value">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Yes" />
+          <xs:enumeration value="No" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
 </xs:element>
 ```
 

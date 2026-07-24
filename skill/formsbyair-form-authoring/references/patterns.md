@@ -321,6 +321,29 @@ renders rows inline. Repeated groups end with the standard attribute trio.
 </xs:element>
 ```
 
+## Signature with date
+
+A Date field that immediately follows a Signature element must be left
+**blank by default** — do NOT set `default` to `=DateTime.Today` or any
+other value. The form app has logic that populates the date automatically
+when a signature is entered.
+
+```xml
+<xs:element minOccurs="1" name="aNEWID" nillable="true" type="fba:signature">
+  <xs:annotation>
+    <xs:documentation source="prompt">Signature</xs:documentation>
+    <xs:documentation source="autofillkey">Signature</xs:documentation>
+  </xs:annotation>
+</xs:element>
+<xs:element minOccurs="1" name="aNEWID2" nillable="true" type="xs:date">
+  <xs:annotation>
+    <xs:documentation source="prompt">Date</xs:documentation>
+    <xs:documentation source="autofillkey">SignatureDate</xs:documentation>
+    <!-- no default — populated automatically on signing -->
+  </xs:annotation>
+</xs:element>
+```
+
 ## Single-line address — addressPicker (Google lookup)
 
 The default for any non-NZ single-line address question. Needs no service

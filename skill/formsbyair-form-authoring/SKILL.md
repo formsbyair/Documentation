@@ -222,4 +222,4 @@ evaluation semantics are in `references/integration-map-format.md`; simpler
 official samples with their outputs are in `references/docs/samples/`.
 
 ---
-Skill version: 2026.7.23 — when reporting issues with this skill, quote this version.
+Skill version: 2026.7.28 — when reporting issues with this skill, quote this version.

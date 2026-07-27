@@ -12,7 +12,7 @@ templates, integration maps, and delivery filters. The official docs under
 |---|---|
 | `<<Name>>` | Simple tag — resolves an autofillkey. |
 | `<<[Function:...]>>` | Function or system tag. |
-| `<<<[...]>>>` | Same as `<<[...]>>`, but for content that itself contains `]>>` — e.g. an `[Expression:...]` whose body nests other `<<[...]>>` tags. Without the triple brackets the tag would be cut off at the first inner `]>>`. |
+| `<<<[...]>>>` | Same as `<<[...]>>`, but for content that itself contains `]>>` — i.e. any function tag whose body nests other `<<[...]>>` tags (`[Expression:...]`, `[Join:...]`, `[Condition:...]`, ...). The tag regex matches the triple form first, so the outer tag captures its nested tags intact; without the triple brackets it would be cut off at the first inner `]>>`. See the `[Join:...]` entry for the delimited-list pattern this enables. |
 
 Tags are matched non-greedily in order of appearance and each is replaced
 once. A tag that matches nothing resolves to an **empty string, never an
@@ -101,7 +101,18 @@ below). `Repeater` means the autofillkey of the repeating group.
   part `:expression` evaluates an expression with `@Count` substituted.
 - `<<[Expression:expr]>>` — evaluates `expr` (see *Expressions*).
 - `<<[Join:[sep] <<A>> <<B>> ...]>>` — joins the non-empty tag values with
-  `sep`; skips empties so you don't get doubled separators.
+  `sep`; skips empties so you don't get doubled separators. The parts may be
+  function tags (`[Condition:...]`, `[First:...]`, ...) — but then the outer
+  Join **must** use the triple-bracket form `<<<[Join:...]>>>`, or the outer
+  tag is cut off at the first inner `]>>`. This is the pattern for building
+  delimited value lists, e.g. a Dataverse multi-select choice value:
+
+  ```
+  <<<[Join:<<[Condition:'<<OptionA>>' != '':284210000]>><<[Condition:'<<OptionB>>' != '':284210001]>>[,]]>>>
+  ```
+
+  Join does **not** de-duplicate — when two conditions would emit the same
+  value, combine them into one condition with `||`.
 - `<<[Fallback: <<A>> <<B>> ...]>>` — the first tag (left to right) that
   resolves non-empty; later tags are not evaluated.
 - `<<[Stage]>>` — autofillkey of the last completed section.

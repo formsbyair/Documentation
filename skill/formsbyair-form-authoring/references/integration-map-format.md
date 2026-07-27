@@ -60,6 +60,30 @@ independently and the failing ones are removed. Two rules:
 - **Cover the else case explicitly** (e.g. a final variant with the negated
   condition) or accept that the attribute is absent when nothing matches.
 
+### Multi-valued attributes (e.g. multi-select choice columns)
+
+When one attribute needs a delimited list built from several independent
+conditions (a Dataverse multi-select choice takes `"284210000,284210001"`),
+don't chain filtered variants — use a single attribute whose `Value` is a
+triple-bracket `[Join:...]` of `[Condition:...]` tags (see `tag-engine.md`,
+Tag forms):
+
+```json
+{
+  "Name": "path_sourceofwealth",
+  "Filter": "'<<OptionA>>' != '' || '<<OptionB>>' != ''",
+  "Value": "<<<[Join:<<[Condition:'<<OptionA>>' != '':284210000]>><<[Condition:'<<OptionB>>' != '':284210001]>>[,]]>>>"
+}
+```
+
+- The outer tag **must** be triple-bracketed or it terminates at the first
+  inner `]>>`.
+- `Join` skips empty parts but does **not** de-duplicate — combine conditions
+  that emit the same value with `||`.
+- Guard the attribute with a `Filter` (an `||` chain of the same conditions)
+  so the attribute is omitted entirely when nothing matches, rather than
+  sending an empty value.
+
 ## Output shaping (`Setter`)
 
 When the resolved entity tree is serialised to JSON:

@@ -38,7 +38,7 @@ the formula result matches the branch's `visibility` value. See
 | `popupnote` | `True` = note displays as a popup instead of inline. |
 | `hint` | On input fields: helper/placeholder text. On `fba:formula` fields: the formula expression itself. Context-dependent — check the element type. |
 | `width` | Grid width of the field (12-column grid). |
-| `format` | Rendering/formatting mode. Per-type: e.g. `titleCase`/`upperCase` (text), `year`/`month` (date), `12` (time), `post`, `inline`, `international-mobile` (phone), `date`/`number`/`percent`/`currency` (formula output type). |
+| `format` | Rendering/formatting mode. Per-type: e.g. `titleCase`/`upperCase` (text), `year`/`month` (date), `12` (time), `post`, `international-mobile` (phone), `date`/`number`/`percent`/`currency` (formula output type). On repeaters: `inline` (narrow default columns — rows of 3+ fields wrap) or `table` (full 12-column grid via per-field `width`, prompts render once as column headers) — see "Row layout" in `references/patterns.md`. |
 | `inline` | Inline rendering flag. |
 | `cssclass` | Custom CSS class(es) applied to the element. |
 | `sort` | Sort order for list/lookup options. |
@@ -49,15 +49,15 @@ the formula result matches the branch's `visibility` value. See
 | Property | Meaning |
 |---|---|
 | `visibility` | Conditional display. On a group nested **as a child of** the controlling question, the value matches one of that question's enumeration values (`True`/`False` for a boolean parent) — the group shows only when selected. The controlling question hosts its branches in its `<xs:sequence>` and moves its own value to an `<xs:attribute name="value">`; see the conditional-branch patterns. |
-| `hidden` | `True` = element not shown during form-fill. Used for computed `fba:formula` fields and validation switches. |
+| `hidden` | `True` = element not shown during form-fill. Used for computed `fba:formula` fields and validation switches. Context-dependent on containers: on a **group** it hides only the heading (title/rule/note) — children still render, which makes a hidden group the standard wrapper for a repeater inside a condition branch; on a **Request** element it is the builder's "Hide First" option (suppresses the request prompt on the first repeater row). |
 | `readonly` | `True` = display-only field. |
 | `readonlyprefill` | `True` = field becomes read-only when prefilled. |
 | `arrayexpression` | Expression producing/controlling repeater rows from data. |
-| `linkedrepeater` | Autofillkey of another repeater whose rows this repeater's rows pair with (row *n* links to row *n*). Affects tag scope escalation. |
+| `linkedrepeater` | Autofillkey of another repeater whose rows this repeater's rows pair with (row *n* links to row *n*). Rows are created/removed automatically to match the linked repeater — the user gets no Add/Remove controls — and tags inside a row escalate to the linked parent row. See "Linked repeater" in `references/patterns.md`. |
 | `canduplicate` | `True` = user can duplicate a repeater row. |
 | `cansubmitpartial` | `True` on a section = section can be submitted partially complete. |
 | `defervalidation` | `True` on a section ("Defer Validation" in the builder) = clicking Next on that section does not fire validation; the section is validated at submit instead (the last section always validates on submit regardless). Some clients ask for all validation deferred to the end so the form can be freely navigated and filled in any order — set it on every section. Not recommended on a section that drives significant conditional content later in the form. |
-| `limit` | Maximum rows / selection count / attachment limit. |
+| `limit` | Maximum rows / selection count / attachment limit. On a repeater element it is evaluated as a JavaScript expression (tags allowed): excess rows are trimmed and the Add button hides at the cap. Pair with `min` (same expression) to pin the row count to another answer — see "Row-count bounds" in `references/patterns.md`. |
 
 ## Data & identity
 
@@ -141,7 +141,10 @@ datasets like addresses use `typeahead`), `formula`
 `nzdriverlicenceVersion`, `dataService`, `card`, `pattern`, `placeholder`.
 
 Standard XSD types: `xs:string`, `xs:boolean` (checkbox), `xs:date`,
-`xs:time`, `xs:int`. Enumerated fields use a named `xs:simpleType` with an
+`xs:time`, `xs:int`. **Do not author new `xs:int` questions** — the form
+renderer has no case for `int`, so no input box appears; use `fba:number`
+(with `decimals` = `0` for whole-number counts, plus `min`/`max` bounds)
+instead. Enumerated fields use a named `xs:simpleType` with an
 `xs:restriction` (`nameValueList` behaviour when enumerations carry `name`
 annotations).
 

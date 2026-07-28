@@ -63,7 +63,23 @@ than copying the source layout literally:
 - **Repeating elements → repeater.** If the source has numbered duplicates
   ("Person 1", "Person 2", "Beneficiary 1/2/3"...), model it once as a
   repeating group (`maxOccurs="unbounded"`), not as copies. Users add rows
-  as needed.
+  as needed. When the row count is dictated by an earlier answer (e.g. a
+  Single/Joint choice), set the repeater's `min` and `limit` annotations to
+  the same expression instead of leaving it free — see "Row-count bounds"
+  in `references/patterns.md`.
+- **One entry per person (signatures, authorities) → linked repeater.**
+  Don't model per-person blocks at the end of a form as fixed copies
+  switched by a condition; use a repeater with `linkedrepeater` pointing at
+  the person repeater so the rows track the people automatically — see
+  "Linked repeater" in `references/patterns.md`.
+- **Parts completed by someone else → third-party Request.** In
+  multi-person forms, wrap each person's row content in a Request element
+  with Hide First (`hidden` = `True`) so additional applicants can complete
+  their own details remotely; when identity verification is required, place
+  a validation-service element at the root of each person's content (inside
+  the Request) for the account's verification service to be connected in
+  the builder — see the request and validation-service patterns in
+  `references/patterns.md`.
 - **"If yes, please provide detail" → conditional path.** Put the follow-up
   question(s) in a conditional branch (`visibility`) **as a child of** the
   controlling question that displays only when Yes (or the relevant option)
@@ -82,6 +98,9 @@ than copying the source layout literally:
 - **Email and phone get their specific types.** If a question is clearly an
   email address or a phone number, use `fba:email` / `fba:phone` (not
   `xs:string`) so input is validated as the user types.
+- **Whole-number counts are `fba:number`, never `xs:int`.** The form
+  renderer has no case for `xs:int`, so no input box appears at all. Use
+  `fba:number` with `decimals` = `0` (plus `min`/`max` bounds as needed).
 - **Person names are plain text.** `fba:name` is deprecated — use
   `xs:string` with `autocomplete` = `name`.
 - **"About this form" guidance → the form Instruction, not content.** Put

@@ -297,8 +297,19 @@ text shown in the alert.
 
 ## Repeating group (repeater)
 
-`maxOccurs="unbounded"` on the repeated group element. `format` `inline`
-renders rows inline. Repeated groups end with the standard attribute trio.
+`maxOccurs="unbounded"` on the repeated group element. Repeated groups end
+with the standard attribute trio.
+
+**A repeater's direct parent must be a group** (with the repeater as the
+group's only child — the builder enforces the only-child part). The form
+renderer takes each row's index from the parent group's iteration, so a
+repeater placed directly inside a condition branch renders every row
+header as *"Title #NaN"*. When a repeater belongs inside a condition
+branch, wrap it in a group with `hidden` = `True`: on a **group**,
+`hidden` suppresses only the heading (title, rule, note) — the children
+still render and the row index is supplied. This is the canonical shape in
+the production templates (the hidden "Relationships" / "Documents" wrapper
+groups in the investment examples).
 
 ```xml
 <xs:element minOccurs="1" maxOccurs="unbounded" name="aNEWID" nillable="true">
@@ -317,6 +328,162 @@ renders rows inline. Repeated groups end with the standard attribute trio.
     <xs:attribute name="value" type="xs:string" />
     <xs:attribute name="documentdeliveryid" type="xs:string" />
     <xs:attribute name="trycount" type="xs:string" />
+  </xs:complexType>
+</xs:element>
+```
+
+### Row-count bounds — `min` / `limit` accept expressions
+
+`min` and `limit` annotations on the repeater element are evaluated as
+JavaScript expressions (tags allowed), not just constants. `min` auto-adds
+rows up to the result and blocks Remove below it; `limit` trims excess
+rows and hides the Add button at the cap. Set both to the same expression
+to pin the row count to another answer:
+
+```xml
+<xs:documentation source="min">'&lt;&lt;ApplicationType&gt;&gt;' == 'Joint' ? 2 : 1</xs:documentation>
+<xs:documentation source="limit">'&lt;&lt;ApplicationType&gt;&gt;' == 'Joint' ? 2 : 1</xs:documentation>
+```
+
+### Row layout — `format` `inline` vs `table`
+
+`format` `inline` lays row fields out with narrow default columns (a lone
+field gets 8 of the 12 grid columns, two fields get 6 each, three or more
+get only 2 each — per-field `width` overrides), so rows with three or more
+fields wrap onto extra lines. `format` `table` uses the full 12-column
+grid driven by each field's `width` annotation and renders the field
+prompts once as column headers above the first row — prefer it for rows
+of three or more fields (e.g. three fields at `width` 4). Conditional
+paths are not supported inside either format (builder rule).
+
+## Linked repeater (rows track another repeater)
+
+A repeater with `linkedrepeater` = the **autofillkey of another repeater**
+keeps its rows in lockstep with that repeater: row *n* pairs with row *n*,
+rows are created and removed automatically, and the user gets no
+Add/Remove controls. Inside a row, tags escalate to the **linked parent
+row**, so a tag like `<<ApplicantFirstName>>` resolves to that row's
+person. A `title` containing `<<tags>>` is parsed per row (falling back to
+`AutofillKey #n` while empty), so the row header can show the person's
+name. Use `maxOccurs="unbounded"` without `minOccurs`, wrapped in a
+(hidden) group as usual. Canonical use: one signature block per applicant
+at the end of a form — the rows automatically match the number of
+applicants.
+
+```xml
+<xs:element name="aNEWID" nillable="true">
+  <xs:annotation>
+    <xs:documentation source="title">Applicants</xs:documentation>
+    <xs:documentation source="hidden">True</xs:documentation>
+  </xs:annotation>
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="aNEWID2" nillable="true">
+        <xs:annotation>
+          <xs:documentation source="autofillkey">ApplicantSignature</xs:documentation>
+          <xs:documentation source="title">&lt;&lt;ApplicantFirstName&gt;&gt; &lt;&lt;ApplicantLastName&gt;&gt;</xs:documentation>
+          <xs:documentation source="linkedrepeater">Applicant</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" name="aNEWID3" nillable="true" type="fba:signature">
+              <xs:annotation>
+                <xs:documentation source="prompt">Signature</xs:documentation>
+                <xs:documentation source="autofillkey">Signature</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" name="aNEWID4" nillable="true" type="xs:date">
+              <xs:annotation>
+                <xs:documentation source="prompt">Date</xs:documentation>
+                <xs:documentation source="autofillkey">SignatureDate</xs:documentation>
+                <!-- no default — populated automatically on signing -->
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="value" type="xs:string" />
+          <xs:attribute name="documentdeliveryid" type="xs:string" />
+          <xs:attribute name="trycount" type="xs:string" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+```
+
+## Third-party request block
+
+A Request element lets a third party complete part of the form via a
+unique link (`docs/forms/elements/request.md`). It wraps the content the
+third party completes; in a multi-person repeater, place it at the top of
+the row wrapping the per-person content. On a Request element `hidden` =
+`True` is the builder's **Hide First** option: within a repeater it
+suppresses the "send them a request" prompt on the first row only, since
+the first person is generally the main form filler. `minOccurs="1"` makes
+the request mandatory (the main filler cannot complete that part
+themselves) — usually omitted. Include a hidden formula with autofillkey
+`RequestEmailMessage` so the filler's optional message reaches the
+On-Third-Party-Request email integration; the email-address prefill comes
+from that integration's recipient tag setting, not the XSD. Requests end
+with a value / requestdocumentid / completed attribute trio.
+
+```xml
+<xs:element name="aNEWID" nillable="true">
+  <xs:annotation>
+    <xs:documentation source="title">Request</xs:documentation>
+    <xs:documentation source="hidden">True</xs:documentation>
+    <xs:documentation source="request">request</xs:documentation>
+  </xs:annotation>
+  <xs:complexType>
+    <xs:sequence>
+      <!-- content the third party completes -->
+      <xs:element name="aNEWID2" nillable="true" type="fba:formula">
+        <xs:annotation>
+          <xs:documentation source="prompt">Request Email Message</xs:documentation>
+          <xs:documentation source="autofillkey">RequestEmailMessage</xs:documentation>
+          <xs:documentation source="hidden">True</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="value" type="xs:string" />
+    <xs:attribute name="requestdocumentid" type="xs:string" />
+    <xs:attribute name="completed" type="xs:string" />
+  </xs:complexType>
+</xs:element>
+```
+
+## Validation service block (identity verification etc.)
+
+A validation-service element posts its contents to a connected service —
+identity verification (Cloudcheck, APLYiD), bank account checks, and
+similar. `format` `post` sends after submit rather than on section
+navigation; `attachresponse` `True` attaches the service response to the
+document. Wrap the fields the service needs (names, date of birth,
+address...) inside the element's sequence — in a multi-person form, put
+one at the root of each person's content (inside the Request block when
+there is one). Leave `subscriptionid` off when authoring; the service is
+connected in the builder. Validation services end with an extended
+attribute set.
+
+```xml
+<xs:element name="aNEWID" nillable="true">
+  <xs:annotation>
+    <xs:documentation source="autofillkey">Verification</xs:documentation>
+    <xs:documentation source="title">Verification</xs:documentation>
+    <xs:documentation source="format">post</xs:documentation>
+    <xs:documentation source="attachresponse">True</xs:documentation>
+    <xs:documentation source="validationService">validationService</xs:documentation>
+  </xs:annotation>
+  <xs:complexType>
+    <xs:sequence>
+      <!-- fields the service validates -->
+    </xs:sequence>
+    <xs:attribute name="value" type="xs:string" />
+    <xs:attribute name="documentdeliveryid" type="xs:string" />
+    <xs:attribute name="trycount" type="xs:string" />
+    <xs:attribute name="data" type="xs:string" />
+    <xs:attribute name="message" type="xs:string" />
+    <xs:attribute name="reference" type="xs:string" />
+    <xs:attribute name="datetime" type="xs:string" />
   </xs:complexType>
 </xs:element>
 ```

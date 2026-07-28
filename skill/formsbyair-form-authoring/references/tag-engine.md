@@ -136,6 +136,12 @@ text **before** evaluation, with single quotes in values escaped, so:
 ## Gotchas worth remembering
 
 - A misspelled tag silently becomes an empty string — validate output.
+- **Option (checkbox) tags in filters**: server-side, `<<Opt>>` resolves to the
+  option's prompt text when ticked and blank otherwise — test with
+  `'<<Opt>>' != ''`, never `== 'True'`. (`true`/`false` is the *client-side*
+  formula result, and what `<<Opt.Value>>` gives on both sides — see
+  `docs/questions/types/option.md`.) Comparing against a selected value
+  (`== 'Yes'`) is for select/switch questions, not options.
 - Trailing separators are trimmed; leading separator only with the
   `[sep]`-before-name form and only when output is non-empty.
 - Multiple elements sharing an autofillkey concatenate in simple-tag

@@ -1,6 +1,6 @@
 ---
 name: formsbyair-form-authoring
-version: 2026.7.29
+version: 2026.7.31
 metadata:
   author: FormsByAir
 description: Author and edit FormsByAir form definitions (XSD schema files). Use this skill whenever the user wants to create, modify, review, or understand a FormsByAir form — adding/removing questions, sections, dropdown options, conditional visibility, repeating groups, formulas, validation rules, lookups, or document tags — or mentions FormsByAir, a form schema/XSD, form builder output, or files like "*_Form_*.xsd". Also use it when asked how a FormsByAir feature (questions, tags, workflow, templates) works.
@@ -193,6 +193,20 @@ than copying the source layout literally:
 - Required = `minOccurs="1"` attribute, not an annotation.
 - Never invent `subscriptionid` or `tableid` GUIDs — reuse ones already in the
   form or ask the user.
+- When deleting elements, check every ancestor group/branch that becomes
+  empty and delete it too — the builder rejects empty groups/conditions
+  ("must contain at least one element"). Then re-check formulas, gates,
+  validations, and templates that referenced the removed autofillkeys
+  (the validator lists them); leftovers resolve to empty strings, which may
+  silently change gating.
+- Never "correct" a working tag reference on inference (e.g. adding or
+  removing `.Value`) — verify against other working formulas for the same
+  tag in the file first; see the `.Value` gotcha in
+  `references/tag-engine.md`.
+- When a change request says "remove/change this question" identified only
+  by a screenshot, confirm the exact question with the requester before
+  editing — screenshots usually show a whole section, and removing the
+  wrong compliance question is expensive to unwind.
 - Preserve the file's existing conventions: CRLF line endings, two-space
   indentation, HTML-encoded entities inside annotation text
   (`&lt;&lt;Tag&gt;&gt;` for `<<Tag>>`).
@@ -241,4 +255,4 @@ evaluation semantics are in `references/integration-map-format.md`; simpler
 official samples with their outputs are in `references/docs/samples/`.
 
 ---
-Skill version: 2026.7.29 — when reporting issues with this skill, quote this version.
+Skill version: 2026.7.31 — when reporting issues with this skill, quote this version.

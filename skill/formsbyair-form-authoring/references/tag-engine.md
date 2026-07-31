@@ -142,6 +142,25 @@ text **before** evaluation, with single quotes in values escaped, so:
   formula result, and what `<<Opt.Value>>` gives on both sides — see
   `docs/questions/types/option.md`.) Comparing against a selected value
   (`== 'Yes'`) is for select/switch questions, not options.
+- **`.Value` is only for name/value lists (and booleans)**: a plain `list`
+  (enumerations without `name` annotations) stores the value directly — the
+  bare tag `<<Tag>>` IS the value, and appending `.Value` breaks resolution
+  (verified in production: `<<EntityType.Value>>` resolved empty where
+  `<<EntityType>>` worked). Use `.Value` only when the enumerations carry
+  `name` display annotations (e.g. `<<ClientType.Value>>`). Whether the
+  element is simple or complexType (has conditional branches) is irrelevant
+  — check the enumerations for `name` annotations, or copy whichever form
+  existing working formulas in the same file already use for that tag.
+- **Scope escalation is blocked by same-key elements in unselected
+  branches**: escalation to the parent/linked scope happens only when the
+  autofillkey doesn't exist at the current level *at all*. If the current
+  scope contains the key inside a conditional branch that is unselected,
+  the tag resolves EMPTY — it does not escalate. Consequence: reusing an
+  autofillkey across mutually exclusive branches is safe for direct output,
+  but a linked-repeater row can never "see through" to its linked row's
+  value for a key it also declares locally. If a linked row must surface
+  the other row's conditional value, give the source field a distinct key
+  and mirror it locally with a hidden formula in the appropriate branch.
 - Trailing separators are trimmed; leading separator only with the
   `[sep]`-before-name form and only when output is non-empty.
 - Multiple elements sharing an autofillkey concatenate in simple-tag

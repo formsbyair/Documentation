@@ -32,6 +32,7 @@ cp -r "$DOCS_SRC/questions" "$SKILL_SRC/references/docs/"
 cp -r "$DOCS_SRC/tags"      "$SKILL_SRC/references/docs/"
 cp -r "$DOCS_SRC/forms"     "$SKILL_SRC/references/docs/"
 cp -r "$DOCS_SRC/integrations" "$SKILL_SRC/references/docs/"
+cp -r "$DOCS_SRC/templates" "$SKILL_SRC/references/docs/"
 cp "$DOCS_SRC/tutorials/build-form.md" "$SKILL_SRC/references/docs/"
 
 # Sample outputs referenced by docs/integrations/file.md (text formats only)

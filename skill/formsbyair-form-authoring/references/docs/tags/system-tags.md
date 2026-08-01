@@ -94,6 +94,12 @@ See [Document Workflow Status]({{ site.baseurl }}/documents/workflow-status) for
 |&lt;&lt;Example.[SectionValidationData]&gt;&gt;|Data returned from validation service|{&quot;name&quot;: &quot;test&quot;}|
 |&lt;&lt;Example.[DocumentDeliveryId]&gt;&gt;|Associated Document Delivery Id|b664b162-78c3-49da-b4aa-2c69f3cf6f4e|
 
+### Signature Property Tags
+
+|Tag|Definition|Example|
+|---|---|---|
+|&lt;&lt;Example.[Audit]&gt;&gt;|Audit information captured with a signature|Captured 1 Aug 2026 9:15:32 am +12:00 from 203.0.113.7 using Mozilla/5.0|
+
 ### Aggregate Tags
 
 |Tag|Definition|Example|

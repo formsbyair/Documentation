@@ -15,6 +15,7 @@ Add styles with the following names to your template to override default formatt
 * Form Question
 * Form Answer
 * Form Terms
+* Form Audit
 
 
 #### Custom fonts

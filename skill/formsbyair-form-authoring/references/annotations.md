@@ -66,7 +66,7 @@ the formula result matches the branch's `visibility` value. See
 | `autofillkey` | The logical field name. Used in `<<Tag>>` references, data binding, document templates, and export. Element names are opaque IDs. |
 | `default` | Pre-populated value; may be a tag expression. |
 | `subscriptionid` | GUID linking a typeahead/lookup/validation/payment element to an external service subscription. Never invent — reuse or ask. |
-| `tableid` | GUID linking a field to a lookup table. Never invent — reuse or ask. |
+| `tableid` | GUID linking a field to a lookup table. Never invent — reuse or ask. Exception: `4a263fa0-06a7-41c9-a2bb-34cce4d0258c` is the built-in Countries table (present in every account) — use it for country questions. |
 | `getextendeddata` | `True` = lookup stores the full response; sub-fields readable as `<<Key.SubField>>`. |
 | `matchstart` | Typeahead matches from start of string. |
 | `allowmanualentry` | `True` = user may type a value not in the lookup. |

@@ -74,6 +74,10 @@ def child_elements(el):
     ct = el.find(f"{XS}complexType")
     if ct is None:
         return None  # not a container
+    if ct.find(f"{XS}simpleContent") is not None:
+        # value element serialized as a simpleContent extension (e.g. an
+        # fba:signature question carrying an audit attribute) - not a container
+        return None
     seq = ct.find(f"{XS}sequence")
     return [] if seq is None else seq.findall(f"{XS}element")
 

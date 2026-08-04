@@ -1,6 +1,6 @@
 ---
 name: formsbyair-form-authoring
-version: 2026.8.1
+version: 2026.8.5
 metadata:
   author: FormsByAir
 description: Author and edit FormsByAir form definitions (XSD schema files). Use this skill whenever the user wants to create, modify, review, or understand a FormsByAir form — adding/removing questions, sections, dropdown options, conditional visibility, repeating groups, formulas, validation rules, lookups, or document tags — or mentions FormsByAir, a form schema/XSD, form builder output, or files like "*_Form_*.xsd". Also use it when asked how a FormsByAir feature (questions, tags, workflow, templates) works.
@@ -120,6 +120,15 @@ than copying the source layout literally:
   `allowmanualentry` and `getextendeddata`, so an NZ address service
   (e.g. NZ Post) can be connected. Leave `subscriptionid` off —
   the user connects the service in the builder.
+- **Countries get a Typeahead on the built-in Countries table — never
+  free text.** Any country / jurisdiction question (country of
+  incorporation, tax-residency jurisdiction, country of organisation)
+  is `fba:typeahead` with `tableid` =
+  `4a263fa0-06a7-41c9-a2bb-34cce4d0258c` — FormsByAir's built-in
+  Countries table, present in every account, and the one documented
+  exception to the never-invent-GUIDs rule. See "Country question" in
+  `references/patterns.md`. (Nationality wording like "Singaporean" is
+  not a country name — leave nationality questions as text.)
 - **Always set a Document Reference.** On any new form, set the form-level
   `documentreference` annotation to a tag holding a relevant unique
   identifier for the submission — generally a name of some kind (e.g. the
@@ -192,7 +201,9 @@ than copying the source layout literally:
   element inside the correct `<xs:sequence>`.
 - Required = `minOccurs="1"` attribute, not an annotation.
 - Never invent `subscriptionid` or `tableid` GUIDs — reuse ones already in the
-  form or ask the user.
+  form or ask the user. Sole exception: the built-in Countries table
+  `tableid` `4a263fa0-06a7-41c9-a2bb-34cce4d0258c`, which exists in every
+  account and may always be used for country questions.
 - When deleting elements, check every ancestor group/branch that becomes
   empty and delete it too — the builder rejects empty groups/conditions
   ("must contain at least one element"). Then re-check formulas, gates,
@@ -255,4 +266,4 @@ evaluation semantics are in `references/integration-map-format.md`; simpler
 official samples with their outputs are in `references/docs/samples/`.
 
 ---
-Skill version: 2026.8.1 — when reporting issues with this skill, quote this version.
+Skill version: 2026.8.5 — when reporting issues with this skill, quote this version.

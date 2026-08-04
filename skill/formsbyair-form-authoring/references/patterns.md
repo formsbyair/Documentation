@@ -526,6 +526,24 @@ NZ address service — see the address principle in SKILL.md.)
 </xs:element>
 ```
 
+## Country question — typeahead on the built-in Countries table
+
+Any country / jurisdiction question (country of incorporation,
+tax-residency jurisdiction, country of organisation) is a typeahead bound
+to FormsByAir's built-in Countries table. This `tableid` is present in
+every account and is the one GUID that may be hardcoded without asking.
+Nationality questions ("Singaporean") stay plain text.
+
+```xml
+<xs:element minOccurs="1" name="aNEWID" nillable="true" type="fba:typeahead">
+  <xs:annotation>
+    <xs:documentation source="prompt">Country of incorporation</xs:documentation>
+    <xs:documentation source="autofillkey">IncorporationCountry</xs:documentation>
+    <xs:documentation source="tableid">4a263fa0-06a7-41c9-a2bb-34cce4d0258c</xs:documentation>
+  </xs:annotation>
+</xs:element>
+```
+
 ## Typeahead with external lookup (e.g. Companies Office)
 
 ```xml

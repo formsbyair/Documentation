@@ -32,7 +32,7 @@ We've fixed a group of issues reported through form testing, along with a couple
 
 * Clicking a tracked document link during prefill marked it as read for the form filler. Prefill users can still open the documents, but the read receipt is now only recorded when the form filler clicks the link.
 
-* Credentials are now optional when editing an existing connected service — leave them blank to keep the saved credentials and update only the other settings.
+* Credentials are now optional when editing an existing connected service, allowing you to change specific values only, and leave others as they were.
 
 * Form build now validates that a linked repeater's tag name doesn't conflict with the repeater it links to. This conflict previously caused the form to fail when filling.
 

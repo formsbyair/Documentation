@@ -36,10 +36,12 @@ they're resolved at delivery time, so they survive this pass untouched.
 - `<<[This]>>` — the current repeater row's own value (inside `[ForEach:...]`
   / `[First:...]` templates).
 - **Scope escalation**: inside a repeater row template, tags resolve within
-  that row first. If the tag doesn't exist at the current level at all (not
-  merely empty or hidden behind an unselected conditional branch / empty
-  repeater), resolution escalates to the parent scope, and so on upward.
-  Linked repeaters (`linkedrepeater`) escalate to their linked parent row.
+  that row first. If the tag doesn't exist at the current level at all —
+  and an element behind an unselected conditional branch, or in an empty
+  repeater, does not exist there — resolution escalates to the parent
+  scope, and so on upward. An element that exists but is empty does not
+  escalate. Linked repeaters (`linkedrepeater`) escalate to their linked
+  parent row. See escalation gotchas below.
 
 ## Suffixes
 
@@ -151,16 +153,19 @@ text **before** evaluation, with single quotes in values escaped, so:
   element is simple or complexType (has conditional branches) is irrelevant
   — check the enumerations for `name` annotations, or copy whichever form
   existing working formulas in the same file already use for that tag.
-- **Scope escalation is blocked by same-key elements in unselected
-  branches**: escalation to the parent/linked scope happens only when the
-  autofillkey doesn't exist at the current level *at all*. If the current
-  scope contains the key inside a conditional branch that is unselected,
-  the tag resolves EMPTY — it does not escalate. Consequence: reusing an
-  autofillkey across mutually exclusive branches is safe for direct output,
-  but a linked-repeater row can never "see through" to its linked row's
-  value for a key it also declares locally. If a linked row must surface
-  the other row's conditional value, give the source field a distinct key
-  and mirror it locally with a hidden formula in the appropriate branch.
+- **A tag missing from a repeater row escalates rather than returning
+  blank**: when a condition inside a repeater references a tag that
+  doesn't exist in a given row — e.g. its element sits behind a
+  conditional path the row didn't take — resolution escalates and may find
+  a same-named tag somewhere else in the document, returning an unexpected
+  value instead of the blank the author expected. To prevent escalation,
+  add a hidden formula with that tag name in the row's other path(s) so
+  the tag is always found in the row and returns blank.
+- **Linked-repeater escalation is blocked by locally declared keys**: a
+  linked-repeater row can never "see through" to its linked row's value
+  for a key it also declares locally. If a linked row must surface the
+  other row's conditional value, give the source field a distinct key and
+  mirror it locally with a hidden formula in the appropriate branch.
 - Trailing separators are trimmed; leading separator only with the
   `[sep]`-before-name form and only when output is non-empty.
 - Multiple elements sharing an autofillkey concatenate in simple-tag

@@ -29,6 +29,31 @@ optional `Setter`.
 `Value` and `Filter` use the full tag syntax — see `tag-engine.md`. Filters
 are NCalc boolean expressions with tags interpolated first.
 
+### The root entity and the dummy root
+
+`ForEach` and `Filter` on the **root** entity are **ignored** — the
+clone/remove machinery only runs when a *parent* processes its `Entities`
+list, and the root has none. A root-level `ForEach` therefore does not scope
+anything: the root's tags resolve document-wide, and a simple tag inside a
+repeater **concatenates across all rows** (`<<DOB>>` with two rows →
+`2010-07-25 1991-08-09`). This is invisible while test data has one row and
+corrupts the first multi-row submission.
+
+When the top-level record needs `ForEach`/`Filter`, use a **dummy root** —
+an entity with no `Name` wrapping the real entities:
+
+```json
+{
+  "Entities": [
+    { "Name": "contacts", "ForEach": "Applicant", "Filter": "'<<Type>>' == 'Primary'", ... }
+  ]
+}
+```
+
+The dummy root creates nothing itself; its children get full child-entity
+semantics. **Order matters**: the delivery reference comes from the first
+top-level entity, so list the primary record first.
+
 ## Evaluation order (what the engine actually does)
 
 For each entity, attributes are processed first, then child entities:
@@ -48,7 +73,11 @@ For each entity, attributes are processed first, then child entities:
    emitted per repeater row (per-row `Filter` optional), with tags inside
    resolving against that row (parent-scope escalation applies). Clones are
    appended **after** the non-ForEach siblings, in row order. Zero matching
-   rows → nothing emitted.
+   rows → nothing emitted. **A clone's entire subtree resolves in row
+   scope**: nested `ForEach` (entity or attribute) only finds repeaters
+   *inside that row* (e.g. a per-person relationships repeater). Anything
+   that must see other rows of the same repeater — or the whole document —
+   belongs outside the clone, not nested within it.
 
 ### Conditional (if/else-if) attributes
 
@@ -114,3 +143,27 @@ from the resolved map and translate them to the target API — so the set of
 meaningful `Name`s is fixed by the connector, and inventing new names has no
 effect. Reuse names from a working map for the same connector (see
 `assets/example-integration-map.json`); don't guess.
+
+### Dynamics 365 Sales connector specifics
+
+- Entity `Name` = the Dataverse **entity-set name** (`contacts`, `accounts`,
+  `leads`, `connections`, custom sets like `path_customerinvestments`).
+  Lookups bind via `<schema-name>@odata.bind` attributes; option sets take
+  integer value strings; Boolean columns need `"Setter": "boolean"`;
+  multi-select choices take comma-separated values.
+- **Attribute `Getter`** `"parent"`/`"grandparent"` → the record path (e.g.
+  `accounts(guid)`) of the entity created one/two levels up — for
+  `@odata.bind` values like `parentcustomerid_account@odata.bind`.
+- **Entity `Id`** pre-populated (typically
+  `<<[DocumentDeliveryReference:subscriptionId]>>`) → the entity **updates**
+  (PATCH) that record instead of creating one. Empty resolves to a create,
+  so a self-referencing Id gives create-on-first-save / update-thereafter.
+- **Entity `Getter`** `"parent"`/`"grandparent"` → the entity updates its
+  ancestor's record — e.g. setting an account's `primarycontactid` to a
+  contact created as its child, after the fact.
+- **Dummy root** is supported; the delivery reference is the first top-level
+  entity's record. Dataverse alternate-key binds work in `@odata.bind`
+  values (`/accounts(accountnumber='CODE')`) once the key is defined.
+- A `Document` entity (`Attachment` `"true"`/`"false"`, optional
+  `FilenameFilter`) attaches the submission PDF or uploads as notes on its
+  parent record.

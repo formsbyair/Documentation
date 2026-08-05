@@ -4,13 +4,13 @@ Dated release notes, newest first, merged from the documentation site's posts.
 
 ## 2026-08-01 — Signature audit (platform)
 
-We've added an audit trail to **Signature** questions.
+We've made the audit trail on **Signature** questions much more accessible.
 
 When a signature is captured we record the signer's local date and time (including timezone offset), IP address and browser user agent, and display this in small print under the signature in the form e.g.
 
 *Captured 1 Aug 2026 9:15:32 am +12:00 from 203.0.113.7 using Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X)*
 
-This audit information is now also stored with the submitted document, so it remains available after submission:
+Previously this was only surfaced after submission in the properties of a generated PDF. It's now stored with the submitted document, so:
 
 * It appears under the signature when viewing a document in workflow
 * It's output under the signature image in auto-generated Word/PDF output

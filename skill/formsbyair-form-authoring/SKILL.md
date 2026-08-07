@@ -103,6 +103,10 @@ than copying the source layout literally:
   `fba:number` with `decimals` = `0` (plus `min`/`max` bounds as needed).
 - **Person names are plain text.** `fba:name` is deprecated — use
   `xs:string` with `autocomplete` = `name`.
+- **Date of birth is a required Date with fixed bounds.** Any
+  date-of-birth question is `xs:date` with `minOccurs="1"`, `min` =
+  `01/01/1900`, `max` = `=DateTime.Now`, and `autocomplete` = `bday`.
+  See "Date of birth" in `references/patterns.md`.
 - **"About this form" guidance → the form Instruction, not content.** Put
   any about-this-form / how-to-use text in the root `Form` element's `note`
   annotation (the builder's Instruction setting) rather than creating

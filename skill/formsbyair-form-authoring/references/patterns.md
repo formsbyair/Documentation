@@ -511,6 +511,23 @@ when a signature is entered.
 </xs:element>
 ```
 
+## Date of birth
+
+Every date-of-birth question is a **required Date** question with Min
+Value `01/01/1900` and Max Value `=DateTime.Now`:
+
+```xml
+<xs:element minOccurs="1" name="aNEWID" nillable="true" type="xs:date">
+  <xs:annotation>
+    <xs:documentation source="prompt">Date Of Birth</xs:documentation>
+    <xs:documentation source="autofillkey">PersonDateOfBirth</xs:documentation>
+    <xs:documentation source="min">01/01/1900</xs:documentation>
+    <xs:documentation source="max">=DateTime.Now</xs:documentation>
+    <xs:documentation source="autocomplete">bday</xs:documentation>
+  </xs:annotation>
+</xs:element>
+```
+
 ## Single-line address — addressPicker (Google lookup)
 
 The default for any non-NZ single-line address question. Needs no service
